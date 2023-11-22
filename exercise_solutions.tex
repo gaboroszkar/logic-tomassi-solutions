@@ -3601,9 +3601,9 @@
                     Semantically invalid.
                     \vspace{1em}\\
                     \tiny{
-                    \hspace*{-0.5cm}
+                    \hspace*{-1.5cm}
                     \begin{tabular}{c c c c | c c c c c c c c c c c c | c c c c c c c c c c c c c}
-                        P & Q & R & S &   & P & v & Q &   & \lra       &   & \s & R & v & S &   & R & \ra        &   & P & \lra & \s &   & R & \& & \s & S &   &  \\
+                        P & Q & R & S & ( & P & v & Q & ) & \lra       & ( & \s & R & v & S & ) & R & \ra        & ( & P & \lra & \s & ( & R & \& & \s & S & ) &) \\
                         \hline
                         F & F & F & F &   & F & F & F &   & \textbf{F} &   & T  & F & T & F &   & F & \textbf{T} &   & F & F    & T  &   & F & F  & T  & F &   &  \\
                         F & F & F & T &   & F & F & F &   & \textbf{F} &   & T  & F & T & T &   & F & \textbf{T} &   & F & F    & T  &   & F & F  & F  & T &   &  \\
@@ -3956,6 +3956,345 @@ P & T & T &  & T & T & T &  & \textbf{T} &  & T & T & T & \\
                     \vspace{1em}
                 \end{minipage}
             \end{enumerate}
+    \end{enumerate}
+
+    \subsection*{EXERCISE 4.5}
+
+    \begin{enumerate}[label=\arabic*,leftmargin=*]
+
+        \item The truth-tables are the followings.
+            \nopagebreak
+            \begin{enumerate}[label=\arabic*.]
+
+                \begin{minipage}{\textwidth}
+                \item P \& Q, \s ( \s P v \s Q )
+                    \vspace{1em}\\
+\begin{tabular}{c c | c c c | c c c c c c c c}
+P & Q & P & \& & Q & \s & ( & \s & P & v & \s & Q & )\\
+\hline
+F & F & F & \textbf{F} & F & \textbf{F} &   & T & F & T & T & F &  \\
+F & T & F & \textbf{F} & T & \textbf{F} &   & T & F & T & F & T &  \\
+T & F & T & \textbf{F} & F & \textbf{F} &   & F & T & T & T & F &  \\
+T & T & T & \textbf{T} & T & \textbf{T} &   & F & T & F & F & T &  \\
+\end{tabular}
+                    \vspace{1em}
+                \end{minipage}
+                \begin{minipage}{\textwidth}
+                \item P v Q, \s ( \s P \& \s Q )
+                    \vspace{1em}\\
+\begin{tabular}{c c | c c c | c c c c c c c c}
+P & Q & P & v & Q & \s & ( & \s & P & \& & \s & Q & )\\
+\hline
+F & F & F & \textbf{F} & F & \textbf{F} &   & T & F & T & T & F &  \\
+F & T & F & \textbf{T} & T & \textbf{T} &   & T & F & F & F & T &  \\
+T & F & T & \textbf{T} & F & \textbf{T} &   & F & T & F & T & F &  \\
+T & T & T & \textbf{T} & T & \textbf{T} &   & F & T & F & F & T &  \\
+\end{tabular}
+                    \vspace{1em}
+                \end{minipage}
+                \begin{minipage}{\textwidth}
+                \item \s ( P \& Q ), \s P v \s Q
+                    \vspace{1em}\\
+\begin{tabular}{c c | c c c c c c | c c c c c}
+P & Q & \s & ( & P & \& & Q & ) & \s & P & v & \s & Q\\
+\hline
+F & F & \textbf{T} &   & F & F & F &   & T & F & \textbf{T} & T & F\\
+F & T & \textbf{T} &   & F & F & T &   & T & F & \textbf{T} & F & T\\
+T & F & \textbf{T} &   & T & F & F &   & F & T & \textbf{T} & T & F\\
+T & T & \textbf{F} &   & T & T & T &   & F & T & \textbf{F} & F & T\\
+\end{tabular}
+                    \vspace{1em}
+                \end{minipage}
+                \begin{minipage}{\textwidth}
+                \item \s (P v Q), \s P \& \s Q
+                    \vspace{1em}\\
+\begin{tabular}{c c | c c c c c c | c c c c c c}
+P & Q & \s & ( & P & v & Q & ) & \s & P & \& & \s & Q\\
+\hline
+F & F & \textbf{T} &   & F & F & F &   & T & F & \textbf{T} & T & F \\
+F & T & \textbf{F} &   & F & T & T &   & T & F & \textbf{F} & F & T \\
+T & F & \textbf{F} &   & T & T & F &   & F & T & \textbf{F} & T & F \\
+T & T & \textbf{F} &   & T & T & T &   & F & T & \textbf{F} & F & T \\
+\end{tabular}
+                    \vspace{1em}
+                \end{minipage}
+
+            \end{enumerate}
+
+        \item The truth-tables are the followings.
+            \nopagebreak
+            \begin{enumerate}[label=(\roman*)]
+
+                \begin{minipage}{\textwidth}
+                \item \ \\
+                    P: Professor Cameron's car is in the car park.\\
+                    Q: Professor Cameron is in his office.
+                    \vspace{1em}\\
+\begin{tabular}{c c | c c c | c c c c c}
+P & Q & P & \ra & Q & \s & Q & \ra & \s & P\\
+\hline
+F & F & F & \textbf{T} & F & T & F & \textbf{T} & T & F\\
+F & T & F & \textbf{T} & T & F & T & \textbf{T} & T & F\\
+T & F & T & \textbf{F} & F & T & F & \textbf{F} & F & T\\
+T & T & T & \textbf{T} & T & F & T & \textbf{T} & F & T\\
+\end{tabular}
+                    \vspace{1em}
+                \end{minipage}
+                \begin{minipage}{\textwidth}
+                \item \ \\
+                    P: You eat your cake.\\
+                    Q: You still have your cake.
+                    \vspace{1em}\\
+\begin{tabular}{c c | c c c c | c c c c c c}
+P & Q & P & \ra & \s & Q & \s & ( & P & \& & Q & )\\
+\hline
+F & F & F & \textbf{T} & T & F & \textbf{T} &   & F & F & F &  \\
+F & T & F & \textbf{T} & F & T & \textbf{T} &   & F & F & T &  \\
+T & F & T & \textbf{T} & T & F & \textbf{T} &   & T & F & F &  \\
+T & T & T & \textbf{F} & F & T & \textbf{F} &   & T & T & T &  \\
+\end{tabular}
+                    \vspace{1em}
+                \end{minipage}
+                \begin{minipage}{\textwidth}
+                \item \ \\
+                    P: Students love logic exams.\\
+                    Q: Students are very enlightened.
+                    \vspace{1em}\\
+\begin{tabular}{c c | c c c | c c c c c c c c c c c}
+P & Q & P & \lra & Q & ( & P & \ra & Q & ) & \& & ( & Q & \ra & P & )\\
+\hline
+F & F & F & \textbf{T} & F &   & F & T & F &   & \textbf{T} &   & F & T & F &  \\
+F & T & F & \textbf{F} & T &   & F & T & T &   & \textbf{F} &   & T & F & F &  \\
+P & F & P & \textbf{F} & F &   & T & F & F &   & \textbf{F} &   & F & T & T &  \\
+P & T & P & \textbf{T} & T &   & T & T & T &   & \textbf{T} &   & T & T & T &  \\
+\end{tabular}
+                    \vspace{1em}
+                \end{minipage}
+                \begin{minipage}{\textwidth}
+                \item \ \\
+                    P: The sun is shining.\\
+                    Q: Everything in the garden is coming up roses.
+                    \vspace{1em}\\
+\begin{tabular}{c c | c c c | c c c c c c c c}
+P & Q & P & \& & Q & \s & ( & \s & P & v & \s & Q & )\\
+\hline
+F & F & F & \textbf{F} & F & \textbf{F} &   & T & F & T & T & F &  \\
+F & T & F & \textbf{F} & T & \textbf{F} &   & T & F & T & F & T &  \\
+T & F & T & \textbf{F} & F & \textbf{F} &   & F & T & T & T & F &  \\
+T & T & T & \textbf{T} & T & \textbf{T} &   & F & T & F & F & T &  \\
+\end{tabular}
+                    \vspace{1em}
+                \end{minipage}
+
+            \end{enumerate}
+
+        \item The truth-tables are the followings.
+            \nopagebreak
+            \begin{enumerate}[label=(\roman*)]
+
+                \begin{minipage}{\textwidth}
+                \item \s P v \s Q, P \ra \s Q\\
+                    Semantically equivalent.
+                    \vspace{1em}\\
+\begin{tabular}{c c | c c c c c | c c c c}
+P & Q & \s & P & v & \s & Q & P & \ra & \s & Q\\
+\hline
+F & F & T & F & \textbf{T} & T & F & F & \textbf{T} & T & F\\
+F & T & T & F & \textbf{T} & F & T & F & \textbf{T} & F & T\\
+T & F & F & T & \textbf{T} & T & F & T & \textbf{T} & T & F\\
+T & T & F & T & \textbf{F} & F & T & T & \textbf{F} & F & T\\
+\end{tabular}
+                    \vspace{1em}
+                \end{minipage}
+                \begin{minipage}{\textwidth}
+                \item \s (P \ra Q), P \& \s Q\\
+                    Semantically equivalent.
+                    \vspace{1em}\\
+\begin{tabular}{c c | c c c c c c | c c c c}
+P & Q & \s & ( & P & \ra & Q & ) & P & \& & \s & Q\\
+\hline
+F & F & \textbf{F} &   & F & T & F &   & F & \textbf{F} & T & F\\
+F & T & \textbf{F} &   & F & T & T &   & F & \textbf{F} & F & T\\
+T & F & \textbf{T} &   & T & F & F &   & T & \textbf{T} & T & F\\
+T & T & \textbf{F} &   & T & T & T &   & T & \textbf{F} & F & T\\
+\end{tabular}
+                    \vspace{1em}
+                \end{minipage}
+                \begin{minipage}{\textwidth}
+                \item P \ra (P \ra Q), P \ra Q\\
+                    Semantically equivalent.
+                    \vspace{1em}\\
+\begin{tabular}{c c | c c c c c c c | c c c}
+P & Q & P & \ra & ( & P & \ra & Q & ) & P & \ra & Q\\
+\hline
+F & F & F & \textbf{T} &   & F & T & F &   & F & \textbf{T} & F\\
+F & T & F & \textbf{T} &   & F & T & T &   & F & \textbf{T} & T\\
+T & F & T & \textbf{F} &   & T & F & F &   & T & \textbf{F} & F\\
+T & T & T & \textbf{T} &   & T & T & T &   & T & \textbf{T} & T\\
+\end{tabular}
+                    \vspace{1em}
+                \end{minipage}
+                \begin{minipage}{\textwidth}
+                \item P v Q, \s (\s P \& \s Q)\\
+                    Semantically equivalent.
+                    \vspace{1em}\\
+\begin{tabular}{c c | c c c | c c c c c c c c}
+P & Q & P & v & Q & \s & ( & \s & P & \& & \s & Q & )\\
+\hline
+F & F & F & \textbf{F} & F & \textbf{F} &   & T & F & T & T & F &  \\
+F & Q & F & \textbf{T} & T & \textbf{T} &   & T & F & F & F & T &  \\
+T & F & T & \textbf{T} & F & \textbf{T} &   & F & T & F & T & F &  \\
+T & Q & T & \textbf{T} & T & \textbf{T} &   & F & T & F & F & T &  \\
+\end{tabular}
+                    \vspace{1em}
+                \end{minipage}
+                \begin{minipage}{\textwidth}
+                \item P v (\s \s Q \& R), Q \ra (P \& \s R)\\
+                    Semantically inequivalent.
+                    \vspace{1em}\\
+\begin{tabular}{c c c | c c c c c c c c c | c c c c c c c c}
+P & Q & R & P & v & ( & \s & \s & Q & \& & R & ) & Q & \ra & ( & P & \& & \s & R & )\\
+\hline
+F & F & F & F & \textbf{F} &   & F & T & F & F & F &   & F & \textbf{T} &   & F & F & T & F &  \\
+F & F & T & F & \textbf{F} &   & F & T & F & F & T &   & F & \textbf{T} &   & F & F & F & T &  \\
+F & T & F & F & \textbf{F} &   & T & F & T & F & F &   & T & \textbf{F} &   & F & F & T & F &  \\
+F & T & T & F & \textbf{T} &   & T & F & T & T & T &   & T & \textbf{F} &   & F & F & F & T &  \\
+T & F & F & T & \textbf{T} &   & F & T & F & F & F &   & F & \textbf{T} &   & T & T & T & F &  \\
+T & F & T & T & \textbf{T} &   & F & T & F & F & T &   & F & \textbf{T} &   & T & F & F & T &  \\
+T & T & F & T & \textbf{T} &   & T & F & T & F & F &   & T & \textbf{T} &   & T & T & T & F &  \\
+T & T & T & T & \textbf{T} &   & T & F & T & T & T &   & T & \textbf{F} &   & T & F & F & T &  \\
+\end{tabular}
+                    \vspace{1em}
+                \end{minipage}
+                \begin{minipage}{\textwidth}
+                \item (P v Q) \& \s (P \& Q), \s (P \lra Q)\\
+                    Semantically equivalent.
+                    \vspace{1em}\\
+\begin{tabular}{c c | c c c c c c c c c c c c | c c c c c c}
+P & Q & ( & P & v & Q & ) & \&         & \s & ( & P & \& & Q & ) & \s         & ( & P & \lra & Q & )\\
+\hline
+F & F &   & F & F & F &   & \textbf{F} & T  &   & F & F  & F &   & \textbf{F} &   & F & T    & F &  \\
+F & T &   & F & T & T &   & \textbf{T} & T  &   & F & F  & T &   & \textbf{T} &   & F & F    & T &  \\
+T & F &   & T & T & F &   & \textbf{T} & T  &   & T & F  & F &   & \textbf{T} &   & T & F    & F &  \\
+T & T &   & T & T & T &   & \textbf{F} & F  &   & T & T  & T &   & \textbf{F} &   & T & T    & T &  \\
+\end{tabular}
+                    \vspace{1em}
+                \end{minipage}
+                \begin{minipage}{\textwidth}
+                \item (P \ra Q) v \s (\s R \ra S), (\s P v Q) v (R v S)\\
+                    Semantically inequivalent.
+                    \vspace{1em}\\
+                    \hspace*{-3.8cm}
+\begin{tabular}{c c c c | c c c c c c c c c c c c c | c c c c c c c c c c c c}
+P & Q & R & S & ( & P & \ra & Q & ) & v & \s & ( & \s & R & \ra & S & ) & ( & \s & P & v & Q & ) & v & ( & R & v & S & )\\
+\hline
+F & F & F & F &   & F & T & F &   & \textbf{T} & T &   & T & F & F & F &   &   & T & F & T & F &   & \textbf{T} &   & F & F & F &  \\
+F & F & F & T &   & F & T & F &   & \textbf{T} & F &   & T & F & T & T &   &   & T & F & T & F &   & \textbf{T} &   & F & T & T &  \\
+F & F & T & F &   & F & T & F &   & \textbf{T} & F &   & F & T & T & F &   &   & T & F & T & F &   & \textbf{T} &   & T & T & F &  \\
+F & F & T & T &   & F & T & F &   & \textbf{T} & F &   & F & T & T & T &   &   & T & F & T & F &   & \textbf{T} &   & T & T & T &  \\
+F & T & F & F &   & F & T & T &   & \textbf{T} & T &   & T & F & F & F &   &   & T & F & T & T &   & \textbf{T} &   & F & F & F &  \\
+F & T & F & T &   & F & T & T &   & \textbf{T} & F &   & T & F & T & T &   &   & T & F & T & T &   & \textbf{T} &   & F & T & T &  \\
+F & T & T & F &   & F & T & T &   & \textbf{T} & F &   & F & T & T & F &   &   & T & F & T & T &   & \textbf{T} &   & T & T & F &  \\
+F & T & T & T &   & F & T & T &   & \textbf{T} & F &   & F & T & T & T &   &   & T & F & T & T &   & \textbf{T} &   & T & T & T &  \\
+T & F & F & F &   & T & F & F &   & \textbf{T} & T &   & T & F & F & F &   &   & F & T & F & F &   & \textbf{F} &   & F & F & F &  \\
+T & F & F & T &   & T & F & F &   & \textbf{F} & F &   & T & F & T & T &   &   & F & T & F & F &   & \textbf{T} &   & F & T & T &  \\
+T & F & T & F &   & T & F & F &   & \textbf{F} & F &   & F & T & T & F &   &   & F & T & F & F &   & \textbf{T} &   & T & T & F &  \\
+T & F & T & T &   & T & F & F &   & \textbf{F} & F &   & F & T & T & T &   &   & F & T & F & F &   & \textbf{T} &   & T & T & T &  \\
+T & T & F & F &   & T & T & T &   & \textbf{T} & T &   & T & F & F & F &   &   & F & T & T & T &   & \textbf{T} &   & F & F & F &  \\
+T & T & F & T &   & T & T & T &   & \textbf{T} & F &   & T & F & T & T &   &   & F & T & T & T &   & \textbf{T} &   & F & T & T &  \\
+T & T & T & F &   & T & T & T &   & \textbf{T} & F &   & F & T & T & F &   &   & F & T & T & T &   & \textbf{T} &   & T & T & F &  \\
+T & T & T & T &   & T & T & T &   & \textbf{T} & F &   & F & T & T & T &   &   & F & T & T & T &   & \textbf{T} &   & T & T & T &  \\
+\end{tabular}
+                    \vspace{1em}
+                \end{minipage}
+
+            \end{enumerate}
+
+        \item The truth-tables are the followings.
+            \nopagebreak
+            \begin{enumerate}[label=(\roman*)]
+
+                \begin{minipage}{\textwidth}
+                \item A \ra B, \s A v B
+                    \vspace{1em}\\
+\begin{tabular}{c c | c c c | c c c c}
+A & B & A & \ra & B & \s & A & v & B\\
+\hline
+F & F & F & \textbf{T} & F & T & F & \textbf{T} & F\\
+F & T & F & \textbf{T} & T & T & F & \textbf{T} & T\\
+T & F & T & \textbf{F} & F & F & T & \textbf{F} & F\\
+T & T & T & \textbf{T} & T & F & T & \textbf{T} & T\\
+\end{tabular}
+                    \vspace{1em}
+                \end{minipage}
+                \begin{minipage}{\textwidth}
+                \item \s (A \ra B), A \& \s B
+                    \vspace{1em}\\
+\begin{tabular}{c c | c c c c c c | c c c c}
+A & B & \s & ( & A & \ra & B & ) & A & \& & \s & B\\
+\hline
+F & F & \textbf{F} &   & F & T & F &   & F & \textbf{F} & T & F\\
+F & T & \textbf{F} &   & F & T & T &   & F & \textbf{F} & F & T\\
+T & F & \textbf{T} &   & T & F & F &   & T & \textbf{T} & T & F\\
+T & T & \textbf{F} &   & T & T & T &   & T & \textbf{F} & F & T\\
+\end{tabular}
+                    \vspace{1em}
+                \end{minipage}
+                \begin{minipage}{\textwidth}
+                \item \s (A \& B), \s A v \s B
+                    \vspace{1em}\\
+\begin{tabular}{c c | c c c c c c | c c c c c}
+A & B & \s & ( & A & \& & B & ) & \s & A & v & \s & B\\
+\hline
+F & F & \textbf{T} &   & F & F & F &   & T & F & \textbf{T} & T & F\\
+F & T & \textbf{T} &   & F & F & T &   & T & F & \textbf{T} & F & T\\
+T & F & \textbf{T} &   & T & F & F &   & F & T & \textbf{T} & T & F\\
+T & T & \textbf{F} &   & T & T & T &   & F & T & \textbf{F} & F & T\\
+\end{tabular}
+                    \vspace{1em}
+                \end{minipage}
+                \begin{minipage}{\textwidth}
+                \item \s (A v B), \s A \& \s B
+                    \vspace{1em}\\
+\begin{tabular}{c c | c c c c c c | c c c c c}
+A & B & \s & ( & A & v & B & ) & \s & A & \& & \s & B\\
+\hline
+F & F & \textbf{T} &   & F & F & F &   & T & F & \textbf{T} & T & F\\
+F & T & \textbf{F} &   & F & T & T &   & T & F & \textbf{F} & F & T\\
+T & F & \textbf{F} &   & T & T & F &   & F & T & \textbf{F} & T & F\\
+T & T & \textbf{F} &   & T & T & T &   & F & T & \textbf{F} & F & T\\
+\end{tabular}
+                    \vspace{1em}
+                \end{minipage}
+                \begin{minipage}{\textwidth}
+                \item A \lra B, (A \& B) v (\s A \& \s B)
+                    \vspace{1em}\\
+\begin{tabular}{c c | c c c | c c c c c c c c c c c c c}
+A & B & A & \lra & B & ( & A & \& & B & ) & v & ( & \s & A & \& & \s & B & )\\
+\hline
+F & F & F & \textbf{T} & F &   & F & F & F &   & \textbf{T} &   & T & F & T & T & F &  \\
+F & T & F & \textbf{F} & T &   & F & F & T &   & \textbf{F} &   & T & F & F & F & T &  \\
+T & F & T & \textbf{F} & F &   & T & F & F &   & \textbf{F} &   & F & T & F & T & F &  \\
+T & T & T & \textbf{T} & T &   & T & T & T &   & \textbf{T} &   & F & T & F & F & T &  \\
+\end{tabular}
+                    \vspace{1em}
+                \end{minipage}
+                \begin{minipage}{\textwidth}
+                \item \s (A \lra B), (A \& \s B) v (\s A \& B)
+                    \vspace{1em}\\
+\begin{tabular}{c c | c c c c c c | c c c c c c c c c c c c c}
+A & B & \s         & ( & A & \lra & B & ) & ( & A & \& & \s & B & ) & v & ( & \s & A & \& & B & )\\
+\hline
+F & F & \textbf{F} &   & F & T    &  F &   &   & F & F & T & F &   & \textbf{F} &   & T & F & F & F &  \\
+F & T & \textbf{T} &   & F & F    &  T &   &   & F & F & F & T &   & \textbf{T} &   & T & F & T & T &  \\
+A & F & \textbf{T} &   & A & F    &  F &   &   & T & T & T & F &   & \textbf{T} &   & F & T & F & F &  \\
+A & T & \textbf{F} &   & A & T    &  T &   &   & T & F & F & T &   & \textbf{F} &   & F & T & F & T &  \\
+\end{tabular}
+                    \vspace{1em}
+                \end{minipage}
+
+            \end{enumerate}
+
     \end{enumerate}
 
 \end{document}
