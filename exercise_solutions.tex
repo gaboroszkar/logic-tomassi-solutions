@@ -5,11 +5,15 @@
 \usepackage{indentfirst}
 \usepackage{enumitem}
 \usepackage{tikz}
+\usepackage{pifont} % For checkmark and xmark with ding.
 
 \newcommand{\ra}{$\rightarrow$ }
 \newcommand{\lra}{$\leftrightarrow$ }
 \newcommand{\s}{$\sim$}
 \newcommand{\vd}{$\vdash$ }
+
+\newcommand{\cmark}{\ding{51}}
+\newcommand{\xmark}{\ding{55}}
 
 \begin{document}
 
@@ -4290,6 +4294,201 @@ F & T & \textbf{T} &   & F & F    &  T &   &   & F & F & F & T &   & \textbf{T} 
 A & F & \textbf{T} &   & A & F    &  F &   &   & T & T & T & F &   & \textbf{T} &   & F & T & F & F &  \\
 A & T & \textbf{F} &   & A & T    &  T &   &   & T & F & F & T &   & \textbf{F} &   & F & T & F & T &  \\
 \end{tabular}
+                    \vspace{1em}
+                \end{minipage}
+
+            \end{enumerate}
+
+    \end{enumerate}
+
+    \subsection*{EXERCISE 4.6}
+
+    \begin{enumerate}[label=\arabic*,leftmargin=*]
+
+        \item The consistency-trees are the followings.
+            \nopagebreak
+            \begin{enumerate}[label=\arabic*.]
+                \begin{minipage}{\textwidth}
+                \item P \& Q, R \& \s S, P v S \\
+                    Consistent.
+                    \vspace{1em}\\
+\begin{tikzpicture}[every text node part/.style={align=center}]
+    \node (1) at (0,-1) {P \& Q};
+    \node (2) at (0,-2) {R \& \s S};
+    \node (3) at (0,-3) {P v S};
+    \node (4) at (0,-4) {P};
+    \node (5) at (0,-5) {Q};
+    \node (6) at (0,-6) {R};
+    \node (7) at (0,-7) {\s S};
+    \node (8-1) at (-1,-8) {S \\ \xmark \ 7, 8};
+    \node (8-2) at (1,-8) {P \\ \cmark};
+
+    \draw (1) -- (2) -- (3) -- (4) -- (5) -- (6) -- (7);
+    \draw (7) -- (8-1);
+    \draw (7) -- (8-2);
+
+    \node[anchor=west] at ([xshift=-3.0cm]1.center) {1.};
+    \node[anchor=west] at ([xshift=-3.0cm]2.center) {2.};
+    \node[anchor=west] at ([xshift=-3.0cm]3.center) {3.};
+
+    \node[anchor=west] at ([xshift=-3.0cm]4.center) {4.};
+    \node[anchor=west] at ([xshift=+3.0cm]4.center) {From line 1.};
+
+    \node[anchor=west] at ([xshift=-3.0cm]5.center) {5.};
+    \node[anchor=west] at ([xshift=+3.0cm]5.center) {From line 1.};
+
+    \node[anchor=west] at ([xshift=-3.0cm]6.center) {6.};
+    \node[anchor=west] at ([xshift=+3.0cm]6.center) {From line 2.};
+
+    \node[anchor=west] at ([xshift=-3.0cm]7.center) {7.};
+    \node[anchor=west] at ([xshift=+3.0cm]7.center) {From line 2.};
+
+    \node[anchor=west] at ([xshift=-3.0cm]7.center |- 8-1) {8.};
+    \node[anchor=west] at ([xshift=+3.0cm]7.center |- 8-1) {From line 3.};
+
+\end{tikzpicture}
+                    \vspace{1em}
+                \end{minipage}
+                \begin{minipage}{\textwidth}
+                \item P \& Q, \s P v \s Q, \s Q \\
+                    Inconsistent.
+                    \vspace{1em}\\
+\begin{tikzpicture}[every text node part/.style={align=center}]
+    \node (1) at (0,-1) {P \& Q};
+    \node (2) at (0,-2) {\s P v \s Q};
+    \node (3) at (0,-3) {\s Q};
+    \node (4) at (0,-4) {P};
+    \node (5) at (0,-5) {Q \\ \xmark \ 3, 5};
+
+    \draw (1) -- (2) -- (3) -- (4) -- (5);
+
+    \node[anchor=west] at ([xshift=-3.0cm]1.center) {1.};
+    \node[anchor=west] at ([xshift=-3.0cm]2.center) {2.};
+    \node[anchor=west] at ([xshift=-3.0cm]3.center) {3.};
+
+    \node[anchor=west] at ([xshift=-3.0cm]4.center) {4.};
+    \node[anchor=west] at ([xshift=+3.0cm]4.center) {From line 1.};
+
+    \node[anchor=west] at ([xshift=-3.0cm]5.center) {5.};
+    \node[anchor=west] at ([xshift=+3.0cm]5.center) {From line 1.};
+\end{tikzpicture}
+                    \vspace{1em}
+                \end{minipage}
+                \begin{minipage}{\textwidth}
+            \item P \& (Q v R), \s Q v \s R, \s R \\
+                    Consistent.
+                    \vspace{1em}\\
+\begin{tikzpicture}[every text node part/.style={align=center}]
+    \node (1) at (0,-1) {P \& (Q v R)};
+    \node (2) at (0,-2) {\s Q v \s R};
+    \node (3) at (0,-3) {\s R};
+    \node (4) at (0,-4) {P};
+    \node (5) at (0,-5) {Q v R};
+    \node (6-1) at (-2,-6) {Q};
+    \node (6-2) at (+2,-6) {R \\ \xmark \ 3, 6};
+    \node (7-1-1) at (-3,-7) {\s Q \\ \xmark \ 6, 7};
+    \node (7-1-2) at (-1,-7) {\s R \\ \cmark};
+
+    \draw (1) -- (2) -- (3) -- (4) -- (5);
+    \draw (5) -- (6-1);
+    \draw (5) -- (6-2);
+    \draw (6-1) -- (7-1-1);
+    \draw (6-1) -- (7-1-2);
+
+    \node[anchor=west] at ([xshift=-5.0cm]1.center) {1.};
+    \node[anchor=west] at ([xshift=-5.0cm]2.center) {2.};
+    \node[anchor=west] at ([xshift=-5.0cm]3.center) {3.};
+
+    \node[anchor=west] at ([xshift=-5.0cm]4.center) {4.};
+    \node[anchor=west] at ([xshift=+5.0cm]4.center) {From line 1.};
+
+    \node[anchor=west] at ([xshift=-5.0cm]5.center) {5.};
+    \node[anchor=west] at ([xshift=+5.0cm]5.center) {From line 1.};
+
+    \node[anchor=west] at ([xshift=-5.0cm]6.center) {6.};
+    \node[anchor=west] at ([xshift=+5.0cm]6.center) {From line 5.};
+
+    \node[anchor=west] at ([xshift=-5.0cm]7.center) {7.};
+    \node[anchor=west] at ([xshift=+5.0cm]7.center) {From line 2.};
+\end{tikzpicture}
+                    \vspace{1em}
+                \end{minipage}
+                \begin{minipage}{\textwidth}
+            \item (\s P v \s Q) v R, \s P \& \s Q, R \\
+                Consistent.
+                    \vspace{1em}\\
+\begin{tikzpicture}[every text node part/.style={align=center}]
+    \node (1) at (0,-1) {(\s P v \s Q) v R};
+    \node (2) at (0,-2) {\s P \& \s Q};
+    \node (3) at (0,-3) {R};
+    \node (4) at (0,-4) {\s P};
+    \node (5) at (0,-5) {\s Q};
+    \node (6-1) at (-2,-6) {\s P v \s Q};
+    \node (6-2) at (+2,-6) {R \\ \cmark};
+    \node (7-1-1) at (-3,-7) {\s P \\ \cmark};
+    \node (7-1-2) at (-1,-7) {\s Q \\ \cmark};
+
+    \draw (1) -- (2) -- (3) -- (4) -- (5);
+    \draw (5) -- (6-1);
+    \draw (5) -- (6-2);
+    \draw (6-1) -- (7-1-1);
+    \draw (6-1) -- (7-1-2);
+
+    \node[anchor=west] at ([xshift=-5.0cm]1.center) {1.};
+    \node[anchor=west] at ([xshift=-5.0cm]2.center) {2.};
+    \node[anchor=west] at ([xshift=-5.0cm]3.center) {3.};
+
+    \node[anchor=west] at ([xshift=-5.0cm]4.center) {4.};
+    \node[anchor=west] at ([xshift=+5.0cm]4.center) {From line 2.};
+
+    \node[anchor=west] at ([xshift=-5.0cm]5.center) {5.};
+    \node[anchor=west] at ([xshift=+5.0cm]5.center) {From line 2.};
+
+    \node[anchor=west] at ([xshift=-5.0cm]6.center) {6.};
+    \node[anchor=west] at ([xshift=+5.0cm]6.center) {From line 1.};
+
+    \node[anchor=west] at ([xshift=-5.0cm]7.center) {7.};
+    \node[anchor=west] at ([xshift=+5.0cm]7.center) {From line 6.};
+\end{tikzpicture}
+                    \vspace{1em}
+                \end{minipage}
+                \begin{minipage}{\textwidth}
+            \item (\s P v \s Q) v R, P \& Q, \s R \\
+                Inconsistent.
+                    \vspace{1em}\\
+\begin{tikzpicture}[every text node part/.style={align=center}]
+    \node (1) at (0,-1) {(\s P v \s Q) v R};
+    \node (2) at (0,-2) {P \& Q};
+    \node (3) at (0,-3) {\s R};
+    \node (4) at (0,-4) {P};
+    \node (5) at (0,-5) {Q};
+    \node (6-1) at (-2,-6) {\s P v \s Q};
+    \node (6-2) at (+2,-6) {R \\ \xmark \ 3, 6};
+    \node (7-1-1) at (-3,-7) {\s P \\ \xmark \ 4, 7};
+    \node (7-1-2) at (-1,-7) {\s Q \\ \xmark \ 5, 7};
+
+    \draw (1) -- (2) -- (3) -- (4) -- (5);
+    \draw (5) -- (6-1);
+    \draw (5) -- (6-2);
+    \draw (6-1) -- (7-1-1);
+    \draw (6-1) -- (7-1-2);
+
+    \node[anchor=west] at ([xshift=-5.0cm]1.center) {1.};
+    \node[anchor=west] at ([xshift=-5.0cm]2.center) {2.};
+    \node[anchor=west] at ([xshift=-5.0cm]3.center) {3.};
+
+    \node[anchor=west] at ([xshift=-5.0cm]4.center) {4.};
+    \node[anchor=west] at ([xshift=+5.0cm]4.center) {From line 2.};
+
+    \node[anchor=west] at ([xshift=-5.0cm]5.center) {5.};
+    \node[anchor=west] at ([xshift=+5.0cm]5.center) {From line 2.};
+
+    \node[anchor=west] at ([xshift=-5.0cm]6.center) {6.};
+    \node[anchor=west] at ([xshift=+5.0cm]6.center) {From line 1.};
+
+    \node[anchor=west] at ([xshift=-5.0cm]7.center) {7.};
+    \node[anchor=west] at ([xshift=+5.0cm]7.center) {From line 6.};
+\end{tikzpicture}
                     \vspace{1em}
                 \end{minipage}
 
