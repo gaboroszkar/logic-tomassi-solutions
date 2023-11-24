@@ -15,6 +15,8 @@
 \newcommand{\cmark}{\ding{51}}
 \newcommand{\xmark}{\ding{55}}
 
+\newcommand{\tb}{\textbar \ }
+
 \begin{document}
 
     \begin{titlepage}
@@ -5222,6 +5224,62 @@ A & T & \textbf{F} &   & A & T    &  T &   &   & T & F & F & T &   & \textbf{F} 
                 \end{minipage}
 
             \end{enumerate}
+
+    \end{enumerate}
+
+    \subsection*{EXERCISE 4.8}
+
+    \begin{enumerate}[label=\arabic*,leftmargin=*]
+
+        \item We can easily see that
+            \begin{enumerate}[label=(\roman*)]
+                \item (P \ra Q) is equivalent to (\s P v Q);\\
+                    (P \lra Q) is equivalent to (\s (\s (P \ra Q) v \s (Q \ra P))).
+                \item (P \& Q) is equivalent to \s (\s P v \s Q). For others, see above.
+            \end{enumerate}
+
+        \item The substitutions are the followings.
+            \begin{enumerate}[label=(\roman*)]
+                \begin{minipage}{\textwidth}
+                \item P v Q
+                    \begin{enumerate}[label=\arabic*.]
+                        \item P v Q
+                        \item \s ((P \tb P) \& (Q \tb Q))
+                        \item (P \tb P) \tb (Q \tb Q)
+                    \end{enumerate}
+                    \vspace{1em}
+                \end{minipage}
+                \begin{minipage}{\textwidth}
+                \item \s P v Q
+                    \begin{enumerate}[label=\arabic*.]
+                        \item \s P v Q
+                        \item \s (\s \s P \& \s Q)
+                        \item \s (P \& \s Q)
+                        \item \s (P \& (Q \tb Q))
+                        \item P \tb (Q \tb Q)
+                    \end{enumerate}
+                    \vspace{1em}
+                \end{minipage}
+                \begin{minipage}{\textwidth}
+                \item (\s P v \s Q) v \s R
+                    \begin{enumerate}[label=\arabic*.]
+                        \item (\s P v \s Q) v \s R
+                        \item \s (\s (\s P v \s Q) \& \s \s R)
+                        \item \s (\s (\s P v \s Q) \& R)
+                        \item \s (\s \s (P \& Q) \& R)
+                        \item \s (((P \tb Q) \tb (P \tb Q)) \& R)
+                        \item ((P \tb Q) \tb (P \tb Q)) \tb R
+                    \end{enumerate}
+                    \vspace{1em}
+                \end{minipage}
+
+            \end{enumerate}
+
+        \item (\s P) is equivalent to (P \tb P), and (P \& Q) is equivalent to ((P \tb Q) \tb (P \tb Q)). Therefore, every other connective can be expressed by Sheffer's stroke.
+
+        \item (\s P) is equivalent to (P \tb P).\\
+            To express \ra first see, that (P \ra Q) is equivalent (\s P v Q)\\
+            (\s P v Q) is equivalent to (P \tb (Q \tb Q)) (see exercise 2, (ii) above).
 
     \end{enumerate}
 
