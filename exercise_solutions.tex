@@ -5283,4 +5283,133 @@ A & T & \textbf{F} &   & A & T    &  T &   &   & T & F & F & T &   & \textbf{F} 
 
     \end{enumerate}
 
+    \subsection*{Examination 1 in Formal Logic}
+
+    \begin{enumerate}[label=\arabic*,leftmargin=*]
+
+        \item The keys and the proofs are the followings.
+            \nopagebreak
+            \begin{enumerate}[label=(\roman*)]
+                \begin{minipage}{\textwidth}
+                \item P \ra (Q \& R) : P \ra Q\\
+                    P: Pigs have wings.\\
+                    Q: Pigs fly.\\
+                    R: Air traffic controllers have nightmares.\\
+                    Valid.
+                    \vspace{1em}\\
+\begin{tabular}{c c c | c c c c c c c | c c c}
+P & Q & R & P & \ra & ( & Q & \& & R & ) & P & \ra & Q\\
+\hline
+F & F & F & F & \textbf{T} &   & F & F  & F &   & F & \textbf{T} & F\\
+F & F & T & F & \textbf{T} &   & F & F  & T &   & F & \textbf{T} & F\\
+F & T & F & F & \textbf{T} &   & T & F  & F &   & F & \textbf{T} & T\\
+F & T & T & F & \textbf{T} &   & T & T  & T &   & F & \textbf{T} & T\\
+T & F & F & T & \textbf{F} &   & F & F  & F &   & T & \textbf{F} & F\\
+T & F & T & T & \textbf{F} &   & F & F  & T &   & T & \textbf{F} & F\\
+T & T & F & T & \textbf{F} &   & T & F  & F &   & T & \textbf{T} & T\\
+T & T & T & T & \textbf{T} &   & T & T  & T &   & T & \textbf{T} & T\\
+\end{tabular}
+                \end{minipage}
+                \begin{minipage}{\textwidth}
+                    \begin{tabular}{l l l l}
+                        \{1\} & 1. & P \ra (Q \& R) & Premise\\
+                        \{2\} & 2. & P & Assumption for CP\\
+                        \{1, 2\} & 3. & Q \& R & 1, 2 MP\\
+                        \{1, 2\} & 4. & Q & 3 \&E\\
+                        \{1\} & 5. & P \ra Q & 2, 4 CP\\
+                    \end{tabular}
+                    \vspace{1em}
+                \end{minipage}
+                \begin{minipage}{\textwidth}
+                \item P \& Q, (P \& R) \ra S : R \ra S\\
+                    P: Professor Plum was in the drawing room.\\
+                    Q: Miss Scarlet was in the kitchen.\\
+                    R: Murder weapon was found in the drawing room.\\
+                    S: Professor Plum is in big trouble.\\
+                    Valid.
+                    \vspace{1em}\\
+\begin{tabular}{c c c c | c c c | c c c c c c c | c c c}
+P & Q & R & S & P & \& & Q & ( & P & \& & R & ) & \ra & S & R & \ra & S\\
+\hline
+F & F & F & F & F & \textbf{F} & F &   & F & F  & F &   & \textbf{T} & F & F & \textbf{T} & F\\
+F & F & F & T & F & \textbf{F} & F &   & F & F  & F &   & \textbf{T} & T & F & \textbf{T} & T\\
+F & F & T & F & F & \textbf{F} & F &   & F & F  & T &   & \textbf{T} & F & T & \textbf{F} & F\\
+F & F & T & T & F & \textbf{F} & F &   & F & F  & T &   & \textbf{T} & T & T & \textbf{T} & T\\
+F & T & F & F & F & \textbf{F} & T &   & F & F  & F &   & \textbf{T} & F & F & \textbf{T} & F\\
+F & T & F & T & F & \textbf{F} & T &   & F & F  & F &   & \textbf{T} & T & F & \textbf{T} & T\\
+F & T & T & F & F & \textbf{F} & T &   & F & F  & T &   & \textbf{T} & F & T & \textbf{F} & F\\
+F & T & T & T & F & \textbf{F} & T &   & F & F  & T &   & \textbf{T} & T & T & \textbf{T} & T\\
+T & F & F & F & T & \textbf{F} & F &   & T & F  & F &   & \textbf{T} & F & F & \textbf{T} & F\\
+T & F & F & T & T & \textbf{F} & F &   & T & F  & F &   & \textbf{T} & T & F & \textbf{T} & T\\
+T & F & T & F & T & \textbf{F} & F &   & T & T  & T &   & \textbf{F} & F & T & \textbf{F} & F\\
+T & F & T & T & T & \textbf{F} & F &   & T & T  & T &   & \textbf{T} & T & T & \textbf{T} & T\\
+T & T & F & F & T & \textbf{T} & T &   & T & F  & F &   & \textbf{T} & F & F & \textbf{T} & F\\
+T & T & F & T & T & \textbf{T} & T &   & T & F  & F &   & \textbf{T} & T & F & \textbf{T} & T\\
+T & T & T & F & T & \textbf{T} & T &   & T & T  & T &   & \textbf{F} & F & T & \textbf{F} & F\\
+T & T & T & T & T & \textbf{T} & T &   & T & T  & T &   & \textbf{T} & T & T & \textbf{T} & T\\
+\end{tabular}
+                \end{minipage}
+                \begin{minipage}{\textwidth}
+                    \begin{tabular}{l l l l}
+                        \{1\} & 1. & P \& Q & Premise\\
+                        \{2\} & 2. & (P \& R) \ra S & Premise\\
+                        \{3\} & 3. & R & Assumption\\
+                        \{1\} & 4. & P & 1 \&E\\
+                        \{1,3\} & 5. & P \& R & 3,4 \&I\\
+                        \{1,2,3\} & 6. & S & 2,5 MP\\
+                        \{1,2\} & 7. & R \ra S & 3,6 CP\\
+                    \end{tabular}
+                    \vspace{1em}
+                \end{minipage}
+                \begin{minipage}{\textwidth}
+                \item (P \& Q) \ra R, \s R \ra (Q \& S) : \s R \ra (P \& U)\\
+                    P: Professor Plum was in the study.\\
+                    Q: Miss Scarlet was in the conservatory.\\
+                    R: Reverend Green was the murderer.\\
+                    S: Colonel Mustard was in the conservatory.\\
+                    U: Colonel Mustard was in the study.\\
+                    Invalid. IPLI: P: F, Q: T, R: F, S: T, U: F.
+                    \vspace{1em}\\
+                    \hspace*{-3.5cm}
+\begin{tabular}{c c c c c | c c c c c c c | c c c c c c c c | c c c c c c c c c}
+P & Q & R & S & U & ( & P & \& & Q & ) & \ra & R & \s & R & \ra & ( & Q & \& & S & ) & \s & R & \ra & ( & P & \& & U & )\\
+\hline
+F & F & F & F & F &   & F & F  & F &   & \textbf{T} & F & T  & F & \textbf{F} &   & F & F  & F &   & T  & F & \textbf{F} &   & F & F  & F &  \\
+T & F & F & F & F &   & T & F  & F &   & \textbf{T} & F & T  & F & \textbf{F} &   & F & F  & F &   & T  & F & \textbf{F} &   & T & F  & F &  \\
+F & T & F & F & F &   & F & F  & T &   & \textbf{T} & F & T  & F & \textbf{F} &   & T & F  & F &   & T  & F & \textbf{F} &   & F & F  & F &  \\
+T & T & F & F & F &   & T & T  & T &   & \textbf{F} & F & T  & F & \textbf{F} &   & T & F  & F &   & T  & F & \textbf{F} &   & T & F  & F &  \\
+F & F & T & F & F &   & F & F  & F &   & \textbf{T} & T & F  & T & \textbf{T} &   & F & F  & F &   & F  & T & \textbf{T} &   & F & F  & F &  \\
+T & F & T & F & F &   & T & F  & F &   & \textbf{T} & T & F  & T & \textbf{T} &   & F & F  & F &   & F  & T & \textbf{T} &   & T & F  & F &  \\
+F & T & T & F & F &   & F & F  & T &   & \textbf{T} & T & F  & T & \textbf{T} &   & T & F  & F &   & F  & T & \textbf{T} &   & F & F  & F &  \\
+T & T & T & F & F &   & T & T  & T &   & \textbf{T} & T & F  & T & \textbf{T} &   & T & F  & F &   & F  & T & \textbf{T} &   & T & F  & F &  \\
+F & F & F & T & F &   & F & F  & F &   & \textbf{T} & F & T  & F & \textbf{F} &   & F & F  & T &   & T  & F & \textbf{F} &   & F & F  & F &  \\
+T & F & F & T & F &   & T & F  & F &   & \textbf{T} & F & T  & F & \textbf{F} &   & F & F  & T &   & T  & F & \textbf{F} &   & T & F  & F &  \\
+F & T & F & T & F &   & F & F  & T &   & \textbf{T} & F & T  & F & \textbf{T} &   & T & T  & T &   & T  & F & \textbf{F} &   & F & F  & F &  \\
+T & T & F & T & F &   & T & T  & T &   & \textbf{F} & F & T  & F & \textbf{T} &   & T & T  & T &   & T  & F & \textbf{F} &   & T & F  & F &  \\
+F & F & T & T & F &   & F & F  & F &   & \textbf{T} & T & F  & T & \textbf{T} &   & F & F  & T &   & F  & T & \textbf{T} &   & F & F  & F &  \\
+T & F & T & T & F &   & T & F  & F &   & \textbf{T} & T & F  & T & \textbf{T} &   & F & F  & T &   & F  & T & \textbf{T} &   & T & F  & F &  \\
+F & T & T & T & F &   & F & F  & T &   & \textbf{T} & T & F  & T & \textbf{T} &   & T & T  & T &   & F  & T & \textbf{T} &   & F & F  & F &  \\
+T & T & T & T & F &   & T & T  & T &   & \textbf{T} & T & F  & T & \textbf{T} &   & T & T  & T &   & F  & T & \textbf{T} &   & T & F  & F &  \\
+F & F & F & F & T &   & F & F  & F &   & \textbf{T} & F & T  & F & \textbf{F} &   & F & F  & F &   & T  & F & \textbf{F} &   & F & F  & T &  \\
+T & F & F & F & T &   & T & F  & F &   & \textbf{T} & F & T  & F & \textbf{F} &   & F & F  & F &   & T  & F & \textbf{T} &   & T & T  & T &  \\
+F & T & F & F & T &   & F & F  & T &   & \textbf{T} & F & T  & F & \textbf{F} &   & T & F  & F &   & T  & F & \textbf{F} &   & F & F  & T &  \\
+T & T & F & F & T &   & T & T  & T &   & \textbf{F} & F & T  & F & \textbf{F} &   & T & F  & F &   & T  & F & \textbf{T} &   & T & T  & T &  \\
+F & F & T & F & T &   & F & F  & F &   & \textbf{T} & T & F  & T & \textbf{T} &   & F & F  & F &   & F  & T & \textbf{T} &   & F & F  & T &  \\
+T & F & T & F & T &   & T & F  & F &   & \textbf{T} & T & F  & T & \textbf{T} &   & F & F  & F &   & F  & T & \textbf{T} &   & T & T  & T &  \\
+F & T & T & F & T &   & F & F  & T &   & \textbf{T} & T & F  & T & \textbf{T} &   & T & F  & F &   & F  & T & \textbf{T} &   & F & F  & T &  \\
+T & T & T & F & T &   & T & T  & T &   & \textbf{T} & T & F  & T & \textbf{T} &   & T & F  & F &   & F  & T & \textbf{T} &   & T & T  & T &  \\
+F & F & F & T & T &   & F & F  & F &   & \textbf{T} & F & T  & F & \textbf{F} &   & F & F  & T &   & T  & F & \textbf{F} &   & F & F  & T &  \\
+T & F & F & T & T &   & T & F  & F &   & \textbf{T} & F & T  & F & \textbf{F} &   & F & F  & T &   & T  & F & \textbf{T} &   & T & T  & T &  \\
+F & T & F & T & T &   & F & F  & T &   & \textbf{T} & F & T  & F & \textbf{T} &   & T & T  & T &   & T  & F & \textbf{F} &   & F & F  & T &  \\
+T & T & F & T & T &   & T & T  & T &   & \textbf{F} & F & T  & F & \textbf{T} &   & T & T  & T &   & T  & F & \textbf{T} &   & T & T  & T &  \\
+F & F & T & T & T &   & F & F  & F &   & \textbf{T} & T & F  & T & \textbf{T} &   & F & F  & T &   & F  & T & \textbf{T} &   & F & F  & T &  \\
+T & F & T & T & T &   & T & F  & F &   & \textbf{T} & T & F  & T & \textbf{T} &   & F & F  & T &   & F  & T & \textbf{T} &   & T & T  & T &  \\
+F & T & T & T & T &   & F & F  & T &   & \textbf{T} & T & F  & T & \textbf{T} &   & T & T  & T &   & F  & T & \textbf{T} &   & F & F  & T &  \\
+T & T & T & T & T &   & T & T  & T &   & \textbf{T} & T & F  & T & \textbf{T} &   & T & T  & T &   & F  & T & \textbf{T} &   & T & T  & T &  \\
+\end{tabular}
+                \end{minipage}
+            \end{enumerate}
+
+    \end{enumerate}
+
 \end{document}
