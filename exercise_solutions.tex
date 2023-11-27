@@ -11,11 +11,14 @@
 \newcommand{\mlra}{$\leftrightarrow$ }
 \newcommand{\ms}{$\sim$}
 \newcommand{\mvd}{$\vdash$ }
-
 \newcommand{\cmark}{\ding{51}}
 \newcommand{\xmark}{\ding{55}}
-
 \newcommand{\tb}{\textbar \ }
+\newcommand{\ra}{\rightarrow}
+\newcommand{\lra}{\leftrightarrow}
+\newcommand{\s}{\sim}
+\newcommand{\tv}{\textrm{v}}
+\newcommand{\all}{\forall}
 
 \begin{document}
 
@@ -5734,6 +5737,42 @@ T & T & T & T & T &   & T & T  & T &   & \textbf{T} & T & F  & T & \textbf{T} & 
 
         \end{enumerate}
 
+    \end{enumerate}
+
+    \newpage
+
+    \section*{Chapter Five: An Introduction to First Order Predicate Logic}
+
+    \subsection*{EXERCISE 5.1}
+
+    \begin{enumerate}[label=\arabic*,leftmargin=*]
+        \item
+            \nopagebreak
+            \begin{enumerate}[label=(\roman*)]
+                \item $\all x [Fx \ \& \ Gx]$
+                \item $\all x [Fx \ \tv \ Gx]$
+                \item $\all x [Fx \ra Gx]$
+                \item $\all x [Fx \lra Gx]$
+                \item $\all x [\s Fx]$
+            \end{enumerate}
+        \item
+            \nopagebreak
+            \begin{enumerate}[label=(\roman*)]
+                \item $\all x [Fx] \ \& \ \all x [Gx]$
+                \item $\all x [Fx] \ \tv \ \all x [Gx]$
+                \item $\all x [Fx] \ra \all x [Gx]$
+                \item $\all x [Fx] \lra \all x [Gx]$
+                \item $\s \all x [Fx]$
+            \end{enumerate}
+        \item
+            \nopagebreak
+            \begin{enumerate}[label=(\roman*)]
+                \item $Fx \ \& \ Gx$
+                \item $Fx \ \tv \ Gx$
+                \item $Fx \ra Gx$
+                \item $Fx \lra Gx$
+                \item $\s Fx$
+            \end{enumerate}
     \end{enumerate}
 
 \end{document}
