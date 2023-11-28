@@ -5775,4 +5775,646 @@ T & T & T & T & T &   & T & T  & T &   & \textbf{T} & T & F  & T & \textbf{T} & 
             \end{enumerate}
     \end{enumerate}
 
+    \subsection*{EXERCISE 5.2}
+
+    \begin{enumerate}[label=\arabic*,leftmargin=*]
+        \item The trees are the followings.
+            \nopagebreak
+            \begin{enumerate}[label=(\roman*)]
+                \begin{minipage}{\textwidth}
+                \item $\all x [Fx \ \& \ Gx]$ \\
+                    \begin{tikzpicture}
+                        \tikzstyle{level 1}=[sibling distance=40mm]
+                        \tikzstyle{level 2}=[sibling distance=20mm]
+                        \tikzstyle{level 3}=[sibling distance=10mm]
+                        \node{\textbf{F}}
+                            child {node {\textbf{Q}}
+                                child {node {$\all$}
+                                }
+                                child {node {$x$}
+                                }
+                            }
+                            child {node {\textbf{M}}
+                                child {node {\textbf{F}}
+                                    child {node {\textbf{S-P F}}
+                                        child {node {\textbf{P-L}}
+                                            child {node {$F$}
+                                            }
+                                        }
+                                        child {node {\textbf{N}}
+                                            child {node {$x$}
+                                            }
+                                        }
+                                    }
+                                }
+                                child {node {\textbf{B}}
+                                    child {node {\&}
+                                    }
+                                }
+                                child {node {\textbf{F}}
+                                    child {node {\textbf{S-P F}}
+                                        child {node {\textbf{P-L}}
+                                            child {node {$G$}
+                                            }
+                                        }
+                                        child {node {\textbf{N}}
+                                            child {node {$x$}
+                                            }
+                                        }
+                                    }
+                                }
+                            };
+                    \end{tikzpicture}
+                \end{minipage}
+                \begin{minipage}{\textwidth}
+                \item $\all x [Fx \ \tv \ Gx]$ \\
+                    \begin{tikzpicture}
+                        \tikzstyle{level 1}=[sibling distance=40mm]
+                        \tikzstyle{level 2}=[sibling distance=20mm]
+                        \tikzstyle{level 3}=[sibling distance=10mm]
+                        \node{\textbf{F}}
+                            child {node {\textbf{Q}}
+                                child {node {$\all$}
+                                }
+                                child {node {$x$}
+                                }
+                            }
+                            child {node {\textbf{M}}
+                                child {node {\textbf{F}}
+                                    child {node {\textbf{S-P F}}
+                                        child {node {\textbf{P-L}}
+                                            child {node {$F$}
+                                            }
+                                        }
+                                        child {node {\textbf{N}}
+                                            child {node {$x$}
+                                            }
+                                        }
+                                    }
+                                }
+                                child {node {\textbf{B}}
+                                    child {node {v}
+                                    }
+                                }
+                                child {node {\textbf{F}}
+                                    child {node {\textbf{S-P F}}
+                                        child {node {\textbf{P-L}}
+                                            child {node {$G$}
+                                            }
+                                        }
+                                        child {node {\textbf{N}}
+                                            child {node {$x$}
+                                            }
+                                        }
+                                    }
+                                }
+                            };
+                    \end{tikzpicture}
+                \end{minipage}
+                \begin{minipage}{\textwidth}
+                \item $\all x [Fx \ra Gx]$ \\
+                    \begin{tikzpicture}
+                        \tikzstyle{level 1}=[sibling distance=40mm]
+                        \tikzstyle{level 2}=[sibling distance=20mm]
+                        \tikzstyle{level 3}=[sibling distance=10mm]
+                        \node{\textbf{F}}
+                            child {node {\textbf{Q}}
+                                child {node {$\all$}
+                                }
+                                child {node {$x$}
+                                }
+                            }
+                            child {node {\textbf{M}}
+                                child {node {\textbf{F}}
+                                    child {node {\textbf{S-P F}}
+                                        child {node {\textbf{P-L}}
+                                            child {node {$F$}
+                                            }
+                                        }
+                                        child {node {\textbf{N}}
+                                            child {node {$x$}
+                                            }
+                                        }
+                                    }
+                                }
+                                child {node {\textbf{B}}
+                                    child {node {\mra}
+                                    }
+                                }
+                                child {node {\textbf{F}}
+                                    child {node {\textbf{S-P F}}
+                                        child {node {\textbf{P-L}}
+                                            child {node {$G$}
+                                            }
+                                        }
+                                        child {node {\textbf{N}}
+                                            child {node {$x$}
+                                            }
+                                        }
+                                    }
+                                }
+                            };
+                    \end{tikzpicture}
+                \end{minipage}
+                \begin{minipage}{\textwidth}
+                \item $\all x [Fx \lra Gx]$ \\
+                    \begin{tikzpicture}
+                        \tikzstyle{level 1}=[sibling distance=40mm]
+                        \tikzstyle{level 2}=[sibling distance=20mm]
+                        \tikzstyle{level 3}=[sibling distance=10mm]
+                        \node{\textbf{F}}
+                            child {node {\textbf{Q}}
+                                child {node {$\all$}
+                                }
+                                child {node {$x$}
+                                }
+                            }
+                            child {node {\textbf{M}}
+                                child {node {\textbf{F}}
+                                    child {node {\textbf{S-P F}}
+                                        child {node {\textbf{P-L}}
+                                            child {node {$F$}
+                                            }
+                                        }
+                                        child {node {\textbf{N}}
+                                            child {node {$x$}
+                                            }
+                                        }
+                                    }
+                                }
+                                child {node {\textbf{B}}
+                                    child {node {\mlra}
+                                    }
+                                }
+                                child {node {\textbf{F}}
+                                    child {node {\textbf{S-P F}}
+                                        child {node {\textbf{P-L}}
+                                            child {node {$G$}
+                                            }
+                                        }
+                                        child {node {\textbf{N}}
+                                            child {node {$x$}
+                                            }
+                                        }
+                                    }
+                                }
+                            };
+                    \end{tikzpicture}
+                \end{minipage}
+                \begin{minipage}{\textwidth}
+                \item $\all x [\s Fx]$ \\
+                    \begin{tikzpicture}
+                        \tikzstyle{level 1}=[sibling distance=40mm]
+                        \tikzstyle{level 2}=[sibling distance=20mm]
+                        \tikzstyle{level 3}=[sibling distance=10mm]
+                        \node{\textbf{F}}
+                            child {node {\textbf{Q}}
+                                child {node {$\all$}
+                                }
+                                child {node {$x$}
+                                }
+                            }
+                            child {node {\textbf{M}}
+                                child {node {\textbf{U}}
+                                    child {node {\ms}
+                                    }
+                                }
+                                child {node {\textbf{F}}
+                                    child {node {\textbf{S-P F}}
+                                        child {node {\textbf{P-L}}
+                                            child {node {$G$}
+                                            }
+                                        }
+                                        child {node {\textbf{N}}
+                                            child {node {$x$}
+                                            }
+                                        }
+                                    }
+                                }
+                            };
+                    \end{tikzpicture}
+                \end{minipage}
+                \begin{minipage}{\textwidth}
+                \item $\all x [Fx] \ \& \ \all x [Gx]$ \\
+                    \begin{tikzpicture}
+                        \tikzstyle{level 1}=[sibling distance=30mm]
+                        \tikzstyle{level 2}=[sibling distance=20mm]
+                        \tikzstyle{level 3}=[sibling distance=10mm]
+                        \node{\textbf{F}}
+                            child {node {\textbf{F}}
+                                child {node {\textbf{Q}}
+                                    child {node {$\all$}
+                                    }
+                                    child {node {$x$}
+                                    }
+                                }
+                                child {node {\textbf{M}}
+                                    child {node {\textbf{S-P F}}
+                                        child {node {\textbf{P-L}}
+                                            child {node {$F$}
+                                            }
+                                        }
+                                        child {node {\textbf{N}}
+                                            child {node {$x$}
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                            child {node {\textbf{B}}
+                                child {node {\&}
+                                }
+                            }
+                            child {node {\textbf{F}}
+                                child {node {\textbf{Q}}
+                                    child {node {$\all$}
+                                    }
+                                    child {node {$x$}
+                                    }
+                                }
+                                child {node {\textbf{M}}
+                                    child {node {\textbf{S-P F}}
+                                        child {node {\textbf{P-L}}
+                                            child {node {$G$}
+                                            }
+                                        }
+                                        child {node {\textbf{N}}
+                                            child {node {$x$}
+                                            }
+                                        }
+                                    }
+                                }
+                            };
+                    \end{tikzpicture}
+                \end{minipage}
+                \begin{minipage}{\textwidth}
+                \item $\all x [Fx] \ \tv \ \all x [Gx]$ \\
+                    \begin{tikzpicture}
+                        \tikzstyle{level 1}=[sibling distance=30mm]
+                        \tikzstyle{level 2}=[sibling distance=20mm]
+                        \tikzstyle{level 3}=[sibling distance=10mm]
+                        \node{\textbf{F}}
+                            child {node {\textbf{F}}
+                                child {node {\textbf{Q}}
+                                    child {node {$\all$}
+                                    }
+                                    child {node {$x$}
+                                    }
+                                }
+                                child {node {\textbf{M}}
+                                    child {node {\textbf{S-P F}}
+                                        child {node {\textbf{P-L}}
+                                            child {node {$F$}
+                                            }
+                                        }
+                                        child {node {\textbf{N}}
+                                            child {node {$x$}
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                            child {node {\textbf{B}}
+                                child {node {v}
+                                }
+                            }
+                            child {node {\textbf{F}}
+                                child {node {\textbf{Q}}
+                                    child {node {$\all$}
+                                    }
+                                    child {node {$x$}
+                                    }
+                                }
+                                child {node {\textbf{M}}
+                                    child {node {\textbf{S-P F}}
+                                        child {node {\textbf{P-L}}
+                                            child {node {$G$}
+                                            }
+                                        }
+                                        child {node {\textbf{N}}
+                                            child {node {$x$}
+                                            }
+                                        }
+                                    }
+                                }
+                            };
+                    \end{tikzpicture}
+                \end{minipage}
+                \begin{minipage}{\textwidth}
+                \item $\all x [Fx] \ra \all x [Gx]$ \\
+                    \begin{tikzpicture}
+                        \tikzstyle{level 1}=[sibling distance=30mm]
+                        \tikzstyle{level 2}=[sibling distance=20mm]
+                        \tikzstyle{level 3}=[sibling distance=10mm]
+                        \node{\textbf{F}}
+                            child {node {\textbf{F}}
+                                child {node {\textbf{Q}}
+                                    child {node {$\all$}
+                                    }
+                                    child {node {$x$}
+                                    }
+                                }
+                                child {node {\textbf{M}}
+                                    child {node {\textbf{S-P F}}
+                                        child {node {\textbf{P-L}}
+                                            child {node {$F$}
+                                            }
+                                        }
+                                        child {node {\textbf{N}}
+                                            child {node {$x$}
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                            child {node {\textbf{B}}
+                                child {node {\mra}
+                                }
+                            }
+                            child {node {\textbf{F}}
+                                child {node {\textbf{Q}}
+                                    child {node {$\all$}
+                                    }
+                                    child {node {$x$}
+                                    }
+                                }
+                                child {node {\textbf{M}}
+                                    child {node {\textbf{S-P F}}
+                                        child {node {\textbf{P-L}}
+                                            child {node {$G$}
+                                            }
+                                        }
+                                        child {node {\textbf{N}}
+                                            child {node {$x$}
+                                            }
+                                        }
+                                    }
+                                }
+                            };
+                    \end{tikzpicture}
+                \end{minipage}
+                \begin{minipage}{\textwidth}
+                \item $\all x [Fx] \lra \all x [Gx]$ \\
+                    \begin{tikzpicture}
+                        \tikzstyle{level 1}=[sibling distance=30mm]
+                        \tikzstyle{level 2}=[sibling distance=20mm]
+                        \tikzstyle{level 3}=[sibling distance=10mm]
+                        \node{\textbf{F}}
+                            child {node {\textbf{F}}
+                                child {node {\textbf{Q}}
+                                    child {node {$\all$}
+                                    }
+                                    child {node {$x$}
+                                    }
+                                }
+                                child {node {\textbf{M}}
+                                    child {node {\textbf{S-P F}}
+                                        child {node {\textbf{P-L}}
+                                            child {node {$F$}
+                                            }
+                                        }
+                                        child {node {\textbf{N}}
+                                            child {node {$x$}
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                            child {node {\textbf{B}}
+                                child {node {\mlra}
+                                }
+                            }
+                            child {node {\textbf{F}}
+                                child {node {\textbf{Q}}
+                                    child {node {$\all$}
+                                    }
+                                    child {node {$x$}
+                                    }
+                                }
+                                child {node {\textbf{M}}
+                                    child {node {\textbf{S-P F}}
+                                        child {node {\textbf{P-L}}
+                                            child {node {$G$}
+                                            }
+                                        }
+                                        child {node {\textbf{N}}
+                                            child {node {$x$}
+                                            }
+                                        }
+                                    }
+                                }
+                            };
+                    \end{tikzpicture}
+                \end{minipage}
+                \begin{minipage}{\textwidth}
+                \item $\s \all x [Fx]$ \\
+                    \begin{tikzpicture}
+                        \tikzstyle{level 1}=[sibling distance=30mm]
+                        \tikzstyle{level 2}=[sibling distance=20mm]
+                        \tikzstyle{level 3}=[sibling distance=10mm]
+                        \node{\textbf{F}}
+                            child {node {\textbf{U}}
+                                child {node {\ms}
+                                }
+                            }
+                            child {node {\textbf{F}}
+                                child {node {\textbf{Q}}
+                                    child {node {$\all$}
+                                    }
+                                    child {node {$x$}
+                                    }
+                                }
+                                child {node {\textbf{M}}
+                                    child {node {\textbf{S-P F}}
+                                        child {node {\textbf{P-L}}
+                                            child {node {$F$}
+                                            }
+                                        }
+                                        child {node {\textbf{N}}
+                                            child {node {$x$}
+                                            }
+                                        }
+                                    }
+                                }
+                            };
+                    \end{tikzpicture}
+                \end{minipage}
+                \begin{minipage}{\textwidth}
+                \item $Fx \ \& \ Gx$ \\
+                    \begin{tikzpicture}
+                        \tikzstyle{level 1}=[sibling distance=20mm]
+                        \tikzstyle{level 2}=[sibling distance=10mm]
+                        \node{\textbf{F}}
+                            child {node {\textbf{F}}
+                                child {node {\textbf{S-P F}}
+                                    child {node {\textbf{P-L}}
+                                        child {node {$F$}
+                                        }
+                                    }
+                                    child {node {\textbf{N}}
+                                        child {node {$x$}
+                                        }
+                                    }
+                                }
+                            }
+                            child {node {\textbf{B}}
+                                child {node {\&}
+                                }
+                            }
+                            child {node {\textbf{F}}
+                                child {node {\textbf{S-P F}}
+                                    child {node {\textbf{P-L}}
+                                        child {node {$G$}
+                                        }
+                                    }
+                                    child {node {\textbf{N}}
+                                        child {node {$x$}
+                                        }
+                                    }
+                                }
+                            };
+                    \end{tikzpicture}
+                \end{minipage}
+                \begin{minipage}{\textwidth}
+                \item $Fx \ \tv \ Gx$ \\
+                    \begin{tikzpicture}
+                        \tikzstyle{level 1}=[sibling distance=20mm]
+                        \tikzstyle{level 2}=[sibling distance=10mm]
+                        \node{\textbf{F}}
+                            child {node {\textbf{F}}
+                                child {node {\textbf{S-P F}}
+                                    child {node {\textbf{P-L}}
+                                        child {node {$F$}
+                                        }
+                                    }
+                                    child {node {\textbf{N}}
+                                        child {node {$x$}
+                                        }
+                                    }
+                                }
+                            }
+                            child {node {\textbf{B}}
+                                child {node {v}
+                                }
+                            }
+                            child {node {\textbf{F}}
+                                child {node {\textbf{S-P F}}
+                                    child {node {\textbf{P-L}}
+                                        child {node {$G$}
+                                        }
+                                    }
+                                    child {node {\textbf{N}}
+                                        child {node {$x$}
+                                        }
+                                    }
+                                }
+                            };
+                    \end{tikzpicture}
+                \end{minipage}
+                \begin{minipage}{\textwidth}
+                \item $Fx \ra Gx$ \\
+                    \begin{tikzpicture}
+                        \tikzstyle{level 1}=[sibling distance=20mm]
+                        \tikzstyle{level 2}=[sibling distance=10mm]
+                        \node{\textbf{F}}
+                            child {node {\textbf{F}}
+                                child {node {\textbf{S-P F}}
+                                    child {node {\textbf{P-L}}
+                                        child {node {$F$}
+                                        }
+                                    }
+                                    child {node {\textbf{N}}
+                                        child {node {$x$}
+                                        }
+                                    }
+                                }
+                            }
+                            child {node {\textbf{B}}
+                                child {node {\mra}
+                                }
+                            }
+                            child {node {\textbf{F}}
+                                child {node {\textbf{S-P F}}
+                                    child {node {\textbf{P-L}}
+                                        child {node {$G$}
+                                        }
+                                    }
+                                    child {node {\textbf{N}}
+                                        child {node {$x$}
+                                        }
+                                    }
+                                }
+                            };
+                    \end{tikzpicture}
+                \end{minipage}
+                \begin{minipage}{\textwidth}
+                \item $Fx \lra Gx$ \\
+                    \begin{tikzpicture}
+                        \tikzstyle{level 1}=[sibling distance=20mm]
+                        \tikzstyle{level 2}=[sibling distance=10mm]
+                        \node{\textbf{F}}
+                            child {node {\textbf{F}}
+                                child {node {\textbf{S-P F}}
+                                    child {node {\textbf{P-L}}
+                                        child {node {$F$}
+                                        }
+                                    }
+                                    child {node {\textbf{N}}
+                                        child {node {$x$}
+                                        }
+                                    }
+                                }
+                            }
+                            child {node {\textbf{B}}
+                                child {node {\mlra}
+                                }
+                            }
+                            child {node {\textbf{F}}
+                                child {node {\textbf{S-P F}}
+                                    child {node {\textbf{P-L}}
+                                        child {node {$G$}
+                                        }
+                                    }
+                                    child {node {\textbf{N}}
+                                        child {node {$x$}
+                                        }
+                                    }
+                                }
+                            };
+                    \end{tikzpicture}
+                \end{minipage}
+                \begin{minipage}{\textwidth}
+                \item $\s Fx$ \\
+                    \begin{tikzpicture}
+                        \tikzstyle{level 1}=[sibling distance=20mm]
+                        \tikzstyle{level 2}=[sibling distance=10mm]
+                        \node{\textbf{F}}
+                            child {node {\textbf{U}}
+                                child {node {\ms}
+                                }
+                            }
+                            child {node {\textbf{F}}
+                                child {node {\textbf{S-P F}}
+                                    child {node {\textbf{P-L}}
+                                        child {node {$F$}
+                                        }
+                                    }
+                                    child {node {\textbf{N}}
+                                        child {node {$x$}
+                                        }
+                                    }
+                                }
+                            };
+                    \end{tikzpicture}
+                \end{minipage}
+        \end{enumerate}
+
+        \item \
+            \begin{enumerate}[label=(\roman*),leftmargin=*]
+                \item The scope of the negation connective is the quantified formula $\all x \ [Fx \ra Gx]$. The scope of the universal quantifier is the formula $Fx \ra Gx$. The scope of the implication connective are the formulas $Fx$ and $Gx$.
+                \item The scope of the universal quantifier is the formula $\s (Fx \ra Gx)$. The scope of the negation connective is the formula $Fx \ra Gx$. The scope of the implication connective are the formulas $Fx$ and $Gx$.
+            \end{enumerate}
+
+    \end{enumerate}
+
 \end{document}
