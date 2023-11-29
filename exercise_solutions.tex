@@ -17,8 +17,10 @@
 \newcommand{\ra}{\rightarrow}
 \newcommand{\lra}{\leftrightarrow}
 \newcommand{\s}{\sim}
-\newcommand{\tv}{\textrm{v}}
+\newcommand{\tv}{ \ \textrm{v} \ }
+\newcommand{\ta}{ \ \& \ }
 \newcommand{\all}{\forall}
+\newcommand{\ex}{\exists}
 
 \begin{document}
 
@@ -157,7 +159,7 @@
         \item For (ii) and (x) it's the whole formula. For (iii) it's \ms P and \ms Q.\\
             For (iv) it's \ms (P \& Q) and \ms Q.
 
-        \item The key is
+        \item The key is\\
             P: Blind Lemon Jefferson is the only bluesman.\\
             Q: Dr Strangely Strange is a bluesman.\\
             R: Mr Oddly Normal is a bluesman.\\
@@ -5749,8 +5751,8 @@ T & T & T & T & T &   & T & T  & T &   & \textbf{T} & T & F  & T & \textbf{T} & 
         \item
             \nopagebreak
             \begin{enumerate}[label=(\roman*)]
-                \item $\all x [Fx \ \& \ Gx]$
-                \item $\all x [Fx \ \tv \ Gx]$
+                \item $\all x [Fx \ta Gx]$
+                \item $\all x [Fx \tv Gx]$
                 \item $\all x [Fx \ra Gx]$
                 \item $\all x [Fx \lra Gx]$
                 \item $\all x [\s Fx]$
@@ -5758,8 +5760,8 @@ T & T & T & T & T &   & T & T  & T &   & \textbf{T} & T & F  & T & \textbf{T} & 
         \item
             \nopagebreak
             \begin{enumerate}[label=(\roman*)]
-                \item $\all x [Fx] \ \& \ \all x [Gx]$
-                \item $\all x [Fx] \ \tv \ \all x [Gx]$
+                \item $\all x [Fx] \ta \all x [Gx]$
+                \item $\all x [Fx] \tv \all x [Gx]$
                 \item $\all x [Fx] \ra \all x [Gx]$
                 \item $\all x [Fx] \lra \all x [Gx]$
                 \item $\s \all x [Fx]$
@@ -5767,8 +5769,8 @@ T & T & T & T & T &   & T & T  & T &   & \textbf{T} & T & F  & T & \textbf{T} & 
         \item
             \nopagebreak
             \begin{enumerate}[label=(\roman*)]
-                \item $Fx \ \& \ Gx$
-                \item $Fx \ \tv \ Gx$
+                \item $Fx \ta Gx$
+                \item $Fx \tv Gx$
                 \item $Fx \ra Gx$
                 \item $Fx \lra Gx$
                 \item $\s Fx$
@@ -5782,7 +5784,7 @@ T & T & T & T & T &   & T & T  & T &   & \textbf{T} & T & F  & T & \textbf{T} & 
             \nopagebreak
             \begin{enumerate}[label=(\roman*)]
                 \begin{minipage}{\textwidth}
-                \item $\all x [Fx \ \& \ Gx]$ \\
+                \item $\all x [Fx \ta Gx]$ \\
                     \begin{tikzpicture}
                         \tikzstyle{level 1}=[sibling distance=40mm]
                         \tikzstyle{level 2}=[sibling distance=20mm]
@@ -5827,7 +5829,7 @@ T & T & T & T & T &   & T & T  & T &   & \textbf{T} & T & F  & T & \textbf{T} & 
                     \end{tikzpicture}
                 \end{minipage}
                 \begin{minipage}{\textwidth}
-                \item $\all x [Fx \ \tv \ Gx]$ \\
+                \item $\all x [Fx \tv Gx]$ \\
                     \begin{tikzpicture}
                         \tikzstyle{level 1}=[sibling distance=40mm]
                         \tikzstyle{level 2}=[sibling distance=20mm]
@@ -5995,7 +5997,7 @@ T & T & T & T & T &   & T & T  & T &   & \textbf{T} & T & F  & T & \textbf{T} & 
                     \end{tikzpicture}
                 \end{minipage}
                 \begin{minipage}{\textwidth}
-                \item $\all x [Fx] \ \& \ \all x [Gx]$ \\
+                \item $\all x [Fx] \ta \all x [Gx]$ \\
                     \begin{tikzpicture}
                         \tikzstyle{level 1}=[sibling distance=30mm]
                         \tikzstyle{level 2}=[sibling distance=20mm]
@@ -6048,7 +6050,7 @@ T & T & T & T & T &   & T & T  & T &   & \textbf{T} & T & F  & T & \textbf{T} & 
                     \end{tikzpicture}
                 \end{minipage}
                 \begin{minipage}{\textwidth}
-                \item $\all x [Fx] \ \tv \ \all x [Gx]$ \\
+                \item $\all x [Fx] \tv \all x [Gx]$ \\
                     \begin{tikzpicture}
                         \tikzstyle{level 1}=[sibling distance=30mm]
                         \tikzstyle{level 2}=[sibling distance=20mm]
@@ -6240,7 +6242,7 @@ T & T & T & T & T &   & T & T  & T &   & \textbf{T} & T & F  & T & \textbf{T} & 
                     \end{tikzpicture}
                 \end{minipage}
                 \begin{minipage}{\textwidth}
-                \item $Fx \ \& \ Gx$ \\
+                \item $Fx \ta Gx$ \\
                     \begin{tikzpicture}
                         \tikzstyle{level 1}=[sibling distance=20mm]
                         \tikzstyle{level 2}=[sibling distance=10mm]
@@ -6276,7 +6278,7 @@ T & T & T & T & T &   & T & T  & T &   & \textbf{T} & T & F  & T & \textbf{T} & 
                     \end{tikzpicture}
                 \end{minipage}
                 \begin{minipage}{\textwidth}
-                \item $Fx \ \tv \ Gx$ \\
+                \item $Fx \tv Gx$ \\
                     \begin{tikzpicture}
                         \tikzstyle{level 1}=[sibling distance=20mm]
                         \tikzstyle{level 2}=[sibling distance=10mm]
@@ -6409,7 +6411,7 @@ T & T & T & T & T &   & T & T  & T &   & \textbf{T} & T & F  & T & \textbf{T} & 
                 \end{minipage}
         \end{enumerate}
 
-        \item \
+        \item
             \begin{enumerate}[label=(\roman*),leftmargin=*]
                 \item The scope of the negation connective is the quantified formula $\all x \ [Fx \ra Gx]$. The scope of the universal quantifier is the formula $Fx \ra Gx$. The scope of the implication connective are the formulas $Fx$ and $Gx$.
                 \item The scope of the universal quantifier is the formula $\s (Fx \ra Gx)$. The scope of the negation connective is the formula $Fx \ra Gx$. The scope of the implication connective are the formulas $Fx$ and $Gx$.
