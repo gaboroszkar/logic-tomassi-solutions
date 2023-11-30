@@ -6518,4 +6518,74 @@ T & T & T & T & T &   & T & T  & T &   & \textbf{T} & T & F  & T & \textbf{T} & 
 
     \end{enumerate}
 
+    \subsection*{EXERCISE 5.5}
+
+    \begin{enumerate}[label=\arabic*,leftmargin=*]
+        \item In all of the following QL-interpretations, the domain is "all things". Unfortunately for some of these sentences (especially for "Everything is beautiful.") it's very difficult to determine what it applies to, and it's not even important for the exercises.
+            \begin{enumerate}[label=(\roman*),leftmargin=*]
+                \item $\s \ex x \ [Fx]$,\\
+                    F: ... is a unicorn.
+                \item $\s \ex x \ [Fx \ta Gx]$,\\
+                    F: ... is free,\\
+                    G: ... is a lunch.
+                \item $\all x \ [Fx]$,\\
+                    F: ... is beautiful.
+                \item $\all x \ [Fx \ra Gx]$,\\
+                    F: ... is a logic student,\\
+                    G: ... is a genius.
+                \item $\s \ex x \ [Fx \ta Gx]$,\\
+                    F: ... is a folk singer,\\
+                    G: ... is a grunge fan.
+                \item $\all x \ [Fx \tv Gx]$,\\
+                    F: ... is a folk fan,\\
+                    G: ... is a jazz person.
+                \item $\all x \ [Fx \tv \s Gx]$,\\
+                    F: ... is a fan of traditional folk music,\\
+                    G: ... is a person of taste.
+                \item $\s \ex x \ [((Fx \ta Gx) \ta Hx) \ta Ix]$,\\
+                    F: ... is folk-singing,\\
+                    G: ... is a logic studing,\\
+                    H: ... is happy-go-lucky,\\
+                    I: ... is a haberdasher.
+                \item $\all x \ [(Fx \ta Gx) \ra (Hx \tv Ix)]$,\\
+                    F: ... is a folk fan,\\
+                    G: ... is a jazz person,\\
+                    H: ... is a person of taste,\\
+                    I: ... is eccentric.
+                \item $\all x \ [(Fx \ta Gx) \ra (Hx \tv Ix)]$,\\
+                    F: ... is a folk fan,\\
+                    G: ... is a jazz person,\\
+                    H: ... is a person of taste,\\
+                    I: ... is eccentric.
+            \end{enumerate}
+        \newpage
+        \item In all of the following QL-interpretations, the domain is "all things".
+            \begin{enumerate}[label=(\roman*),leftmargin=*]
+                \item $\ex x \ [Fx] \ta \ex x \ [Gx] : \ex x \ [Fx \ta Gx]$, invalid,\\
+                    F: ... is a folk-singer,\\
+                    G: ... is groovy.
+                \item $\all x \ [Fx \ra Gx], \all x \ [Gx \ra Hx] : \all x \ [Fx \ra Hx]$, valid,\\
+                    F: ... is a formal logician,\\
+                    G: ... is generous,\\
+                    H: ... is happy.
+                \item $\ex x \ [(Fx \ta Gx) \ta Hx], \ex x \ [Fx \ta Ix] : \ex x \ [(Ix \ta Gx) \ta Hx]$, invalid,\\
+                    F: ... is a veggieburger,\\
+                    G: ... is wholesome,\\
+                    H: ... is tasty,\\
+                    I: ... is a cheeseburger.
+                \item $\all x \ [Fx \ra (Gx \ta Hx)], \all x \ [Ix \ra \s (Gx \ta Hx)] : \all x \ [Fx \ra \s Ix]$, valid,\\
+                    F: ... is a fire-fighter,\\
+                    G: ... is fit,\\
+                    H: ... is fearless,\\
+                    I: ... is a folk singer.
+                \item $\ex x \ [Fx] \tv \all x \ [Gx], \s \all x \ [Gx] : \ex x \ [Fx]$, valid,\\
+                    F: ... is a florist,\\
+                    G: ... is greengrocer.
+                \item $\ex x \ [Fx] \tv \all x \ [Gx], \all x \ [\s Gx] : \ex x \ [Fx]$, valid,\\
+                    F: ... is a florist,\\
+                    G: ... is greengrocer.
+            \end{enumerate}
+
+    \end{enumerate}
+
 \end{document}
