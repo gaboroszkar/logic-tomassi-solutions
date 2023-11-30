@@ -6494,4 +6494,28 @@ T & T & T & T & T &   & T & T  & T &   & \textbf{T} & T & F  & T & \textbf{T} & 
             \end{enumerate}
 
     \end{enumerate}
+
+    \subsection*{EXERCISE 5.4}
+
+    \begin{enumerate}[label=\arabic*,leftmargin=*]
+        \item In all of the following QL-interpretations, the domain is all human beings.
+            \begin{enumerate}[label=(\roman*),leftmargin=*]
+                \item $\ex x \ [Fx] : \all x \ [Fx]$, invalid,\\
+                    F: ... is groovy.
+                \item $\all x \ [Fx \ra Gx], \all x \ [Gx \ra Hx] : \all x \ [Fx \ra Hx]$, valid,\\
+                    F: ... is a florist,\\
+                    G: ... is generous,\\
+                    H: ... is happy.
+                \item $\ex x \ [Fx \ta Gx], \ex x \ [Gx \ta Hx] : \ex x \ [Fx \ta Hx]$, invalid,\\
+                    F: ... is a greengrocer,\\
+                    G: ... is a folk singer,\\
+                    H: ... is a haberdasher.
+                \item $\all x \ [Fx \ra Gx], \ex x \ [Fx \ta Hx] : \ex x \ [Hx \ta Gx]$, valid,\\
+                    F: ... is a philosopher,\\
+                    G: ... is absent-minded,\\
+                    H: ... is a logician.
+            \end{enumerate}
+
+    \end{enumerate}
+
 \end{document}
