@@ -6626,6 +6626,144 @@ T & T & T & T & T &   & T & T  & T &   & \textbf{T} & T & F  & T & \textbf{T} & 
                 \item $\all x \ [\ex y \ [xMy \tv xFy]
                     \ra \all y \ [(xMy \tv xFy) \ra xLy]]$
             \end{enumerate}
+        \item
+            \begin{enumerate}[label=(\roman*)]
+                \item $\all x \ [\ex y \ [xLy]]
+                    : \ex y \ [\all x \ [xLy]]$,
+                    invalid,\\
+                    \textbf{D: \{human beings\}},\\
+                    L: ... loves ....
+                \item $\all x \ [\ex y \ [yCx]]
+                    : \ex y \ [\all x \ [xLy]]$,
+                    invalid,\\
+                    \textbf{D: \{events\}},\\
+                    C: ... is the cause of ....
+                \item $\all x \ [\ex y \ [xTy]]
+                    : \ex y \ [\all x \ [yTx]]$,
+                    invalid,\\
+                    \textbf{D: \{human beings\}},\\
+                    T: ... is taller than ....
+                \item $\all x \ [Fx \ra xLa], \ex x \ [Bx \ta Fx]
+                    : \ex x \ [Bx \ta xLa]$,
+                    valid,\\
+                    \textbf{D: \{human beings\}},\\
+                    F: ... is a folk fan,\\
+                    L: ... likes ...,\\
+                    B: ... is a bluesman,\\
+                    a: the Amazing Blondel.
+                \item $\all x \ [\all y \ [(Fx \ta (Gy \ta Wy)) \ra xAy]],
+                    Gg, Wg
+                    : \all x \ [Fx \ra xAg]$,
+                    valid,\\
+                    \textbf{D: \{human beings\}},\\
+                    F: ... is a formal logician,\\
+                    A: ... admires ...,\\
+                    G: ... is a German philosopher,\\
+                    W: ... wrote a logic text,\\
+                    g: Gottlob Frege.
+                \item $\all x \ [\all y \ [(Cx \ta My) \ra xHy]],
+                    \ex x \ [Dx \ta \ex y \ [My \ta xLy]]
+                    : \all x \ [Cx \ra \ex y \ [Dy \ta xHy]]$,
+                    invalid,\\
+                    \textbf{D: \{animals\}},\\
+                    C: ... is a cat,\\
+                    M: ... is a mouse,\\
+                    H: ... hates ...,\\
+                    D: ... is a dog,\\
+                    L: ... likes ....
+                \item $\ex x \ [Fx \ta \all y \ [Gy \ra xRy]],
+                    \s \ex x \ [Fx \ta \ex y \ [Hy \ta xRy]]
+                    : \s \ex x \ [Gx \ta Hx]$,
+                    valid,\\
+                    \textbf{D: \{human beings\}},\\
+                    F: ... is a florist,\\
+                    G: ... is a greengrocer,\\
+                    H: ... is a hitman,\\
+                    R: ... respects ....
+                \item $\all x \ [Fx \ra \all y \ [Ny \ra xLy]],
+                    Nr
+                    : \all x \ [Fx \ra xLr]$,
+                    valid,\\
+                    \textbf{D: \{human beings and flowers\}},\\
+                    F: ... is a florist,\\
+                    N: ... is a nice flower,\\
+                    L: ... likes ...,\\
+                    r: rose.
+            \end{enumerate}
+        \item
+            \begin{enumerate}[label=(\roman*)]
+                \item $\all x \ [\all y \ [xAy]]$\\
+                    \textbf{D: \{objects\}},\\
+                    A: ... attracts ....
+                \item $\all x \ [\all y \ [xRy \ra xBy]]$\\
+                    \textbf{D: \{days\}},\\
+                    R: ... brighter ...,\\
+                    B: ... better ....
+                \item $\all x \ [\all y \ [(Cx \ta (yMx \ta yFx)) \ra xLy]]$\\
+                    \textbf{D: \{human beings and animals\}},\\
+                    C: ... is a cat,\\
+                    M: ... is the master of ...,\\
+                    F: ... feeds ... generously,\\\
+                    L: ... loves ....
+                \item $\all x \ [\all y \ [(Px \ta Ey) \ra xHy]]$\\
+                    \textbf{D: \{subatomic particles\}},\\
+                    P: ... is a proton,\\
+                    E: ... is an electron,\\\
+                    H: ... is heavier then ....
+                \item $\all x \ [Mx \ra \ex y \ [\ex z \ [Gz \ta yCz] \ta xRy]]$\\
+                    \textbf{D: \{biological processes and molecules\}},\\
+                    M: ... is a mutation,\\
+                    G: ... is a gene,\\
+                    C: ... is a change in ...,\\
+                    R: ... results from ....
+                \item $\all x \ [Mx \ra \ex y \ [\ex z \ [Gz \ta yCz] \ta xRy]]$\\
+                    \textbf{D: \{biological processes and molecules\}},\\
+                    M: ... is a mutation,\\
+                    G: ... is a gene,\\
+                    C: ... is a change in ...,\\
+                    R: ... results from ....
+                \item $\all x \ [xLa] \ra \s \ex x \ [xHb]$\\
+                    \textbf{D: \{human beings\}},\\
+                    L: ... loves ...,\\
+                    H: ... hates ...,\\
+                    a: Arlo Guthrie,\\
+                    b: Blind Lemon Jefferson.
+                \item $\all x \ [\all y \ [(Sxry \ta Cy) \ra \ex z \ [Bzry]]]$\\
+                    \textbf{D: \{events and animals\}},\\
+                    S: ... is such an event that ... sees ...,\\
+                    B: ... is such an event that ... barks at ...,\\
+                    C: ... is a cat,\\
+                    r: Rover.
+                \item $\all x \ [((Bx \ta Dx) \ta Hs) \ra \ex y \ [Fy \ta yAx]]$\\
+                    \textbf{D: \{bodies and forces and natural laws\}},\\
+                    B: ... is a body,\\
+                    D: ... decelerates,\\
+                    H: ... holds,\\
+                    F: ... is a force,\\
+                    A: ... acts on ...,\\
+                    s: Newton's Second Law.
+                \item $\s \ex x \ [\all y \ [yFx]]$\\
+                    \textbf{D: \{human beings\}},\\
+                    F: ... has fooled ....
+                \item $\s \ex x \ [\all y \ [xFy]]$\\
+                    \textbf{D: \{human beings\}},\\
+                    F: ... has fooled ....
+                \item $\all x \ [\ex y \ [xFy] \tv \ex y \ [yFx]]$\\
+                    \textbf{D: \{human beings\}},\\
+                    F: ... has fooled ....
+                \item $\all x \ [\ex y \ [xFy] \ra xFx]$\\
+                    \textbf{D: \{human beings\}},\\
+                    F: ... has fooled ....
+                \item $\all x \ [\ex y \ [yFx] \ra xFx]$\\
+                    \textbf{D: \{human beings\}},\\
+                    F: ... has fooled ....
+                \item $\all x \ [\ex y \ [yFx \ta xFy]]$\\
+                    \textbf{D: \{human beings\}},\\
+                    F: ... has fooled ....
+                \item $\ex x \ [\ex y \ [xFy]] \lra \s \s \ex x \ [\ex y \ [xFy]]$\\
+                    \textbf{D: \{human beings\}},\\
+                    F: ... has fooled ....
+            \end{enumerate}
     \end{enumerate}
 
 \end{document}
