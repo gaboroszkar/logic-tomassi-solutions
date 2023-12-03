@@ -6852,4 +6852,54 @@ T & T & T & T & T &   & T & T  & T &   & \textbf{T} & T & F  & T & \textbf{T} & 
             \end{enumerate}
     \end{enumerate}
 
+    \subsection*{EXERCISE 5.10}
+
+    \begin{enumerate}[label=\arabic*,leftmargin=*]
+        \item In all of these formulas, the domain is all supernatural creatures, and the predicate $G$ means "... is a God".
+            \begin{enumerate}[label=(\roman*)]
+                \item $\ex x \ [Gx]$
+                \item $\s \ex x \ [Gx \ta \all y \ [Gy \ra x=y]]$
+                \item $\ex x \ [\ex y \ [(Gx \ta Gy) \ta (\s x=y)] \ta
+                    \all z \ [Gz \ra (z=x \tv z=y)]]$
+                \item $\ex x \ [\ex y \ [\ex z \ [((Gx \ta Gy) \ta Gz) \ta
+                    ((\s x=y \ta \s x=z) \ta \s y=z)]]]$
+                \item $\all x \ [\all y \ [((Gx \ta Gy) \ta (\s x=y)) \ra
+                    \all z \ [Gz \ra (z=x \tv z=y)]]]$\\
+                    (Note: I believe the restriction $(\s x=y)$ is crucial.\\
+                    Without this, it is possible that if there were 2 Gods,\\
+                    and we choose $x$, $y$ such that $(x=y)$,\\
+                    to choose $z$ such that $z$ is not $x$ nor $y$.\\
+                    I believe the book is misleading in BOX 5.12.)
+                \item $\s \ex x \ [Gx] \tv
+                    \ex x \ [Gx \ra \all y \ [Gy \ra x=y]] \tv
+                    \ex x \ [\ex y \ [(Gx \ta Gy) \ta (\s x=y)] \ta
+                        \all z \ [Gz \ra (z=x \tv z=y)]]$
+                \item
+                    $\ex x \ [\ex y \ [\ex z \ [
+                        ((Gx \ta Gy) \ta Gz) \ta ((\s x=y \ta \s x=z) \ta \s y=z) \ta
+                        \all w \ [Gw \ra ((w=x \tv w=y) \tv w=z)]]]]$
+                \item $\ex x \ [\ex y \ [\ex z \ [\ex w \ [
+                    (((Gx \ta Gy) \ta Gz) \ta Gw) \ta
+                    (((\s x=y \ta \s x=z) \ta \s x=w) \ta
+                    (\s y=z \ta \s y=w) \ta
+                    \s z=w)
+                    ]]]]$
+                \item $\all x \ [\all y \ [\all z \ [\all w \ [
+                    ((((Gx \ta Gy) \ta Gz) \ta Gw) \ta
+                    (((\s x=y \ta \s x=z) \ta \s x=w) \ta
+                    (\s y=z \ta \s y=w) \ta
+                    \s z=w)) \ra
+                    \all u \ [Gu \ra (((u=x \tv u=y) \tv u=z) \tv u=w)]
+                    ]]]]$
+                \item $\ex x \ [\ex y \ [\ex z \ [\ex w \ [
+                    ((((Gx \ta Gy) \ta Gz) \ta Gw) \ta
+                    (((\s x=y \ta \s x=z) \ta \s x=w) \ta
+                    (\s y=z \ta \s y=w) \ta
+                    \s z=w)) \ta
+                    \all u \ [Gu \ra (((u=x \tv u=y) \tv u=z) \tv u=w)]
+                    ]]]]$
+            \end{enumerate}
+        \item $\all x \ [\all y \ [(xRy \ta yRx) \ra x=y]]$
+    \end{enumerate}
+
 \end{document}
