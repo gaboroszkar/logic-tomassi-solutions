@@ -6926,4 +6926,67 @@ T & T & T & T & T &   & T & T  & T &   & \textbf{T} & T & F  & T & \textbf{T} & 
             \end{enumerate}
     \end{enumerate}
 
+    \subsection*{Examination 3 in Formal Logic}
+
+    \begin{enumerate}[label=\arabic*,leftmargin=*]
+        \item In each formula, the domain is all human beings and all creatures.
+            \begin{enumerate}[label=(\roman*)]
+                \item $\ex x \ [(Fx \ta \all y \ [Fy \ra x=y]) \ta x=b]$,\\
+                    $F$: ... is the President of the United States,\\
+                    $b$: Bill Clinton.
+                \item $\ex x \ [(Fx \ta \all y \ [Fy \ra x=y]) \ta Gx]$,\\
+                    $F$: ... is the President of the United States,\\
+                    $G$: ... is male.
+                \item $\ex x \ [(Fx \ta \all y \ [Fy \ra x=y]) \ta Gx]$,\\
+                    $F$: ... is the purple people-eater,\\
+                    $G$: ... is a monster.
+                \item $\ex x \ [(Fx \ta \all y \ [Fy \ra x=y]) \ta Gx]$,\\
+                    $F$: ... is the Santa Claus,\\
+                    $G$: ... is a charming fellow.
+                \item $\s \ex x \ [Fx] \ta \s \ex x \ [Gx]$,\\
+                    $F$: ... is a creature named Santa Claus,\\
+                    $G$: ... is a creature named Pegasus.
+                \item $\s \ex x \ [Fx]$,\\
+                    $F$: ... is a creature named Flubjob.
+            \end{enumerate}
+        \item In each formula, the domain is all human beings.
+            \begin{enumerate}[label=(\roman*)]
+                \item $\ex x \ [(Fx \ta \all y \ [Fy \ra x=y]) \ta Gx],\\
+                    \all x \ [Gx \ra \s \ex y \ [yHx]]\\
+                    : \all x \ [Fx \ra \s \ex y \ [yHx]]$,\\
+                    $F$: ... is the man in the iron mask,\\
+                    $G$: ... is a bore,\\
+                    $H$: ... likes ....
+                \item $\ex x \ [(Fx \ta \all y \ [Fy \ra x=y]) \ta Gx],\\
+                    \ex x \ [(Ix \ta \all y \ [(Iy \ta \s x=y) \ra xHy]) \ta (Jx \ta \all y \ [Jy \ra x=y])],\\
+                    \all x \ [\all y \ [xHy \ra \s yHx]],\\
+                    \ex x \ [Fx \ta Jx]\\
+                    : \ex x \ [(Fx \ta \all y \ [Fy \ra x=y]) \ta (Ix \ta Jx)]$,\\
+                    $F$: ... is Alice,\\
+                    $G$: ... sat in the logic exam that Professor Frege had recently devised,\\
+                    $H$: ... is happier than ...,\\
+                    $I$: ... is in the room,\\
+                    $J$: ... passed with flying colours.\\
+                    (Note: the statement "the happiest student" can be translated to $\ex x \ [\all y \ [\s x=y \ra xHy]], \all x \ [\all y \ [xHy \ra \s yHx]]$, because if we assume that there are two $a$ and $b$ things ($\s a=b$) who are the happiest, then it would be true, that $aHb$ and $bHa$, which is impossible, therefore, in this case $a=b$.)
+            \end{enumerate}
+        \begin{minipage}{\textwidth}
+        \item The domain is all animals and their body parts.\\
+            $\all x \ [Px \ra Ax] : \all x \ [\all y \ [(yHx \ta Px) \ra (yHx \ta Ax)]]$\\
+            $P$: ... is a horse,\\
+            $A$: ... is an animal,\\
+            $H$: ... is an head of ....
+        \end{minipage}
+        \item
+            \begin{enumerate}[label=\arabic*.]
+                \item $\s \ex x \ [xBb]$
+                \item $\all x \ [\all y \ [((xDa \ta \all z \ [\s z=a \ra \s xDz]) \ta \s \ex z \ [yDz]) \ra xCy]]$
+                \item $aBb$
+            \end{enumerate}
+            (Note: premise 2. means the following.\\
+            For all two anything (particularly two human beings) it is true,\\
+            that if one ($x$) owns a cheese sandwich and nothing else,\\
+            and the other person ($y$) owns nothing,\\
+            than $x$ is better off than $y$.)
+    \end{enumerate}
+
 \end{document}
