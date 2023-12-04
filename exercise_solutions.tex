@@ -905,7 +905,7 @@
                     \begin{tabular}{l l l l}
                         \{1\} & 1. & P \& Q & Premise\\
                         \{2\} & 2. & (P \& R) \mra S & Premise\\
-                        \{3\} & 3. & R & Assumtion for CP\\
+                        \{3\} & 3. & R & Assumption for CP\\
                         \{1\} & 4. & P & 1 \&E\\
                         \{1, 3\} & 5. & P \& R & 3, 4 \&I\\
                         \{1, 2, 3\} & 6. & S & 2, 5 MP\\
@@ -6987,6 +6987,143 @@ T & T & T & T & T &   & T & T  & T &   & \textbf{T} & T & F  & T & \textbf{T} & 
             that if one ($x$) owns a cheese sandwich and nothing else,\\
             and the other person ($y$) owns nothing,\\
             than $x$ is better off than $y$.)
+    \end{enumerate}
+
+    \section*{Chapter Six: How to Argue Logically in QL}
+
+    \subsection*{EXERCISE 6.1}
+
+    \begin{enumerate}[label=\arabic*,leftmargin=*]
+
+        \item The proofs are the followings.
+            \nopagebreak
+            \begin{enumerate}[label=\arabic*.]
+                \begin{minipage}{\textwidth}
+                \item $\all x \ [Fx] : Fa$
+                    \vspace{1em}\\
+                    \begin{tabular}{l l l l}
+                        \{1\} & 1. & $\all x \ [Fx]$ & Premise\\
+                        \{1\} & 2. & $Fa$ & 1 UE\\
+                    \end{tabular}
+                    \vspace{1em}
+                \end{minipage}
+                \begin{minipage}{\textwidth}
+                \item $\all x \ [Fx] : (Fa \ta Fb) \ta (Fx \ta Fd)$
+                    \vspace{1em}\\
+                    \begin{tabular}{l l l l}
+                        \{1\} & 1. & $\all x \ [Fx]$ & Premise\\
+                        \{1\} & 2. & $Fa$ & 1 UE\\
+                        \{1\} & 3. & $Fb$ & 1 UE\\
+                        \{1\} & 4. & $Fc$ & 1 UE\\
+                        \{1\} & 5. & $Fd$ & 1 UE\\
+                        \{1\} & 6. & $Fa \ta Fb$ & 2, 3 \&I\\
+                        \{1\} & 7. & $Fc \ta Fd$ & 4, 5 \&I\\
+                        \{1\} & 8. & $(Fa \ta Fb) \ta (Fc \ta Fd)$ & 6, 7 \&I\\
+                    \end{tabular}
+                    \vspace{1em}
+                \end{minipage}
+                \begin{minipage}{\textwidth}
+                \item $\all x \ [Fx \ta Gx] : (Ga \ta Fa)$
+                    \vspace{1em}\\
+                    \begin{tabular}{l l l l}
+                        \{1\} & 1. & $\all x \ [Fx \ta Gx]$ & Premise\\
+                        \{1\} & 2. & $Fa \ta Ga$ & 1 UE\\
+                        \{1\} & 3. & $Fa$ & 2 \&E\\
+                        \{1\} & 4. & $Ga$ & 2 \&E\\
+                        \{1\} & 5. & $Ga \ta Fa$ & 3, 4 \&I\\
+                    \end{tabular}
+                    \vspace{1em}
+                \end{minipage}
+                \begin{minipage}{\textwidth}
+                \item $\all x \ [Fx \ra Gx], Fa : Ga$
+                    \vspace{1em}\\
+                    \begin{tabular}{l l l l}
+                        \{1\} & 1. & $\all x \ [Fx \ra Gx]$ & Premise\\
+                        \{2\} & 2. & $Fa$ & Premise\\
+                        \{1\} & 3. & $Fa \ra Ga$ & 1 UE\\
+                        \{1, 2\} & 4. & $Ga$ & 2, 3 MP\\
+                    \end{tabular}
+                    \vspace{1em}
+                \end{minipage}
+                \begin{minipage}{\textwidth}
+                \item $\all x \ [Fx \ra Gx], Fb : (Fb \ta Gb)$
+                    \vspace{1em}\\
+                    \begin{tabular}{l l l l}
+                        \{1\} & 1. & $\all x \ [Fx \ra Gx]$ & Premise\\
+                        \{2\} & 2. & $Fb$ & Premise\\
+                        \{1\} & 3. & $Fb \ra Gb$ & 1 UE\\
+                        \{1, 2\} & 4. & $Gb$ & 2, 3 MP\\
+                        \{1, 2\} & 5. & $Fb \ta Gb$ & 2, 4 \&I\\
+                    \end{tabular}
+                    \vspace{1em}
+                \end{minipage}
+                \begin{minipage}{\textwidth}
+                \item $\all x \ [Fx \ra Gx], \s Gc : \s Fc$
+                    \vspace{1em}\\
+                    \begin{tabular}{l l l l}
+                        \{1\} & 1. & $\all x \ [Fx \ra Gx]$ & Premise\\
+                        \{2\} & 2. & $\s Gc$ & Premise\\
+                        \{1\} & 3. & $Fc \ra Gc$ & 1 UE\\
+                        \{1, 2\} & 4. & $\s Fc$ & 2, 3 MT\\
+                    \end{tabular}
+                    \vspace{1em}
+                \end{minipage}
+                \begin{minipage}{\textwidth}
+                \item $\all x \ [Fx \ra Gx], \all x \ [Gx \ra Hx] : (Fa \ra Ha)$
+                    \vspace{1em}\\
+                    \begin{tabular}{l l l l}
+                        \{1\} & 1. & $\all x \ [Fx \ra Gx]$ & Premise\\
+                        \{2\} & 2. & $\all x \ [Gx \ra Hx]$ & Premise\\
+                        \{1\} & 3. & $Fa \ra Ga$ & 1 UE\\
+                        \{2\} & 4. & $Ga \ra Ha$ & 1 UE\\
+                        \{5\} & 5. & $Fa$ & Assumption\\
+                        \{1, 5\} & 6. & $Ga$ & 3, 5 MP\\
+                        \{1, 2, 5\} & 7. & $Ha$ & 4, 6 MP\\
+                        \{1, 2\} & 8. & $Fa \ra Ha$ & 5, 7 CP\\
+                    \end{tabular}
+                    \vspace{1em}
+                \end{minipage}
+                \begin{minipage}{\textwidth}
+                \item $\s Fa : \s \all x \ [Fx]$
+                    \vspace{1em}\\
+                    \begin{tabular}{l l l l}
+                        \{1\} & 1. & $\s Fa$ & Premise\\
+                        \{2\} & 2. & $\all x \ [Fx]$ & Assumption\\
+                        \{2\} & 3. & $Fa$ & 2 UE\\
+                        \{1, 2\} & 4. & $Fa \ta \s Fa$ & 1, 3 \&I\\
+                        \{1\} & 5. & $\s \all x \ [Fx]$ & 2, 4 RAA\\
+                    \end{tabular}
+                    \vspace{1em}
+                \end{minipage}
+                \begin{minipage}{\textwidth}
+                \item $\s (Fa \ta Fb) : \s \all x \ [Fx]$
+                    \vspace{1em}\\
+                    \begin{tabular}{l l l l}
+                        \{1\} & 1. & $\s (Fa \ta Fb)$ & Premise\\
+                        \{2\} & 2. & $\all x \ [Fx]$ & Assumption\\
+                        \{2\} & 3. & $Fa$ & 2 UE\\
+                        \{2\} & 4. & $Fb$ & 2 UE\\
+                        \{2\} & 5. & $Fa \ta Fb$ & 3, 4 \&I\\
+                        \{1, 2\} & 6. & $(Fa \ta Fb) \ta \s (Fa \ta Fb)$ & 1, 5 \&I\\
+                        \{1\} & 7. & $\s \all x \ [Fx]$ & 2, 6 RAA\\
+                    \end{tabular}
+                    \vspace{1em}
+                \end{minipage}
+                \begin{minipage}{\textwidth}
+                \item $\all x \ [Fx \ra Gx] : \all y \ [Fy] \ra Gb$
+                    \vspace{1em}\\
+                    \begin{tabular}{l l l l}
+                        \{1\} & 1. & $\all x \ [Fx \ra Gx]$ & Premise\\
+                        \{2\} & 2. & $\all x \ [Fx]$ & Assumption\\
+                        \{1\} & 3. & $Fb \ra Gb$ & 1 UE\\
+                        \{2\} & 4. & $Fb$ & 2 UE\\
+                        \{1, 2\} & 5. & $Gb$ & 3, 4 MP\\
+                        \{1\} & 6. & $\all x \ [Fx] \ra Gb$ & 2, 5 CP\\
+                    \end{tabular}
+                    \vspace{1em}
+                \end{minipage}
+            \end{enumerate}
+
     \end{enumerate}
 
 \end{document}
