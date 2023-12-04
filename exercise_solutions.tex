@@ -7126,4 +7126,159 @@ T & T & T & T & T &   & T & T  & T &   & \textbf{T} & T & F  & T & \textbf{T} & 
 
     \end{enumerate}
 
+    \subsection*{EXERCISE 6.2}
+
+    \begin{enumerate}[label=\arabic*,leftmargin=*]
+
+        \item The proofs are the followings.
+            \nopagebreak
+            \begin{enumerate}[label=\arabic*.]
+                \begin{minipage}{\textwidth}
+                \item $\all x \ [Fx] \ta \all y \ [Gy] : \all z \ [Fz \ta Gz] $
+                    \vspace{1em}\\
+                    \begin{tabular}{l l l l}
+                        \{1\} & 1. & $\all x \ [Fx] \ta \all y \ [Gy]$ & Premise\\
+                        \{1\} & 2. & $\all x \ [Fx]$ & 1 \&E\\
+                        \{1\} & 3. & $Fa$ & 2 UE\\
+                        \{1\} & 4. & $\all x \ [Gx]$ & 1 \&E\\
+                        \{1\} & 5. & $Ga$ & 4 UE\\
+                        \{1\} & 6. & $Fa \ta Ga$ & 3, 5 \&I\\
+                        \{1\} & 7. & $\all z \ [Fz \ta Gz]$ & 6 UI\\
+                    \end{tabular}
+                    \vspace{1em}
+                \end{minipage}
+                \begin{minipage}{\textwidth}
+                \item $\all x \ [Fx] : \all x \ [Fx \tv Gx] $
+                    \vspace{1em}\\
+                    \begin{tabular}{l l l l}
+                        \{1\} & 1. & $\all x \ [Fx]$ & Premise\\
+                        \{1\} & 2. & $Fa$ & 1 UE\\
+                        \{1\} & 3. & $Fa \tv Ga$ & 2 vI\\
+                        \{1\} & 4. & $\all x \ [Fx \tv Gx]$ & 3 UI\\
+                    \end{tabular}
+                    \vspace{1em}
+                \end{minipage}
+                \begin{minipage}{\textwidth}
+                \item $\all x \ [Fx \ra Gx] : \all x \ [(Fx \ta Hx) \ra Gx]$
+                    \vspace{1em}\\
+                    \begin{tabular}{l l l l}
+                        \{1\} & 1. & $\all x \ [Fx \ra Gx]$ & Premise\\
+                        \{1\} & 2. & $Fa \ra Ga$ & 1 UE\\
+                        \{3\} & 3. & $Fa \ta Ha$ & Assumption\\
+                        \{3\} & 4. & $Fa$ & 3 \&E\\
+                        \{1, 3\} & 5. & $Ga$ & 2, 4 MP\\
+                        \{1\} & 6. & $(Fa \ta Ha) \ra Ga$ & 3, 5 CP\\
+                        \{1\} & 7. & $\all x \ [(Fa \ta Ha) \ra Ga]$ & 6 UI\\
+                    \end{tabular}
+                    \vspace{1em}
+                \end{minipage}
+                \begin{minipage}{\textwidth}
+                \item $\all x \ [Fx \ra Gx], \all x \ [Gx \ra Hx] : \all x \ [Fx \ra Hx]$
+                    \vspace{1em}\\
+                    \begin{tabular}{l l l l}
+                        \{1\} & 1. & $\all x \ [Fx \ra Gx]$ & Premise\\
+                        \{2\} & 2. & $\all x \ [Gx \ra Hx]$ & Premise\\
+                        \{1\} & 3. & $Fa \ra Ga$ & 1 UE\\
+                        \{2\} & 4. & $Ga \ra Ha$ & 2 UE\\
+                        \{5\} & 5. & $Fa$ & Assumption\\
+                        \{1, 5\} & 6. & $Ga$ & 3, 5 MP\\
+                        \{1, 2, 5\} & 7. & $Ha$ & 4, 6 MP\\
+                        \{1, 2\} & 8. & $Fa \ra Ha$ & 5, 7 CP\\
+                        \{1, 2\} & 9. & $\all x \ [Fx \ra Hx]$ & 8 UI\\
+                    \end{tabular}
+                    \vspace{1em}
+                \end{minipage}
+                \begin{minipage}{\textwidth}
+                \item $\all x \ [Fx \ra Gx], \all x \ [Hx \ra \s Gx] : \all x \ [Fx \ra \s Hx]$
+                    \vspace{1em}\\
+                    \begin{tabular}{l l l l}
+                        \{1\} & 1. & $\all x \ [Fx \ra Gx]$ & Premise\\
+                        \{2\} & 2. & $\all x \ [Hx \ra \s Gx]$ & Premise\\
+                        \{1\} & 3. & $Fa \ra Ga$ & 1 UE\\
+                        \{2\} & 4. & $Ha \ra \s Ga$ & 2 UE\\
+                        \{5\} & 5. & $Fa$ & Assumption\\
+                        \{1, 5\} & 6. & $Ga$ & 3, 5 MP\\
+                        \{1, 5\} & 7. & $\s \s Ga$ & 6 DNI\\
+                        \{1, 2, 5\} & 8. & $\s Ha$ & 4, 7 MT\\
+                        \{1, 2\} & 9. & $Fa \ra \s Ha$ & 5, 8 CP\\
+                        \{1, 2\} & 10. & $\all x \ [Fx \ra \s Hx]$ & 9 UI\\
+                    \end{tabular}
+                    \vspace{1em}
+                \end{minipage}
+                \begin{minipage}{\textwidth}
+                \item $\textrm{P} \ra \all x \ [Fx] : \all x \ [\textrm{P} \ra Fx]$
+                    \vspace{1em}\\
+                    \begin{tabular}{l l l l}
+                        \{1\} & 1. & $\textrm{P} \ra \all x \ [Fx]$ & Premise\\
+                        \{2\} & 2. & $\textrm{P}$ & Assumption\\
+                        \{1, 2\} & 3. & $\all x \ [Fx]$ & 1, 2 MP\\
+                        \{1, 2\} & 4. & $Fa$ & 3 UE\\
+                        \{1\} & 5. & $\textrm{P} \ra Fa$ & 2, 4 CP\\
+                        \{1\} & 6. & $\all x \ [\textrm{P} \ra Fx]$ & 5 UI\\
+                    \end{tabular}
+                    \vspace{1em}
+                \end{minipage}
+                \begin{minipage}{\textwidth}
+                \item $\all x \ [Fx] \tv \all x \ [Gx] : \all x \ [Fx \tv Gx]$
+                    \vspace{1em}\\
+                    \begin{tabular}{l l l l}
+                        \{1\} & 1. & $\all x \ [Fx] \tv \all x \ [Gx]$ & Premise\\
+                        \{2\} & 2. & $\all x \ [Fx]$ & Assumption\\
+                        \{2\} & 3. & $Fa$ & 2 UE\\
+                        \{2\} & 4. & $Fa \tv Ga$ & 3 vI\\
+                        \{5\} & 5. & $\all x \ [Gx]$ & Assumption\\
+                        \{5\} & 6. & $Ga$ & 5 UE\\
+                        \{5\} & 7. & $Fa \tv Ga$ & 6 vI\\
+                        \{1\} & 8. & $Fa \tv Ga$ & 1, 2, 4, 5, 7 vE\\
+                        \{1\} & 9. & $\all x \ [Fx \tv Gx]$ & 8 UI\\
+                    \end{tabular}
+                    \vspace{1em}
+                \end{minipage}
+                \begin{minipage}{\textwidth}
+                \item $\all x \ [Fx \tv Gx], \all x \ [Fx \ra Gx]: \all x \ [Gx]$
+                    \vspace{1em}\\
+                    \begin{tabular}{l l l l}
+                        \{1\} & 1. & $\all x \ [Fx \tv Gx]$ & Premise\\
+                        \{2\} & 2. & $\all x \ [Fx \ra Gx]$ & Premise\\
+                        \{1\} & 3. & $Fa \tv Ga$ & 1 UE\\
+                        \{2\} & 4. & $Fa \ra Ga$ & 2 UE\\
+                        \{5\} & 5. & $Fa$ & Assumption\\
+                        \{2, 5\} & 6. & $Ga$ & 4, 5 MP\\
+                        \{7\} & 7. & $Ga$ & Assumption\\
+                        \{1, 2\} & 8. & $Ga$ & 3, 4, 6, 7, 7 vE\\
+                        \{1, 2\} & 9. & $\all x \ [Gx]$ & 8 UI\\
+                    \end{tabular}
+                    \vspace{1em}
+                \end{minipage}
+                \begin{minipage}{\textwidth}
+                \item $: \all x \ [Fx \ra Fx]$
+                    \vspace{1em}\\
+                    \begin{tabular}{l l l l}
+                        \{1\} & 1. & $Fa$ & Assumption\\
+                        -- & 2. & $Fa \ra Fa$ & 1, 1 CP\\
+                        -- & 3. & $\all x \ [Fx \ra Fx]$ & 2 UI\\
+                    \end{tabular}
+                    \vspace{1em}
+                \end{minipage}
+                \begin{minipage}{\textwidth}
+                \item $: \all x \ [Fx \tv \s Fx]$
+                    \vspace{1em}\\
+                    \begin{tabular}{l l l l}
+                        \{1\} & 1. & $\s (Fa \tv \s Fa)$ & Assumption\\
+                        \{2\} & 2. & $Fa$ & Assumption\\
+                        \{2\} & 3. & $Fa \tv \s Fa$ & 2 vI\\
+                        \{1, 2\} & 4. & $(Fa \tv \s Fa) \ta \s (Fa \tv \s Fa)$ & 1, 3 \&I\\
+                        \{1\} & 5. & $\s Fa$ & 2, 4 RAA\\
+                        \{1\} & 6. & $Fa \tv \s Fa$ & 4 vI\\
+                        \{1\} & 7. & $(Fa \tv \s Fa) \ta \s (Fa \tv \s Fa)$ & 1, 5 \&I\\
+                        -- & 8. & $\s \s (Fa \tv \s Fa)$ & 1, 6 RAA\\
+                        -- & 9. & $Fa \tv \s Fa$ & 8 DNE\\
+                        -- & 10. & $\all x \ [Fx \tv \s Fx]$ & 9 UI\\
+                    \end{tabular}
+                    \vspace{1em}
+                \end{minipage}
+            \end{enumerate}
+
+    \end{enumerate}
+
 \end{document}
