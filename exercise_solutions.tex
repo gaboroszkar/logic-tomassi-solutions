@@ -7281,4 +7281,57 @@ T & T & T & T & T &   & T & T  & T &   & \textbf{T} & T & F  & T & \textbf{T} & 
 
     \end{enumerate}
 
+    \subsection*{REVISION EXERCISE III}
+
+    \begin{enumerate}[label=\arabic*,leftmargin=*]
+
+        \item The proofs are the followings.
+            \nopagebreak
+            \begin{enumerate}[label=\arabic*.,start=10]
+
+                \begin{minipage}{\textwidth}
+                \item $\all x \ [\all y \ [(Fx \ta Fy) \ra (x=y)]] : \ex x \ [\all y \ [Fy \ra (x=y)]]$\\
+                    The proof intuitively is the following.\\
+                    Let's assume that the consequent is not true, and that $Fa$.\\
+                    Then, we get a contradiction, because $a$ can be this element\\
+                    which equals to any other element for which $Fy$ is true (using the premise).\\
+                    Therefore, $\s Fa$. Then if $Fa$ would be true, then anything is true\\
+                    (principle of explosion), therefore, it's also true that $b=a$.\\
+                    Because $a$ was choosen arbitrarily, it's true for every term $y$,\\
+                    we can say that there exists an element $b$ such that if $Fy$, then $b=y$.\\
+                    This contradicts our first assumption. Therefore, it must be false.\\
+                    \vspace{1em}\\
+                    \begin{tabular}{l l l l}
+                        \{1\}           &  1. & $\all x \ [\all y \ [(Fx \ta Fy) \ra (x=y)]]$ & Premise\\
+                        \{2\}           &  2. & $\s \ex x \ [\all y \ [Fy \ra x=y]]$ & Assumption\\
+                        \{3\}           &  3. & $Fa$ & Assumption\\
+                        \{1\}           &  4. & $\all y \ [(Fa \ta Fy) \ra (a=y)]$ & 1 UE\\
+                        \{1\}           &  5. & $(Fa \ta Fb) \ra (a=b)$ & 4 UE\\
+                        \{6\}           &  6. & $Fb$ & Assumption\\
+                        \{3, 6\}        &  7. & $Fa \ta Fb$ & 3, 6 \&I\\
+                        \{1, 3, 6\}     &  8. & $a=b$ & 5, 7 MP\\
+                        \{1, 3\}        &  9. & $Fb \ra a=b$ & 6, 8 CP\\
+                        \{1, 3\}        & 10. & $\all y \ [Fy \ra a=y]$ & 9 UI\\
+                        \{1, 3\}        & 11. & $\ex x \ [\all y \ [Fy \ra x=y]]$ & 10 EI\\
+                        \{1, 2, 3\}     & 12. & $\ex x \ [\all y \ [Fy \ra x=y]] \ta \s \ex x \ [\all y \ [Fy \ra x=y]]$ & 11, 2 \&I\\
+                        \{1, 2\}        & 13. & $\s Fa$ & 3, 12 RAA\\
+                        \{1, 2, 3\}     & 14. & $Fa \ta \s Fa$ & 3, 13 \&I\\
+                        \{15\}          & 15. & $\s b=a$ & Assumption\\
+                        \{1, 2, 3, 15\} & 16. & $(Fa \ta \s Fa) \ta \s b=a$ & 14, 15 \&I\\
+                        \{1, 2, 3, 15\} & 17. & $Fa \ta \s Fa$ & 16 \&E\\
+                        \{1, 2, 3\}     & 18. & $\s \s b=a$ & 15, 17 RAA\\
+                        \{1, 2, 3\}     & 19. & $b=a$ & 18 DNE\\
+                        \{1, 2\}        & 20. & $Fa \ra b=a$ & 3, 19 CP\\
+                        \{1, 2\}        & 21. & $\all y \ [Fy \ra b=y]$ & 20 UI\\
+                        \{1, 2\}        & 22. & $\ex x \ [\all y \ [Fy \ra x=y]]$ & 21 EI\\
+                        \{1, 2\}        & 23. & $\ex x \ [\all y \ [Fy \ra x=y]] \ta \s \ex x \ [\all y \ [Fy \ra x=y]]$ & 2, 22 \&I\\
+                        \{1\}           & 24. & $\s \s \ex x \ [\all y \ [Fy \ra x=y]]$ & 2, 23 RAA\\
+                        \{1\}           & 25. & $\ex x \ [\all y \ [Fy \ra x=y]]$ & 24 DNE\\
+                    \end{tabular}
+                    \vspace{1em}
+                \end{minipage}
+            \end{enumerate}
+
+    \end{enumerate}
+
 \end{document}
