@@ -7426,6 +7426,713 @@ T & T & T & T & T &   & T & T  & T &   & \textbf{T} & T & F  & T & \textbf{T} & 
 
     \end{enumerate}
 
+    \subsection*{EXERCISE 6.4}
+
+    \begin{enumerate}[label=\arabic*,leftmargin=*]
+
+        \item The proofs are the followings.
+            \nopagebreak
+            \begin{enumerate}[label=\arabic*.]
+
+                \begin{minipage}{\textwidth}
+                \item $: \all x \ [Fx] \ra \ex x \ [Fx]$
+                    \vspace{1em}\\
+                    \begin{tabular}{l l l l}
+                        \{1\} & 1. & $\all x \ [Fx]$ & Assumption\\
+                        \{1\} & 2. & $Fa$ & 1 UE\\
+                        \{1\} & 3. & $\ex x \ [Fx]$ & 2 EI\\
+                        -- & 4. & $\all x \ [Fx] \ra \ex x \ [Fx]$ & 1, 3 CP\\
+                    \end{tabular}
+                    \vspace{1em}
+                \end{minipage}
+                \begin{minipage}{\textwidth}
+                \item $\all x \ [\textrm{P} \ta Fx] : \textrm{P} \ta \ex x \ [Fx]$
+                    \vspace{1em}\\
+                    \begin{tabular}{l l l l}
+                        \{1\} & 1. & $\all x \ [\textrm{P} \ta Fx]$ & Premise\\
+                        \{1\} & 2. & $\textrm{P} \ta Fa$ & 1 UE\\
+                        \{1\} & 3. & $\textrm{P}$ & 2 \&E\\
+                        \{1\} & 4. & $Fa$ & 2 \&E\\
+                        \{1\} & 5. & $\ex x \ [Fx]$ & 4 EI\\
+                        \{1\} & 6. & $\textrm{P} \ta \ex x \ [Fx]$ & 3, 5 \&I\\
+                    \end{tabular}
+                    \vspace{1em}
+                \end{minipage}
+                \begin{minipage}{\textwidth}
+                \item $\s \ex x \ [Fx] : \s Fa$
+                    \vspace{1em}\\
+                    \begin{tabular}{l l l l}
+                        \{1\} & 1. & $\s \ex x \ [Fx]$ & Premise\\
+                        \{2\} & 2. & $Fa$ & Assumption\\
+                        \{2\} & 3. & $\ex x \ [Fx]$ & 2 EI\\
+                        \{1, 2\} & 4. & $\ex x \ [Fx] \ta \s \ex x \ [Fx]$ & 1, 3 \&I\\
+                        \{1\} & 5. & $\s Fa$ & 2, 4 RAA\\
+                    \end{tabular}
+                    \vspace{1em}
+                \end{minipage}
+                \begin{minipage}{\textwidth}
+                \item $\s \ex \ [Fx] : \all x \ [\s Fx]$
+                    \vspace{1em}\\
+                    \begin{tabular}{l l l l}
+                        \{1\} & 1. & $\s \ex \ [Fx]$ & Premise\\
+                        \{2\} & 2. & $Fa$ & Assumption\\
+                        \{2\} & 3. & $\ex x \ [Fx]$ & 2 EI\\
+                        \{1, 2\} & 4. & $\ex x \ [Fx] \ta \s \ex x \ [Fx]$ & 1, 3 \&I\\
+                        \{1\} & 5. & $\s Fa$ & 2, 4 RAA\\
+                        \{1\} & 6. & $\all x \ [\s Fx]$ & 5 UI\\
+                    \end{tabular}
+                    \vspace{1em}
+                \end{minipage}
+                \begin{minipage}{\textwidth}
+                \item $\s \all x \ [Fx] : \ex x \ [\s Fx]$
+                    \vspace{1em}\\
+                    \begin{tabular}{l l l l}
+                        \{1\} & 1. & $\s \all x \ [Fx]$ & Premise\\
+                        \{2\} & 2. & $\s \ex x \ [\s Fx]$ & Assumption\\
+                        \{3\} & 3. & $\s Fa$ & Assumption\\
+                        \{3\} & 4. & $\ex x \ [\s Fx]$ & 3 EI\\
+                        \{2, 3\} & 5. & $\ex x \ [\s Fx] \ta \s \ex x \ [\s Fx]$ & 2, 4 \&I\\
+                        \{2\} & 6. & $\s \s Fa$ & 3, 5 RAA\\
+                        \{2\} & 7. & $Fa$ & 6 DNE\\
+                        \{2\} & 8. & $\all x \ [Fx]$ & 7 UI\\
+                        \{1, 2\} & 9. & $\all x \ [Fx] \ta \s \all x \ [Fx]$ & 1, 8 \&I\\
+                        \{1\} & 10. & $\s \s \ex x \ [\s Fx]$ & 2, 9 RAA\\
+                        \{1\} & 11. & $\ex x \ [\s Fx]$ & 10 DNE\\
+                    \end{tabular}
+                    \vspace{1em}
+                \end{minipage}
+                \begin{minipage}{\textwidth}
+                \item $\s \ex x \ [\s Fx] : \all x \ [Fx]$
+                    \vspace{1em}\\
+                    \begin{tabular}{l l l l}
+                        \{1\} & 1. & $\s \ex x \ [\s Fx]$ & Premise\\
+                        \{2\} & 2. & $\s Fa$ & Assumption\\
+                        \{2\} & 3. & $\ex x \ [\s Fx]$ & 2 EI\\
+                        \{1, 2\} & 4. & $\ex x \ [\s Fx] \ta \s \ex x \ [\s Fx]$ & 1, 3 \&I\\
+                        \{1\} & 5. & $\s \s Fa$ & 2, 4 RAA\\
+                        \{1\} & 6. & $Fa$ & 5 DNE\\
+                        \{1\} & 7. & $\all x \ [Fx]$ & 6 UI\\
+                    \end{tabular}
+                    \vspace{1em}
+                \end{minipage}
+                \begin{minipage}{\textwidth}
+                \item $\s \all x \ [\s Fx] : \ex x \ [Fx]$
+                    \vspace{1em}\\
+                    \begin{tabular}{l l l l}
+                        \{1\} & 1. & $\s \all x \ [\s Fx]$ & Premise\\
+                        \{2\} & 2. & $\s \ex x \ [Fx]$ & Assumption\\
+                        \{3\} & 3. & $Fa$ & Assumption\\
+                        \{3\} & 4. & $\ex x \ [Fx]$ & 3 EI\\
+                        \{2, 3\} & 5. & $\ex x \ [Fx] \ta \s \ex x \ [Fx]$ & 2, 4 \&I\\
+                        \{2\} & 6. & $\s Fa$ & 3, 5 RAA\\
+                        \{2\} & 7. & $\all x \ [\s Fx]$ & 6 UI\\
+                        \{1, 2\} & 8. & $\all x \ [\s Fx] \ta \s \all x \ [\s Fx]$ & 1, 7 \&I\\
+                        \{1\} & 9. & $\s \s \ex x \ [Fx]$ & 2, 8 RAA\\
+                        \{1\} & 10. & $\ex x \ [Fx]$ & 9 DNE\\
+                    \end{tabular}
+                    \vspace{1em}
+                \end{minipage}
+                \begin{minipage}{\textwidth}
+                \item $: \ex x \ [Fx \tv \s Fx]$
+                    \vspace{1em}\\
+                    \begin{tabular}{l l l l}
+                        \{1\} & 1. & $\s (Fa \tv \s Fa)$ & Assumption\\
+                        \{2\} & 2. & $Fa$ & Assumption\\
+                        \{2\} & 3. & $Fa \tv \s Fa$ & 2 vI\\
+                        \{1, 2\} & 4. & $(Fa \tv \s Fa) \ta \s (Fa \tv \s Fa)$ & 1, 3 \&I\\
+                        \{1\} & 5. & $\s Fa$ & 2, 4 RAA\\
+                        \{1\} & 6. & $Fa \tv \s Fa$ & 5 vI\\
+                        \{1\} & 7. & $(Fa \tv \s Fa) \ta \s (Fa \tv \s Fa)$ & 1, 6 \&I\\
+                        -- & 8. & $\s \s (Fa \tv \s Fa)$ & 1, 7 RAA\\
+                        -- & 9. & $Fa \tv \s Fa$ & 8 DNE\\
+                        -- & 10. & $\ex x \ [Fx \tv \s Fx]$ & 9 EI\\
+                    \end{tabular}
+                    \vspace{1em}
+                \end{minipage}
+                \begin{minipage}{\textwidth}
+                \item $\ex x \ [Fx] \ra \all x \ [Gx],\\
+                    \all x \ [\s Hx \ra \s Gx] : \ex x \ [Fx] \ra \ex x \ [Hx]$
+                    \vspace{1em}\\
+                    \begin{tabular}{l l l l}
+                        \{1\} & 1. & $\ex x \ [Fx] \ra \all x \ [Gx]$ & Premise\\
+                        \{2\} & 2. & $\all x \ [\s Hx \ra \s Gx]$ & Premise\\
+                        \{3\} & 3. & $\ex x \ [Fx]$ & Assumption\\
+                        \{1, 3\} & 4. & $\all x \ [Gx]$ & 1, 3 MP\\
+                        \{1, 3\} & 5. & $Ga$ & 4 UE\\
+                        \{1, 3\} & 6. & $\s \s Ga$ & 5 DNI\\
+                        \{2\} & 7. & $\s Ha \ra \s Ga$ & 2 UE\\
+                        \{1, 2, 3\} & 8. & $\s \s Ha$ & 6, 7 MT\\
+                        \{1, 2, 3\} & 9. & $Ha$ & 8 DNE\\
+                        \{1, 2, 3\} & 10. & $\ex x \ [Hx]$ & 9 EI\\
+                        \{1, 2\} & 11. & $\ex x \ [Fx] \ra \ex x \ [Hx]$ & 3, 10 CP\\
+                    \end{tabular}
+                    \vspace{1em}
+                \end{minipage}
+                \begin{minipage}{\textwidth}
+                \item $\all x \ [Fx \lra Gx] : \ex x \ [Fx] \lra \ex x \ [Gx]$\\
+                    Note: I believe you need existential elimination rule to prove this sequent,\\
+                    and I'm not sure whether this can be done in 16 steps.
+                    \vspace{1em}\\
+                    \begin{tabular}{l l l l}
+                        \{1\} & 1. & $\all x \ [Fx \lra Gx]$ & Premise\\
+                        \{1\} & 2. & $Fa \lra Ga$ & 1 UE\\
+                        \{1\} & 3. & $(Fa \ra Ga) \ta (Ga \ra Fa)$ & 2 \mlra E\\
+                        \{1\} & 4. & $Fa \ra Ga$ & 3 \&E\\
+                        \{1\} & 5. & $Ga \ra Fa$ & 3 \&E\\
+                        \{6\} & 6. & $\ex x \ [Fx]$ & Assumption\\
+                        \{7\} & 7. & $Fa$ & Assumption\\
+                        \{1, 7\} & 8. & $Ga$ & 4, 7 MP\\
+                        \{1, 7\} & 9. & $\ex x \ [Gx]$ & 8 EI\\
+                        \{1, 6\} & 10. & $\ex x \ [Gx]$ & 6, 7, 9 EE\\
+                        \{1\} & 11. & $\ex x \ [Fx] \ra \ex x \ [Gx]$ & 6, 10 CP\\
+                        \{12\} & 12. & $\ex x \ [Gx]$ & Assumption\\
+                        \{13\} & 13. & $Ga$ & Assumption\\
+                        \{1, 13\} & 14. & $Fa$ & 5, 13 MP\\
+                        \{1, 13\} & 15. & $\ex x \ [Fx]$ & 14 EI\\
+                        \{1, 12\} & 16. & $\ex x \ [Fx]$ & 12, 13, 15 EE\\
+                        \{1\} & 17. & $\ex x \ [Gx] \ra \ex x \ [Fx]$ & 12, 16 CP\\
+                        \{1\} & 18. & $\ex x \ [Fx] \lra \ex x \ [Gx]$ & 11, 17 \mlra I\\
+                    \end{tabular}
+                    \vspace{1em}
+                \end{minipage}
+            \end{enumerate}
+
+    \end{enumerate}
+
+    \subsection*{EXERCISE 6.5}
+
+    \begin{enumerate}[label=\arabic*,leftmargin=*]
+
+        \item The proofs are the followings.
+            \nopagebreak
+            \begin{enumerate}[label=\arabic*.]
+
+                \begin{minipage}{\textwidth}
+                \item $\ex x \ [Fx] : \ex y \ [Fy]$
+                    \vspace{1em}\\
+                    \begin{tabular}{l l l l}
+                        \{1\} & 1. & $\ex x \ [Fx]$ & Premise\\
+                        \{2\} & 2. & $Fa$ & Assumption\\
+                        \{2\} & 3. & $\ex y \ [Fy]$ & 2 EI\\
+                        \{1\} & 4. & $\ex y \ [Fy]$ & 1, 2, 3 EE\\
+                    \end{tabular}
+                    \vspace{1em}
+                \end{minipage}
+                \begin{minipage}{\textwidth}
+                \item $\ex x \ [Fx \ta Gx]$
+                    \vspace{1em}\\
+                    \begin{tabular}{l l l l}
+                        \{1\} & 1. & $\ex x \ [Fx \ta Gx]$ & Premise\\
+                        \{2\} & 2. & $Fa \ta Ga$ & Assumption\\
+                        \{2\} & 3. & $Fa$ & 2 \&E\\
+                        \{2\} & 4. & $\ex x \ [Fx]$ & 3 EI\\
+                        \{2\} & 5. & $Ga$ & 2 \&E\\
+                        \{2\} & 6. & $\ex x \ [Gx]$ & 5 EI\\
+                        \{2\} & 7. & $\ex x \ [Fx] \ta \ex x \ [Fx]$ & 4, 6 \&I\\
+                        \{1\} & 8. & $\ex x \ [Fx] \ta \ex x \ [Fx]$ & 1, 2, 7 EE\\
+                    \end{tabular}
+                    \vspace{1em}
+                \end{minipage}
+                \begin{minipage}{\textwidth}
+                \item $\all x \ [Gx \ra Hx], \ex x \ [Fx \ta Gx] : \ex x \ [Fx \ta Hx]$
+                    \vspace{1em}\\
+                    \begin{tabular}{l l l l}
+                        \{1\} & 1. & $\all x \ [Gx \ra Hx]$ & Premise\\
+                        \{2\} & 2. & $\ex x \ [Fx \ta Gx]$ & Premise\\
+                        \{3\} & 3. & $Fa \ta Ga$ & Assumption\\
+                        \{3\} & 4. & $Fa$ & 3 \&E\\
+                        \{3\} & 5. & $Ga$ & 3 \&E\\
+                        \{1\} & 6. & $Ga \ra Ha$ & 1 UE\\
+                        \{1, 3\} & 7. & $Ha$ & 5, 6 MP\\
+                        \{1, 3\} & 8. & $Fa \ta Ha$ & 4, 7 \&I\\
+                        \{1, 3\} & 9. & $\ex x \ [Fx \ta Hx]$ & 8 EI\\
+                        \{1, 2\} & 10. & $\ex x \ [Fx \ta Hx]$ & 2, 3, 9 EE\\
+                    \end{tabular}
+                    \vspace{1em}
+                \end{minipage}
+                \begin{minipage}{\textwidth}
+                \item $\all x \ [Fx \ra Gx], \ex y \ [Fy \ta Hy] : \ex z \ [Gz \ta Hz]$
+                    \vspace{1em}\\
+                    \begin{tabular}{l l l l}
+                        \{1\} & 1. & $\all x \ [Fx \ra Gx]$ & Premise\\
+                        \{2\} & 2. & $\ex y \ [Fy \ta Hy]$ & Premise\\
+                        \{3\} & 3. & $Fa \ta Ha$ & Assumption\\
+                        \{3\} & 4. & $Fa$ & 3 \&E\\
+                        \{3\} & 5. & $Ha$ & 3 \&E\\
+                        \{1\} & 6. & $Fa \ra Ga$ & 1 UE\\
+                        \{1, 3\} & 7. & $Ga$ & 6, 4 MP\\
+                        \{1, 3\} & 8. & $Ga \ta Ha$ & 5, 7 \&I\\
+                        \{1, 3\} & 9. & $\ex z \ [Gz \ta Hz]$ & 8 EI\\
+                        \{1, 2\} & 10. & $\ex z \ [Gz \ta Hz]$ & 2, 3, 9 EE\\
+                    \end{tabular}
+                    \vspace{1em}
+                \end{minipage}
+                \begin{minipage}{\textwidth}
+                \item $\ex x \ [Fx \ta Gx], \all x \ [Hx \ra \s Gx] : \ex x \ [Fx \ta \s Hx]$
+                    \vspace{1em}\\
+                    \begin{tabular}{l l l l}
+                        \{1\} & 1. & $\ex x \ [Fx \ta Gx]$ & Premise\\
+                        \{2\} & 2. & $\all x \ [Hx \ra \s Gx]$ & Premise\\
+                        \{3\} & 3. & $Fa \ta Ga$ & Assumption\\
+                        \{3\} & 4. & $Fa$ & 3 \&E\\
+                        \{3\} & 5. & $Ga$ & 3 \&E\\
+                        \{2\} & 6. & $Ha \ra \s Ga$ & 2 UE\\
+                        \{3\} & 7. & $\s \s Ga$ & 5 DNI\\
+                        \{2, 3\} & 8. & $\s Ha$ & 6, 7 MT\\
+                        \{2, 3\} & 9. & $Fa \ta \s Ha$ & 4, 8 \&I\\
+                        \{2, 3\} & 10. & $\ex x \ [Fx \ta \s Hx]$ & 9 EI\\
+                        \{1, 2\} & 11. & $\ex x \ [Fx \ta \s Hx]$ & 1, 3, 10 EE\\
+                    \end{tabular}
+                    \vspace{1em}
+                \end{minipage}
+                \begin{minipage}{\textwidth}
+                \item $\all x \ [Gx \ra Hx] : \ex x \ [Gx] \ra \ex y \ [Hy]$
+                    \vspace{1em}\\
+                    \begin{tabular}{l l l l}
+                        \{1\} & 1. & $\all x \ [Gx \ra Hx]$ & Premise\\
+                        \{2\} & 2. & $\ex x \ [Gx]$ & Assumption\\
+                        \{3\} & 3. & $Ga$ & Assumption\\
+                        \{1\} & 4. & $Ga \ra Ha$ & 1 UE\\
+                        \{1, 3\} & 5. & $Ha$ & 3, 4 MP\\
+                        \{1, 3\} & 6. & $\ex x \ [Hx]$ & 5 EI\\
+                        \{1, 2\} & 7. & $\ex x \ [Hx]$ & 2, 3, 6 EE\\
+                        \{1\} & 8. & $\all x \ [Gx \ra Hx] \ra \ex x \ [Hx]$ & 2, 7 CP\\
+                    \end{tabular}
+                    \vspace{1em}
+                \end{minipage}
+                \begin{minipage}{\textwidth}
+                \item $\ex x \ [Fx \tv Gx] : \ex x \ [Fx] \tv \ex x \ [Gx]$
+                    \vspace{1em}\\
+                    \begin{tabular}{l l l l}
+                        \{1\} & 1. & $\ex x \ [Fx \tv Gx]$ & Premise\\
+                        \{2\} & 2. & $Fa \tv Ga$ & Assumption\\
+                        \{3\} & 3. & $Fa$ & Assumption\\
+                        \{3\} & 4. & $\ex x \ [Fx]$ & 3 EI\\
+                        \{3\} & 5. & $\ex x \ [Fx] \tv \ex x \ [Gx]$ & 4 vI\\
+                        \{6\} & 6. & $Ga$ & Assumption\\
+                        \{6\} & 7. & $\ex x \ [Gx]$ & 6 EI\\
+                        \{6\} & 8. & $\ex x \ [Fx] \tv \ex x \ [Gx]$ & 7 vI\\
+                        \{2\} & 9. & $\ex x \ [Fx] \tv \ex x \ [Gx]$ & 2, 3, 5, 6, 8 vE\\
+                        \{1\} & 10. & $\ex x \ [Fx] \tv \ex x \ [Gx]$ & 1, 2, 9 EE\\
+                    \end{tabular}
+                    \vspace{1em}
+                \end{minipage}
+                \begin{minipage}{\textwidth}
+                \item $\ex x \ [Fx] \tv \ex x \ [Gx] : \ex x \ [Fx \tv Gx]$
+                    \vspace{1em}\\
+                    \begin{tabular}{l l l l}
+                        \{1\} & 1. & $\ex x \ [Fx] \tv \ex x \ [Gx]$ & Premise\\
+                        \{2\} & 2. & $\ex x \ [Fx]$ & Assumption\\
+                        \{3\} & 3. & $Fa$ & Assumption\\
+                        \{3\} & 4. & $Fa \tv Ga$ & 3 vI\\
+                        \{3\} & 5. & $\ex x \ [Fx \tv Gx]$ & 4 EI\\
+                        \{2\} & 6. & $\ex x \ [Fx \tv Gx]$ & 2, 3, 6 EE\\
+                        \{7\} & 7. & $\ex x \ [Gx]$ & Assumption\\
+                        \{8\} & 8. & $Ga$ & Assumption\\
+                        \{8\} & 9. & $Fa \tv Ga$ & 8 vI\\
+                        \{8\} & 10. & $\ex x \ [Fx \tv Gx]$ & 9 EI\\
+                        \{7\} & 11. & $\ex x \ [Fx \tv Gx]$ & 7, 8, 10 EE\\
+                        \{1\} & 12. & $\ex x \ [Fx \tv Gx]$ & 1, 2, 6, 7, 11 vE\\
+                    \end{tabular}
+                    \vspace{1em}
+                \end{minipage}
+                \begin{minipage}{\textwidth}
+                \item $\ex x \ [Fx] : \s \all x \ [\s Fx]$
+                    \vspace{1em}\\
+                    \begin{tabular}{l l l l}
+                        \{1\} & 1. & $\ex x \ [Fx]$ & Premise\\
+                        \{2\} & 2. & $Fa$ & Assumption\\
+                        \{3\} & 3. & $\all x \ [\s Fx]$ & Assumption\\
+                        \{3\} & 4. & $\s Fa$ & 2 UE\\
+                        \{3, 4\} & 5. & $Fa \ta \s Fa$ & 2, 4 \&I\\
+                        \{2\} & 6. & $\s \all x \ [\s Fx]$ & 3, 5 RAA\\
+                        \{1\} & 7. & $\s \all x \ [\s Fx]$ & 1, 2, 6 EE\\
+                    \end{tabular}
+                    \vspace{1em}
+                \end{minipage}
+                \begin{minipage}{\textwidth}
+                \item $\ex x \ [Fx \ta \s Gx] : \s \all x \ [Fx \ra Gx]$
+                    \vspace{1em}\\
+                    \begin{tabular}{l l l l}
+                        \{1\} & 1. & $\ex x \ [Fx \ta \s Gx]$ & Premise\\
+                        \{2\} & 2. & $Fa \ta \s Ga$ & Assumption\\
+                        \{2\} & 3. & $Fa$ & 2 \&E\\
+                        \{2\} & 4. & $\s Ga$ & 2 \&E\\
+                        \{5\} & 5. & $\all x \ [Fx \ra Gx]$ & Assumption\\
+                        \{5\} & 6. & $Fa \ra Ga$ & 2 UE\\
+                        \{2, 5\} & 7. & $Ga$ & 3, 6 MP\\
+                        \{2, 5\} & 8. & $Ga \ta \s Ga$ & 4, 7 \&I\\
+                        \{2\} & 9. & $\s \all x \ [Fx \ra Gx]$ & 5, 8 RAA\\
+                        \{1\} & 10. & $\s \all x \ [Fx \ra Gx]$ & 1, 2, 9 EE\\
+                    \end{tabular}
+                    \vspace{1em}
+                \end{minipage}
+            \end{enumerate}
+
+    \end{enumerate}
+
+    \subsection*{EXERCISE 6.6}
+
+    \begin{enumerate}[label=\arabic*,leftmargin=*]
+
+        \item The proofs are the followings.
+            \nopagebreak
+            \begin{enumerate}[label=\arabic*.]
+
+                \begin{minipage}{\textwidth}
+                \item $\all y \ [\all x \ [Rxy]] : \all x \ [\all y \ [Rxy]]$
+                    \vspace{1em}\\
+                    \begin{tabular}{l l l l}
+                        \{1\} & 1. & $\all y \ [\all x \ [Rxy]]$ & Premise\\
+                        \{1\} & 2. & $\all x \ [Rxb]$ & 1 UE\\
+                        \{1\} & 3. & $Rab$ & 2 UE\\
+                        \{1\} & 4. & $\all y \ [Ray]$ & 3 UI\\
+                        \{1\} & 5. & $\all x \ [\all y \ [Rxy]]$ & 4 UI\\
+                    \end{tabular}
+                    \vspace{1em}
+                \end{minipage}
+                \begin{minipage}{\textwidth}
+                \item $\all x \ [\all y \ [\all z \ [Rxyz]]] : \all z \ [\all y \ [\all x \ [Rxyz]]]$
+                    \vspace{1em}\\
+                    \begin{tabular}{l l l l}
+                        \{1\} & 1. & $\all x \ [\all y \ [\all z \ [Rxyz]]]$ & Premise\\
+                        \{1\} & 2. & $\all y \ [\all z \ [Rxyc]]$ & 1 UE\\
+                        \{1\} & 3. & $\all z \ [Rxbc]$ & 2 UE\\
+                        \{1\} & 4. & $Rabc$ & 3 UE\\
+                        \{1\} & 5. & $\all x \ [Rxbc]$ & 4 UI\\
+                        \{1\} & 6. & $\all y \ [\all x \ [Rxyc]]$ & 5 UI\\
+                        \{1\} & 7. & $\all z \ [\all y \ [\all x \ [Rxyz]]]$ & 6 UI\\
+                    \end{tabular}
+                    \vspace{1em}
+                \end{minipage}
+                \begin{minipage}{\textwidth}
+                \item $\ex x \ [\all y \ [Rxy]] : \ex x \ [Rxa]$
+                    \vspace{1em}\\
+                    \begin{tabular}{l l l l}
+                        \{1\} & 1. & $\ex x \ [\all y \ [Rxy]]$ & Premise\\
+                        \{2\} & 2. & $\all y \ [Rby]$ & Assumption\\
+                        \{2\} & 3. & $Rba$ & 2 UE\\
+                        \{2\} & 4. & $\ex x \ [Rxa]$ & 3 EI\\
+                        \{1\} & 5. & $\ex x \ [Rxa]$ & 1, 2, 5 EE\\
+                    \end{tabular}
+                    \vspace{1em}
+                \end{minipage}
+                \begin{minipage}{\textwidth}
+                \item $\ex x \ [\ex y \ [Rxy]] : \ex y \ [\ex x \ [Rxy]]$
+                    \vspace{1em}\\
+                    \begin{tabular}{l l l l}
+                        \{1\} & 1. & $\ex x \ [\ex y \ [Rxy]]$ & Premise\\
+                        \{2\} & 2. & $\ex y \ [Ray]$ & Assumption\\
+                        \{3\} & 3. & $Rab$ & Assumption\\
+                        \{3\} & 4. & $\ex x \ [Rxb]$ & 3 EI\\
+                        \{3\} & 5. & $\ex y \ [\ex x \ [Rxy]]$ & 4 EI\\
+                        \{2\} & 6. & $\ex y \ [\ex x \ [Rxy]]$ & 2, 3, 5 EE\\
+                        \{1\} & 7. & $\ex y \ [\ex x \ [Rxy]]$ & 1, 2, 6 EE\\
+                    \end{tabular}
+                    \vspace{1em}
+                \end{minipage}
+                \begin{minipage}{\textwidth}
+                \item $\all x \ [\all y \ [Rxy \ra Ryx]] : \all x \ [\ex y \ [Rxy] \ra \ex y \ [Ryx]]$
+                    \vspace{1em}\\
+                    \begin{tabular}{l l l l}
+                        \{1\} & 1. & $\all x \ [\all y \ [Rxy \ra Ryx]]$ & Premise\\
+                        \{1\} & 2. & $\all y \ [Ray \ra Rya]$ & 1 UE\\
+                        \{1\} & 3. & $Rab \ra Rba$ & 2 UE\\
+                        \{4\} & 4. & $\ex y \ [Ray]$ & Assumption\\
+                        \{5\} & 5. & $Rab$ & Assumption\\
+                        \{1, 5\} & 6. & $Rba$ & 3, 5 MP\\
+                        \{1, 5\} & 7. & $\ex y \ [Rya]$ & 6 EI\\
+                        \{1, 4\} & 8. & $\ex y \ [Rya]$ & 4, 5, 7 EE\\
+                        \{1\} & 9. & $\ex y \ [Ray] \ra \ex y \ [Rya]$ & 4, 8 CP\\
+                        \{1\} & 10. & $\all x \ [\ex y \ [Rxy] \ra \ex y \ [Ryx]]$ & 9 UI\\
+                    \end{tabular}
+                    \vspace{1em}
+                \end{minipage}
+                \begin{minipage}{\textwidth}
+                \item $\all x \ [Fx \ra Gx] : \all x \ [\ex y \ [Fy \ta Rxy] \ra \ex y \ [Gy \ta Rxy]]$
+                    \vspace{1em}\\
+                    \begin{tabular}{l l l l}
+                        \{1\} & 1. & $\all x \ [Fx \ra Gx]$ & Premise\\
+                        \{1\} & 2. & $Fb \ra Gb$ & 1 UE\\
+                        \{3\} & 3. & $\ex y \ [Fy \ta Ray]$ & Assumption\\
+                        \{4\} & 4. & $Fb \ta Rab$ & Assumption\\
+                        \{4\} & 5. & $Fb$ & 4 \&E\\
+                        \{4\} & 6. & $Rab$ & 4 \&E\\
+                        \{1, 4\} & 7. & $Gb$ & 2, 5 MP\\
+                        \{1, 4\} & 8. & $Gb \ta Rab$ & 6, 7 \&I\\
+                        \{1, 4\} & 9. & $\ex y \ [Gy \ta Ray]$ & 8 EI\\
+                        \{1, 3\} & 10. & $\ex y \ [Gy \ta Ray]$ & 3, 4, 9 EE\\
+                        \{1\} & 11. & $\ex y \ [Fy \ta Ray] \ra \ex y \ [Gy \ta Ray]$ & 3, 10 CP\\
+                        \{1\} & 12. & $\all x \ [\ex y \ [Fy \ta Rxy] \ra \ex y \ [Gy \ta Rxy]]$ & 11 UI\\
+                    \end{tabular}
+                    \vspace{1em}
+                \end{minipage}
+                \begin{minipage}{\textwidth}
+                \item $\all x \ [\ex y \ [\all z \ [Rxyz]]] : \all x \ [\all z \ [\ex y \ [Rxyz]]]$
+                    \vspace{1em}\\
+                    \begin{tabular}{l l l l}
+                        \{1\} & 1. & $\all x \ [\ex y \ [\all z \ [Rxyz]]]$ & Premise\\
+                        \{1\} & 2. & $\ex y \ [\all z \ [Rayz]]$ & 1 UE\\
+                        \{3\} & 3. & $\all z \ [Rabz]$ & Assumption\\
+                        \{3\} & 4. & $Rabc$ & 3 UE\\
+                        \{3\} & 5. & $\ex y \ [Rayc]$ & 4 EI\\
+                        \{2\} & 6. & $\ex y \ [Rayc]$ & 2, 3, 5 EE\\
+                        \{1\} & 7. & $\all z \ [\ex y \ [Rayz]]$ & 6 UI\\
+                        \{1\} & 8. & $\all x \ [\all z \ [\ex y \ [Rxyz]]]$ & 7 UI\\
+                    \end{tabular}
+                    \vspace{1em}
+                \end{minipage}
+                \begin{minipage}{\textwidth}
+                \item $\ex x \ [Fx \ta \all y \ [Gy \ra Rxy]],\\
+                    \all x \ [Fx \ra \all y \ [Hy \ra \s Rxy]] : \all x \ [Gx \ra \s Hx]$\\
+                    Note: I believe the premises have typos in the book.\\
+                    The believed correct premises are written here.
+                    \vspace{1em}\\
+                    \begin{tabular}{l l l l}
+                        \{1\} & 1. & $\ex x \ [Fx \ta \all y \ [Gy \ra Rxy]]$ & Premise\\
+                        \{2\} & 2. & $\all x \ [Fx \ra \all y \ [Hy \ra \s Rxy]]$ & Premise\\
+                        \{3\} & 3. & $Gb$ & Assumption\\
+                        \{4\} & 4. & $Fa \ta \all y \ [Gy \ra Ray]$ & Assumption\\
+                        \{4\} & 5. & $Fa$ & 4 \&E\\
+                        \{4\} & 6. & $\all y \ [Gy \ra Ray]$ & 4 \&E\\
+                        \{4\} & 7. & $Gb \ra Rab$ & 6 UE\\
+                        \{3, 4\} & 8. & $Rab$ & 3, 7 MP\\
+                        \{3, 4\} & 9. & $\s \s Rab$ & 8 DNI\\
+                        \{2\} & 10. & $Fa \ra \all y \ [Hy \ra \s Ray]$ & 2 UE\\
+                        \{2, 4\} & 11. & $\all y \ [Hy \ra \s Ray]$ & 5, 10 MP\\
+                        \{2, 4\} & 12. & $Hb \ra \s Rab$ & 11 UE\\
+                        \{2, 3, 4\} & 13. & $\s Hb$ & 9, 12 MT\\
+                        \{2, 4\} & 14. & $Gb \ra \s Hb$ & 3, 13 CP\\
+                        \{2, 4\} & 15. & $\all x \ [Gx \ra \s Hx]$ & 14 UI\\
+                        \{1, 2\} & 16. & $\all x \ [Gx \ra \s Hx]$ & 1, 4, 15 EE\\
+                    \end{tabular}
+                    \vspace{1em}
+                \end{minipage}
+            \end{enumerate}
+
+        \item The proofs are the followings.
+            \nopagebreak
+            \begin{enumerate}[label=(\roman*)]
+                \begin{minipage}{\textwidth}
+                \item $\all x \ [\all y \ [Rxy \ra \s Ryx]] : \all x \ [\s Rxx]$
+                    \vspace{1em}\\
+                    \begin{tabular}{l l l l}
+                        \{1\} & 1. & $\all x \ [\all y \ [Rxy \ra \s Ryx]]$ & Premise\\
+                        \{2\} & 2. & $Raa$ & Assumption\\
+                        \{1\} & 3. & $\all y \ [Ray \ra \s Rya]$ & 1 UE\\
+                        \{1\} & 4. & $Raa \ra \s Raa$ & 3 UE\\
+                        \{1\} & 5. & $\s Raa$ & 2, 4 MP\\
+                        \{1, 2\} & 6. & $Raa \ta \s Raa$ & 2, 5 \&I\\
+                        \{1\} & 7. & $\s Raa$ & 2, 6 RAA\\
+                        \{1\} & 8. & $\all x \ [\s Rxx]$ & 7 UI\\
+                    \end{tabular}
+                    \vspace{1em}
+                \end{minipage}
+                \begin{minipage}{\textwidth}
+                \item $\all x \ [\all y \ [\all z \ [(Rxy \ta Ryz) \ra \s Rxz]]] : \all x \ [\s Rxx]$
+                    \vspace{1em}\\
+                    \begin{tabular}{l l l l}
+                        \{1\} & 1. & $\all x \ [\all y \ [\all z \ [(Rxy \ta Ryz) \ra \s Rxz]]]$ & Premise\\
+                        \{2\} & 2. & $Raa$ & Assumption\\
+                        \{1\} & 3. & $\all y \ [\all z \ [(Ray \ta Ryz) \ra \s Raz]]$ & 1 UE\\
+                        \{1\} & 4. & $\all z \ [(Raa \ta Raz) \ra \s Raz]$ & 3 UE\\
+                        \{1\} & 5. & $(Raa \ta Raa) \ra \s Raa$ & 4 UE\\
+                        \{2\} & 6. & $Raa \ta Raa$ & 2, 2 \&I\\
+                        \{1, 2\} & 7. & $\s Raa$ & 5, 6 MP\\
+                        \{1, 2\} & 8. & $Raa \ta \s Raa$ & 2, 7 \&I\\
+                        \{1\} & 9. & $\s Raa$ & 2, 8 RAA\\
+                        \{1\} & 10. & $\all x \ [\s Rxx]$ & 8 UI\\
+                    \end{tabular}
+                    \vspace{1em}
+                \end{minipage}
+            \end{enumerate}
+
+        \item $\all y \ [\ex x \ [Rxy]] : \ex x \ [\all y \ [Rxy]]$. One might try to solve it the following way.
+            \nopagebreak
+            \begin{minipage}{\textwidth}
+            \vspace{1em}
+            \begin{tabular}{l l l l}
+                \{1\} & 1. & $\all y \ [\ex x \ [Rxy]]$ & Premise\\
+                \{1\} & 2. & $\ex x \ [Rxb]$ & 1 UE\\
+                \{3\} & 3. & $Rab$ & Assumption\\
+                ? & 4. & $\all y \ [Ray]$ & ? UI\\
+            \end{tabular}
+            \vspace{1em}\\
+            It is not possible to introduce the last line, because the term $b$ in the previous line exists in it's assumptions (namely in the same line).
+            This is not a definitive proof.\\
+
+            One definitive argument for this, is that: if it would be true, then this is true for all relations, even for the equality relation. If that would be the case, we can show, that all terms are equal to each other. And this is contradictory, because there are interpretations where not all terms are the same. The proof for this is the following ($R$ is the $=$ relation).
+            \vspace{1em}\\
+            \begin{tabular}{l l l l}
+                \{1\} & 1. & $\all y \ [\ex x \ [x=y]] \ra \ex x \ [\all y \ [x=y]]$ & Premise\\
+                -- & 2. & $a=a$ & =I\\
+                -- & 3. & $\ex x \ [x=a]$ & 2 EI\\
+                -- & 4. & $\all y \ [\ex x \ [x=y]]$ & 3 UI\\
+                \{1\} & 5. & $\ex x \ [\all y \ [x=y]]$ & 1, 4 MP\\
+                \{6\} & 6. & $\all y \ [a=y]$ & Assumption\\
+                \{6\} & 7. & $a=b$ & 6 UE\\
+                \{6\} & 8. & $a=c$ & 6 UE\\
+                \{6\} & 9. & $b=c$ & 7, 8 =E\\
+                \{6\} & 10. & $\all y \ [b=y]$ & 9 UI\\
+                \{6\} & 11. & $\all x \ [\all y \ [x=y]]$ & 10 UI\\
+                \{1\} & 12. & $\all x \ [\all y \ [x=y]]$ & 5, 6, 11 EE\\
+            \end{tabular}
+            \vspace{1em}\\
+            The conclusion is not true in all interpretations: not all terms are the same in all interpretations. So if the premise cannot be true in all interpretations, therefore, the original argument is invalid.
+            \end{minipage}
+
+    \end{enumerate}
+
+    \subsection*{EXERCISE 6.7}
+
+    \begin{enumerate}[label=\arabic*,leftmargin=*]
+
+        \item The proofs are the followings.
+            \nopagebreak
+            \begin{enumerate}[label=\arabic*.]
+
+                \begin{minipage}{\textwidth}
+                \item $: \ex x \ [x=x]$
+                    \vspace{1em}\\
+                    \begin{tabular}{l l l l}
+                        -- & 1. & $a=a$ & =I\\
+                        -- & 2. & $\ex x \ [x=x]$ & 1 EI\\
+                    \end{tabular}
+                    \vspace{1em}
+                \end{minipage}
+                \begin{minipage}{\textwidth}
+                \item $(Fa \ta Ga), (a=b) : (Fb \ta Gb)$
+                    \vspace{1em}\\
+                    \begin{tabular}{l l l l}
+                        \{1\} & 1. & $(Fa \ta Ga)$ & Premise\\
+                        \{2\} & 2. & $(a=b)$ & Premise\\
+                        \{1, 2\} & 3. & $Fb \ta Gb$ & 1, 2 =E\\
+                    \end{tabular}
+                    \vspace{1em}
+                \end{minipage}
+                \begin{minipage}{\textwidth}
+                \item $\all x \ [Fx \ra (x=a)] : \ex x \ [Fx \ra Fa]$
+                    \vspace{1em}\\
+                    \begin{tabular}{l l l l}
+                        \{1\} & 1. & $\all x \ [Fx \ra (x=a)]$ & Premise\\
+                        \{2\} & 2. & $Fa$ & Assumption\\
+                        -- & 3. & $Fa \ra Fa$ & 2, 2 CP\\
+                        -- & 4. & $\ex x \ [Fx \ra Fa]$ & 3 EI\\
+                        \{1\} & 5. & $(\ex x \ [Fx \ra Fa]) \ta \all x \ [Fx \ra (x=a)]$ & 1, 4 \&I\\
+                        \{1\} & 6. & $\ex x \ [Fx \ra Fa]$ & 5 \&E\\
+                    \end{tabular}
+                    \vspace{1em}
+                \end{minipage}
+                \begin{minipage}{\textwidth}
+                \item $: ((a=b) \ta (b=c)) \ra (a=c)$
+                    \vspace{1em}\\
+                    \begin{tabular}{l l l l}
+                        \{1\} & 1. & $(a=b) \ta (b=c)$ & Premise\\
+                        \{1\} & 2. & $a=b$ & 1 \&E\\
+                        \{1\} & 3. & $b=c$ & 1 \&E\\
+                        \{1\} & 4. & $a=c$ & 2, 3 =E\\
+                        -- & 5. & $((a=b) \ta (b=c)) \ra (a=c)$ & 1, 4 CP\\
+                    \end{tabular}
+                    \vspace{1em}
+                \end{minipage}
+                \begin{minipage}{\textwidth}
+                \item $: \all x \ [\ex y \ [x=y]]$
+                    \vspace{1em}\\
+                    \begin{tabular}{l l l l}
+                        -- & 1. & $a=a$ & =I\\
+                        -- & 2. & $\ex y \ [a=y]$ & 1 EI\\
+                        -- & 3. & $\all x \ [\ex y \ [x=y]]$ & 2 UI\\
+                    \end{tabular}
+                    \vspace{1em}
+                \end{minipage}
+                \begin{minipage}{\textwidth}
+                \item $Fa : \ex x \ [(x=a) \ta Fx]$
+                    \vspace{1em}\\
+                    \begin{tabular}{l l l l}
+                        \{1\} & 1. & $Fa$ & Premise\\
+                        -- & 2. & $a=a$ & =I\\
+                        \{1\} & 3. & $(a=a) \ta Fa$ & 1, 2 \&I\\
+                        \{1\} & 4. & $\ex x \ [(x=a) \ta Fx]$ & 3 EI\\
+                    \end{tabular}
+                    \vspace{1em}
+                \end{minipage}
+                \begin{minipage}{\textwidth}
+                \item $\ex x \ [(x=a) \ta Fx] : Fa$
+                    \vspace{1em}\\
+                    \begin{tabular}{l l l l}
+                        \{1\} & 1. & $\ex x \ [(x=a) \ta Fx]$ & Premise\\
+                        \{2\} & 2. & $(b=a) \ta Fb$ & Assumption\\
+                        \{2\} & 3. & $b=a$ & 2 \&E\\
+                        \{2\} & 4. & $Fb$ & 2 \&E\\
+                        \{2\} & 5. & $Fa$ & 3, 4 =E\\
+                        \{1\} & 6. & $Fa$ & 1, 2, 5 EE\\
+                    \end{tabular}
+                    \vspace{1em}
+                \end{minipage}
+                \begin{minipage}{\textwidth}
+                \item $\all x \ [Fx \ra (Gx \tv (x=a))] : Ga \ra \all x \ [Fx \ra Gx]$
+                    \vspace{1em}\\
+                    \begin{tabular}{l l l l}
+                        \{1\} & 1. & $\all x \ [Fx \ra (Gx \tv (x=a))]$ & Premise\\
+                        \{2\} & 2. & $Ga$ & Assumption\\
+                        \{3\} & 3. & $Fb$ & Assumption\\
+                        \{1\} & 4. & $Fb \ra (Gb \tv (b=a))$ & 1 UE\\
+                        \{1, 3\} & 5. & $Gb \tv (b=a)$ & 3, 4 MP\\
+                        \{6\} & 6. & $Gb$ & Assumption\\
+                        \{7\} & 7. & $b=a$ & Assumption\\
+                        \{2, 7\} & 8. & $Gb$ & 2, 7 =E\\
+                        \{1, 2, 3\} & 9. & $Gb$ & 5, 6, 6, 7, 8 vE\\
+                        \{1, 2\} & 10. & $Fb \ra Gb$ & 3, 9 CP\\
+                        \{1, 2\} & 11. & $\all x \ [Fx \ra Gx]$ & 10 UI\\
+                        \{1\} & 12. & $Ga \ra \all x \ [Fx \ra Gx]$ & 2, 11 CP\\
+                    \end{tabular}
+                    \vspace{1em}
+                \end{minipage}
+                \begin{minipage}{\textwidth}
+                \item $\all x \ [Fx \ra Gx] : \all x \ [\all y \ [(Fx \ta \s Gy) \ra \s (x=y)]]$
+                    \vspace{1em}\\
+                    \begin{tabular}{l l l l}
+                        \{1\} & 1. & $\all x \ [Fx \ra Gx]$ & Premise\\
+                        \{2\} & 2. & $Fa \ta \s Gb$ & Assumption\\
+                        \{3\} & 3. & $a=b$ & Assumption\\
+                        \{1\} & 4. & $Fa \ra Ga$ & 1 UE\\
+                        \{2\} & 5. & $Fa$ & 2 \&E\\
+                        \{1, 2\} & 6. & $Ga$ & 4, 5 MP\\
+                        \{2\} & 7. & $\s Gb$ & 2 \&E\\
+                        \{2, 3\} & 8. & $\s Ga$ & 3, 7 =E\\
+                        \{1, 2, 3\} & 9. & $Ga \ta \s Ga$ & 6, 8 \&I\\
+                        \{1, 2\} & 10. & $\s (a=b)$ & 3, 9 RAA\\
+                        \{1\} & 11. & $(Fa \ta \s Gb) \ra \s (a=b)$ & 2, 10 CP\\
+                        \{1\} & 12. & $\all y \ [(Fa \ta \s Gy) \ra \s (a=y)]$ & 11 UI\\
+                        \{1\} & 13. & $\all x \ [\all y \ [(Fx \ta \s Gy) \ra \s (x=y)]]$ & 12 UI\\
+                    \end{tabular}
+                    \vspace{1em}
+                \end{minipage}
+                \begin{minipage}{\textwidth}
+                \item $\ex x \ [\all y \ [Fy \ra (x=y)]] : \all x \ [\all y \ [(Fx \ta Fy) \ra (x=y)]]$
+                    \vspace{1em}\\
+                    \begin{tabular}{l l l l}
+                        \{1\} & 1. & $\ex x \ [\all y \ [Fy \ra (x=y)]]$ & Premise\\
+                        \{2\} & 2. & $\all y \ [Fy \ra (a=y)]$ & Assumption\\
+                        \{3\} & 3. & $Fb \ta Fc$ & Assumption\\
+                        \{3\} & 4. & $Fb$ & 3 \&E\\
+                        \{3\} & 5. & $Fc$ & 3 \&E\\
+                        \{2\} & 6. & $Fb \ra (a=b)$ & 2 UE\\
+                        \{2\} & 7. & $Fc \ra (a=c)$ & 2 UE\\
+                        \{2, 3\} & 8. & $a=b$ & 4, 6 MP\\
+                        \{2, 3\} & 9. & $a=c$ & 5, 7 MP\\
+                        \{2, 3\} & 10. & $b=c$ & 8, 9 =E\\
+                        \{2\} & 11. & $(Fb \ta Fc) \ra (b=c)$ & 3, 10 CP\\
+                        \{1\} & 12. & $(Fb \ta Fc) \ra (b=c)$ & 1, 2, 11 EE\\
+                        \{1\} & 13. & $\all y \ [(Fb \ta Fy) \ra (b=y)]$ & 12 UI\\
+                        \{1\} & 14. & $\all x \ [\all y \ [(Fx \ta Fy) \ra (x=y)]]$ & 13 UI\\
+                    \end{tabular}
+                    \vspace{1em}
+                \end{minipage}
+            \end{enumerate}
+
+    \end{enumerate}
+
     \subsection*{REVISION EXERCISE III}
 
     \begin{enumerate}[label=\arabic*,leftmargin=*]
@@ -7479,4 +8186,27 @@ T & T & T & T & T &   & T & T  & T &   & \textbf{T} & T & F  & T & \textbf{T} & 
 
     \end{enumerate}
 
+    \subsection*{Examination 4 in Formal Logic}
+
+    \begin{enumerate}[label=\arabic*,leftmargin=*,start=2]
+
+        \begin{minipage}{\textwidth}
+        \item The proof is the following.\\
+            \begin{tabular}{l l l l}
+                \{1\}             & 1. & $\ex x \ [Fx \ra (a=x)]$ & Premise\\
+                \textbf{\{2\}}    & 2. & \boldmath$Fb \ra (a=b)$ & Assumption TD\\
+                \textbf{\{3\}}    & 3. & \boldmath$\s (b=a)$ & Assumption\\
+                \{4\}             & 4. & $Fb$ & Assumption\\
+                \textbf{\{2, 4\}} & 5. & \boldmath$a=b$ & 2, 4 MP\\
+                \textbf{--}       & 6. & \boldmath$a=a$ & =I\\
+                \{2, 4\}          & 7. & $(b=a)$ & 5, 6 =E\\
+                \{2, 3, 4\}       & 8. & $(b=a) \ta \s (b=a)$ & 3, 7 \&I\\
+                \textbf{\{2, 3\}} & 9. & $\s Fb$ & \textbf{4, 8 RAA}\\
+                \{2\}             &10. & \boldmath$\s (b=a) \ra \s Fb$ & 3, 9 CP\\
+                \{2\}             &11. & \boldmath$\ex x \ [\s (x=a) \ra \s Fx]$ & 10 EI\\
+                \{1\}             &12. & \boldmath$\ex x \ [\s (x=a) \ra \s Fx]$ & 1, 2, 11 EE\\
+            \end{tabular}
+        \end{minipage}
+
+    \end{enumerate}
 \end{document}
