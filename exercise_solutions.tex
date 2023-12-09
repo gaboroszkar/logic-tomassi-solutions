@@ -8369,9 +8369,98 @@ T & T & T & T & T &   & T & T  & T &   & \textbf{T} & T & F  & T & \textbf{T} & 
 
     \end{enumerate}
 
+    \newpage
+
     \subsection*{Examination 4 in Formal Logic}
 
-    \begin{enumerate}[label=\arabic*,leftmargin=*,start=2]
+    \begin{enumerate}[label=\arabic*,leftmargin=*]
+
+        \item The proofs are the followings.
+            \nopagebreak
+            \begin{enumerate}[label=(\roman*)]
+
+                \begin{minipage}{\textwidth}
+                \item $: \all x \ [Fx \ra Gx] \ra (\all x \ [Fx] \ra \all x \ [Gx])$\\
+                    Note: I believe the premises have typos in the book.\\
+                    The believed correct premises are written here.
+                    \vspace{1em}\\
+                    \begin{tabular}{l l l l}
+                        \{1\} & 1. & $\all x \ [Fx \ra Gx]$ & Assumption\\
+                        \{2\} & 2. & $\all x \ [Fx]$ & Assumption\\
+                        \{2\} & 3. & $Fa$ & 2 UE\\
+                        \{1\} & 4. & $Fa \ra Ga$ & 1 UE\\
+                        \{1, 2\} & 5. & $Ga$ & 3, 4 MP\\
+                        \{1, 2\} & 6. & $\all x \ [Gx]$ & 5 UI\\
+                        \{1\} & 7. & $\all x \ [Fx] \ra \all x \ [Gx]$ & 2, 6 CP\\
+                        -- & 8. & $\all x \ [Fx \ra Gx] \ra (\all x \ [Fx] \ra \all x \ [Gx])$ & 1, 7 CP\\
+                    \end{tabular}
+                    \vspace{1em}
+                \end{minipage}
+                \begin{minipage}{\textwidth}
+                \item $: \ex x \ [Fx \ta Gx] \ra (\ex x \ [Fx] \ta \ex x \ [Gx])$
+                    \vspace{1em}\\
+                    \begin{tabular}{l l l l}
+                        \{1\} & 1. & $\ex x \ [Fx \ta Gx]$ & Assumption\\
+                        \{2\} & 2. & $Fa \ta Ga$ & Assumption\\
+                        \{2\} & 3. & $Fa$ & 2 \&E\\
+                        \{2\} & 4. & $\ex x \ [Fx]$ & 3 EI\\
+                        \{2\} & 5. & $Ga$ & 2 \&E\\
+                        \{2\} & 6. & $\ex x \ [Gx]$ & 5 EI\\
+                        \{2\} & 7. & $\ex x \ [Fx] \ta \ex x \ [Gx]$ & 4, 6 \&I\\
+                        \{1\} & 8. & $\ex x \ [Fx] \ta \ex x \ [Gx]$ & 1, 2, 7 EE\\
+                        -- & 9. & $\ex x \ [Fx \ta Gx] \ra (\ex x \ [Fx] \ta \ex x \ [Gx])$ & 1, 8 CP\\
+                    \end{tabular}
+                    \vspace{1em}
+                \end{minipage}
+                \begin{minipage}{\textwidth}
+                \item $: \all x \ [Fx \ta Gx] \lra (\all x \ [Fx] \ta \all x \ [Ga])$
+                    \vspace{1em}\\
+                    \begin{tabular}{l l l l}
+                        \{1\} & 1. & $\all x \ [Fx \ta Gx]$ & Assumption\\
+                        \{1\} & 2. & $Fa \ta Ga$ & 1 UE\\
+                        \{1\} & 3. & $Fa$ & 2 \&E\\
+                        \{1\} & 4. & $\all x \ [Fx]$ & 3 UI\\
+                        \{1\} & 5. & $Ga$ & 2 \&E\\
+                        \{1\} & 6. & $\all x \ [Gx]$ & 5 UI\\
+                        \{1\} & 7. & $\all x \ [Fx] \ta \all x \ [Gx]$ & 4, 6 \&I\\
+                        -- & 8. & $\all x \ [Fx \ta Gx] \ra (\all x \ [Fx] \ta \all x \ [Gx])$ & 1, 7 CP\\
+                        \{9\} & 9. & $\all x \ [Fx] \ta \all x \ [Gx]$ & Assumption\\
+                        \{9\} & 10. & $\all x \ [Fx]$ & 9 \&E\\
+                        \{9\} & 11. & $Fa$ & 10 UE\\
+                        \{9\} & 12. & $\all x \ [Gx]$ & 9 \&E\\
+                        \{9\} & 13. & $Ga$ & 12 UE\\
+                        \{9\} & 14. & $Fa \ta Ga$ & 11, 13 \&I\\
+                        \{9\} & 15. & $\all x \ [Fx \ta Gx]$ & 14 UI\\
+                        -- & 16. & $(\all x \ [Fx] \ta \all x \ [Gx]) \ra \all x \ [Fx \ta Gx]$ & 9, 15 CP\\
+                        -- & 17. & $\all x \ [Fx \ta Gx] \lra (\all x \ [Fx] \ta \all x \ [Gx])$ & 8, 16 \mlra I\\
+                    \end{tabular}
+                    \vspace{1em}
+                \end{minipage}
+                \begin{minipage}{\textwidth}
+                \item $: \ex x \ [\ex y \ [Rxy]] \lra \ex y \ [\ex x \ [Rxy]]$
+                    \vspace{1em}\\
+                    \begin{tabular}{l l l l}
+                        \{1\} & 1. & $\ex x \ [\ex y \ [Rxy]]$ & Assumption\\
+                        \{2\} & 2. & $\ex y \ [Ray]$ & Assumption\\
+                        \{3\} & 3. & $Rab$ & Assumption\\
+                        \{3\} & 4. & $\ex x \ [Rxb]$ & 3 EI\\
+                        \{3\} & 5. & $\ex y \ [\ex x \ [Rxy]]$ & 4 EI\\
+                        \{2\} & 6. & $\ex y \ [\ex x \ [Rxy]]$ & 2, 3, 5 EE\\
+                        \{1\} & 7. & $\ex y \ [\ex x \ [Rxy]]$ & 1, 2, 6 EE\\
+                        -- & 8. & $\ex x \ [\ex y \ [Rxy]] \ra \ex y \ [\ex x \ [Rxy]]$ & 1, 7 CP\\
+                        \{9\} & 9. & $\ex y \ [\ex x \ [Rxy]]$ & Assumption\\
+                        \{10\} & 10. & $\ex x \ [Rxb]$ & Assumption\\
+                        \{11\} & 11. & $Rab$ & Assumption\\
+                        \{11\} & 12. & $\ex y \ [Ryb]$ & 11 EI\\
+                        \{11\} & 13. & $\ex x \ [\ex y \ [Rxy]]$ & 12 EI\\
+                        \{10\} & 14. & $\ex x \ [\ex y \ [Rxy]]$ & 10, 11, 13 EE\\
+                        \{9\} & 15. & $\ex x \ [\ex y \ [Rxy]]$ & 9, 10, 14 EE\\
+                        -- & 16. & $\ex y \ [\ex x \ [Rxy]] \ra \ex x \ [\ex y \ [Rxy]]$ & 9, 15 CP\\
+                        -- & 17. & $\ex x \ [\ex y \ [Rxy]] \lra \ex y \ [\ex x \ [Rxy]]$ & 8, 16 \mlra I\\
+                    \end{tabular}
+                    \vspace{1em}
+                \end{minipage}
+            \end{enumerate}
 
         \begin{minipage}{\textwidth}
         \item The proof is the following.\\
@@ -8390,6 +8479,57 @@ T & T & T & T & T &   & T & T  & T &   & \textbf{T} & T & F  & T & \textbf{T} & 
                 \{1\}             &12. & \boldmath$\ex x \ [\s (x=a) \ra \s Fx]$ & 1, 2, 11 EE\\
             \end{tabular}
         \end{minipage}
+
+        \item \
+            \begin{enumerate}[label=(\roman*)]
+
+                \item The domain is all animals and all body parts. $F$: ... is a horse. $G$: ... is an animal. $R$: ... is the head of ....\\
+                \begin{minipage}{\textwidth}
+                \item $\all x \ [Fx \ra Gx] : \all x \ [\ex y \ [Fy \ta Rxy] \ra \ex y \ [Gy \ta Rxy]]$
+                \vspace{1em}\\
+                    \begin{tabular}{l l l l}
+                        \{1\} & 1. & $\all x \ [Fx \ra Gx]$ & Premise\\
+                        \{2\} & 2. & $\ex y \ [Fy \ta Ray]$ & Assumption\\
+                        \{3\} & 3. & $Fb \ta Rab$ & Assumption\\
+                        \{3\} & 4. & $Fb$ & 3 \&E\\
+                        \{3\} & 5. & $Rab$ & 3 \&E\\
+                        \{1\} & 6. & $Fb \ra Gb$ & 1 UE\\
+                        \{1, 3\} & 7. & $Gb$ & 4, 6 MP\\
+                        \{1, 3\} & 8. & $Gb \ta Rab$ & 5, 7 \&I\\
+                        \{1, 3\} & 9. & $\ex y \ [Gy \ta Ray]$ & 8 EI\\
+                        \{1, 2\} & 10. & $\ex y \ [Gy \ta Ray]$ & 2, 3, 9 EE\\
+                        \{1\} & 11. & $\ex y \ [Fy \ta Ray] \ra \ex y \ [Gy \ta Ray]$ & 2, 10 CP\\
+                        \{1\} & 12. & $\all x \ [\ex y \ [Fy \ta Rxy] \ra \ex y \ [Gy \ta Rxy]]$ & 11 UI\\
+                    \end{tabular}
+                \end{minipage}
+            \end{enumerate}
+                \begin{minipage}{\textwidth}
+        \item The proof is the following.\\
+            $\ex x \ [Fx \ta \all y \ [Gy \ra Rxy]],\\
+                    \all x \ [Fx \ra \all y \ [Hy \ra \s Rxy]] : \all x \ [Gx \ra \s Hx]$\\
+                    Note: I believe the conclusion have a typo in the book.\\
+                    The believed correct conclusion is written here.\\
+                    (See also exercise 6.6, 8, which is believed to be the same.)
+                \vspace{1em}\\
+                    \begin{tabular}{l l l l}
+                        \{1\} & 1. & $\ex x \ [Fx \ta \all y \ [Gy \ra Rxy]]$ & Premise\\
+                        \{2\} & 2. & $\all x \ [Fx \ra \all y \ [Hy \ra \s Rxy]]$ & Premise\\
+                        \{3\} & 3. & $Gb$ & Assumption\\
+                        \{4\} & 4. & $Fa \ta \all y \ [Gy \ra Ray]$ & Assumption\\
+                        \{4\} & 5. & $Fa$ & 4 \&E\\
+                        \{4\} & 6. & $\all y \ [Gy \ra Ray]$ & 4 \&E\\
+                        \{4\} & 7. & $Gb \ra Rab$ & 6 UE\\
+                        \{3, 4\} & 8. & $Rab$ & 3, 7 MP\\
+                        \{3, 4\} & 9. & $\s \s Rab$ & 8 DNI\\
+                        \{2\} & 10. & $Fa \ra \all y \ [Hy \ra \s Ray]$ & 2 UE\\
+                        \{2, 4\} & 11. & $\all y \ [Hy \ra \s Ray]$ & 5, 10 MP\\
+                        \{2, 4\} & 12. & $Hb \ra \s Rab$ & 11 UE\\
+                        \{2, 3, 4\} & 13. & $\s Hb$ & 9, 12 MT\\
+                        \{2, 4\} & 14. & $Gb \ra \s Hb$ & 3, 13 CP\\
+                        \{2, 4\} & 15. & $\all x \ [Gx \ra \s Hx]$ & 14 UI\\
+                        \{1, 2\} & 16. & $\all x \ [Gx \ra \s Hx]$ & 1, 4, 15 EE\\
+                    \end{tabular}
+                \end{minipage}
 
     \end{enumerate}
 \end{document}
