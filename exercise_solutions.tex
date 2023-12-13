@@ -9032,9 +9032,9 @@ T & T & T & T & T &   & T & T  & T &   & \textbf{T} & T & F  & T & \textbf{T} & 
     \node[anchor=west] at ([xshift=-5.0cm]8.center) {8.};
     \node[anchor=west] at ([xshift=+5.0cm]8.center) {7 quantifier-equivalence.};
 
-    \node (9-1) at (-1,-9) {$\s Fa$ \\ \xmark 5, 9};
+    \node (9-1) at (-1,-9) {$\s Fa$ \\ \xmark \ 5, 9};
     \draw (8-1) -- (9-1);
-    \node (9-2) at (+1,-9) {$\s Ga$ \\ \xmark 5, 6};
+    \node (9-2) at (+1,-9) {$\s Ga$ \\ \xmark \ 5, 6};
     \draw (8-2) -- (9-2);
     \node[anchor=west] at ([xshift=-5.0cm]9.center) {9.};
     \node[anchor=west] at ([xshift=+5.0cm]9.center) {8 UIN.};
@@ -9412,6 +9412,641 @@ T & T & T & T & T &   & T & T  & T &   & \textbf{T} & T & F  & T & \textbf{T} & 
 \end{tikzpicture}
                     \vspace{1em}
                 \end{minipage}
+                \begin{minipage}{\textwidth}
+                \item $\all x \ [Fx \ra Gx] , \ex x \ [Hx \ta \s Fx] : \ex x \ [Hx \ta \s Gx]$ \\
+                    Invalid. IQLI: $F$: \{\}, $G$: \{1\}, $H$: \{1\}, $a$: 1.
+                    \vspace{1em}\\
+\begin{tikzpicture}[every text node part/.style={align=center}]
+    \node (1) at (0,-1) {$\all x \ [Fx \ra Gx]$};
+    \node[anchor=west] at ([xshift=-5.0cm]1.center) {1.};
+    \node[anchor=west] at ([xshift=+5.0cm]1.center) {Premise.};
+
+    \node (2) at (0,-2) {$\ex x \ [Hx \ta \s Fx]$};
+    \draw (1) -- (2);
+    \node[anchor=west] at ([xshift=-5.0cm]2.center) {2.};
+    \node[anchor=west] at ([xshift=+5.0cm]2.center) {Premise.};
+
+    \node (3) at (0,-3) {$\s \ex x \ [Hx \ta \s Hx]$};
+    \draw (2) -- (3);
+    \node[anchor=west] at ([xshift=-5.0cm]3.center) {3.};
+    \node[anchor=west] at ([xshift=+5.0cm]3.center) {Negated conclusion.};
+
+    \node (4) at (0,-4) {$\all x \ [\s (Hx \ta \s Gx])]$};
+    \draw (3) -- (4);
+    \node[anchor=west] at ([xshift=-5.0cm]4.center) {4.};
+    \node[anchor=west] at ([xshift=+5.0cm]4.center) {3 quantifier-equivalence.};
+
+    \node (5) at (0,-5) {$Ha \ta \s Fa$};
+    \draw (4) -- (5);
+    \node[anchor=west] at ([xshift=-5.0cm]5.center) {5.};
+    \node[anchor=west] at ([xshift=+5.0cm]5.center) {2 EIN.};
+
+    \node (6) at (0,-6) {$Ha$};
+    \draw (5) -- (6);
+    \node[anchor=west] at ([xshift=-5.0cm]6.center) {6.};
+    \node[anchor=west] at ([xshift=+5.0cm]6.center) {From line 5.};
+
+    \node (7) at (0,-7) {$\s Fa$};
+    \draw (6) -- (7);
+    \node[anchor=west] at ([xshift=-5.0cm]7.center) {7.};
+    \node[anchor=west] at ([xshift=+5.0cm]7.center) {From line 5.};
+
+    \node (8) at (0,-8) {$Fa \ra Ga$};
+    \draw (7) -- (8);
+    \node[anchor=west] at ([xshift=-5.0cm]8.center) {8.};
+    \node[anchor=west] at ([xshift=+5.0cm]8.center) {1 UIN.};
+
+    \node (9) at (0,-9) {$\s (Ha \ta \s Ga)$};
+    \draw (8) -- (9);
+    \node[anchor=west] at ([xshift=-5.0cm]9.center) {9.};
+    \node[anchor=west] at ([xshift=+5.0cm]9.center) {4 UIN.};
+
+    \node (10-1) at (-1,-10) {$\s Fa$};
+    \draw (9) -- (10-1);
+    \node (10-2) at (+1,-10) {$Ga$};
+    \draw (9) -- (10-2);
+    \node[anchor=west] at ([xshift=-5.0cm]10.center) {10.};
+    \node[anchor=west] at ([xshift=+5.0cm]10.center) {From line 8.};
+
+    \node (11-1) at (-2,-11) {$\s Ha$ \\ \xmark \ 6, 11};
+    \draw (10-1) -- (11-1);
+    \node (11-2) at (0,-11) {$\s \s Ga$};
+    \draw (10-1) -- (11-2);
+    \node[anchor=west] at ([xshift=-5.0cm]1.center |- 11-1) {11.};
+    \node[anchor=west] at ([xshift=+5.0cm]1.center |- 11-1) {From line 9.};
+
+    \node (12) at (0,-12) {$Ga$ \\ \cmark};
+    \draw (11-2) -- (12);
+    \node[anchor=west] at ([xshift=-5.0cm]1.center |- 12) {12.};
+    \node[anchor=west] at ([xshift=+5.0cm]1.center |- 12) {From line 11.};
+\end{tikzpicture}
+                    \vspace{1em}
+                \end{minipage}
+                \begin{minipage}{\textwidth}
+                \item $\ex x \ [Fx \ta Gx], \ex x \ [Gx \ta Hx] : \ex x \ [Fx \ta Hx]$ \\
+                    Invalid. IQLI: $F$: \{1\}, $G$: \{1, 2\}, $H$: \{2\}, $a$: 1, $b$: 2.
+                    \vspace{1em}\\
+\begin{tikzpicture}[every text node part/.style={align=center}]
+    \node (1) at (0,-1) {$\ex x \ [Fx \ta Gx]$};
+    \node[anchor=west] at ([xshift=-5.0cm]1.center) {1.};
+    \node[anchor=west] at ([xshift=+5.0cm]1.center) {Premise.};
+
+    \node (2) at (0,-2) {$\ex x \ [Gx \ta Hx]$};
+    \draw (1) -- (2);
+    \node[anchor=west] at ([xshift=-5.0cm]2.center) {2.};
+    \node[anchor=west] at ([xshift=+5.0cm]2.center) {Premise.};
+
+    \node (3) at (0,-3) {$\s \ex x \ [Fx \ta Hx]$};
+    \draw (2) -- (3);
+    \node[anchor=west] at ([xshift=-5.0cm]3.center) {3.};
+    \node[anchor=west] at ([xshift=+5.0cm]3.center) {Negated conclusion.};
+
+    \node (4) at (0,-4) {$\all x \ [\s (Fx \ta Hx)]$};
+    \draw (3) -- (4);
+    \node[anchor=west] at ([xshift=-5.0cm]4.center) {4.};
+    \node[anchor=west] at ([xshift=+5.0cm]4.center) {3 quantifier-equivalence.};
+
+    \node (5) at (0,-5) {$Fa \ta Ga$};
+    \draw (4) -- (5);
+    \node[anchor=west] at ([xshift=-5.0cm]5.center) {5.};
+    \node[anchor=west] at ([xshift=+5.0cm]5.center) {1 EIN.};
+
+    \node (6) at (0,-6) {$Fa$};
+    \draw (5) -- (6);
+    \node[anchor=west] at ([xshift=-5.0cm]6.center) {6.};
+    \node[anchor=west] at ([xshift=+5.0cm]6.center) {From line 5.};
+
+    \node (7) at (0,-7) {$Ga$};
+    \draw (6) -- (7);
+    \node[anchor=west] at ([xshift=-5.0cm]7.center) {7.};
+    \node[anchor=west] at ([xshift=+5.0cm]7.center) {From line 5.};
+
+    \node (8) at (0,-8) {$Gb \ta Hb$};
+    \draw (7) -- (8);
+    \node[anchor=west] at ([xshift=-5.0cm]8.center) {8.};
+    \node[anchor=west] at ([xshift=+5.0cm]8.center) {2 EIN.};
+
+    \node (9) at (0,-9) {$Gb$};
+    \draw (8) -- (9);
+    \node[anchor=west] at ([xshift=-5.0cm]9.center) {9.};
+    \node[anchor=west] at ([xshift=+5.0cm]9.center) {From line 8.};
+
+    \node (10) at (0,-10) {$Hb$};
+    \draw (9) -- (10);
+    \node[anchor=west] at ([xshift=-5.0cm]10.center) {10.};
+    \node[anchor=west] at ([xshift=+5.0cm]10.center) {From line 8.};
+
+    \node (11) at (0,-11) {$\s (Fa \ta Ha)$};
+    \draw (10) -- (11);
+    \node[anchor=west] at ([xshift=-5.0cm]11.center) {11.};
+    \node[anchor=west] at ([xshift=+5.0cm]11.center) {4 UIN.};
+
+    \node (12) at (0,-12) {$\s (Fb \ta Hb)$};
+    \draw (11) -- (12);
+    \node[anchor=west] at ([xshift=-5.0cm]12.center) {12.};
+    \node[anchor=west] at ([xshift=+5.0cm]12.center) {4 UIN.};
+
+    \node (13-1) at (-1,-13) {$\s Fa$ \\ \xmark \ 6, 13};
+    \draw (12) -- (13-1);
+    \node (13-2) at (+1,-13) {$\s Ha$};
+    \draw (12) -- (13-2);
+    \node[anchor=west] at ([xshift=-5.0cm]1.center |- 13-1) {13.};
+    \node[anchor=west] at ([xshift=+5.0cm]1.center |- 13-1) {From line 11.};
+
+    \node (14-1) at (0,-14) {$\s Fb$ \\ \cmark};
+    \draw (13-2) -- (14-1);
+    \node (14-2) at (+2,-14) {$\s Hb$ \\ \xmark \ 10, 14};
+    \draw (13-2) -- (14-2);
+    \node[anchor=west] at ([xshift=-5.0cm]1.center |- 14-1) {14.};
+    \node[anchor=west] at ([xshift=+5.0cm]1.center |- 14-1) {From line 12.};
+\end{tikzpicture}
+                    \vspace{1em}
+                \end{minipage}
+                \begin{minipage}{\textwidth}
+                \item $\all x \ [(Fx \ta Gx) \ra Hx], \ex x \ [Fx], \ex x \ [Gx] : \ex x \ [Hx]$ \\
+                    Invalid. IQLI: $F$: \{1\}, $G$: \{2\}, $H$: \{\}, $a$: 1, $b$: 2.
+                    \vspace{1em}\\
+\begin{tikzpicture}[every text node part/.style={align=center}]
+    \node (1) at (0,-1) {$\all x \ [(Fx \ta Gx) \ra Hx]$};
+    \node[anchor=west] at ([xshift=-5.0cm]1.center) {1.};
+    \node[anchor=west] at ([xshift=+5.0cm]1.center) {Premise.};
+
+    \node (2) at (0,-2) {$\ex x \ [Fx]$};
+    \draw (1) -- (2);
+    \node[anchor=west] at ([xshift=-5.0cm]2.center) {2.};
+    \node[anchor=west] at ([xshift=+5.0cm]2.center) {Premise.};
+
+    \node (3) at (0,-3) {$\ex x \ [Gx]$};
+    \draw (2) -- (3);
+    \node[anchor=west] at ([xshift=-5.0cm]3.center) {3.};
+    \node[anchor=west] at ([xshift=+5.0cm]3.center) {Premise.};
+
+    \node (4) at (0,-4) {$\s \ex x \ [Hx]$};
+    \draw (3) -- (4);
+    \node[anchor=west] at ([xshift=-5.0cm]4.center) {4.};
+    \node[anchor=west] at ([xshift=+5.0cm]4.center) {Negated conclusion.};
+
+    \node (5) at (0,-5) {$\all x \ [\s Hx]$};
+    \draw (4) -- (5);
+    \node[anchor=west] at ([xshift=-5.0cm]5.center) {5.};
+    \node[anchor=west] at ([xshift=+5.0cm]5.center) {4 quantifier-equivalence.};
+
+    \node (6) at (0,-6) {$Fa$};
+    \draw (5) -- (6);
+    \node[anchor=west] at ([xshift=-5.0cm]6.center) {6.};
+    \node[anchor=west] at ([xshift=+5.0cm]6.center) {2 EIN.};
+
+    \node (7) at (0,-7) {$Gb$};
+    \draw (6) -- (7);
+    \node[anchor=west] at ([xshift=-5.0cm]7.center) {7.};
+    \node[anchor=west] at ([xshift=+5.0cm]7.center) {3 EIN.};
+
+    \node (8) at (0,-8) {$(Fa \ta Ga) \ra Ha$};
+    \draw (7) -- (8);
+    \node[anchor=west] at ([xshift=-5.0cm]8.center) {8.};
+    \node[anchor=west] at ([xshift=+5.0cm]8.center) {1 UIN.};
+
+    \node (9) at (0,-9) {$(Fb \ta Gb) \ra Hb$};
+    \draw (8) -- (9);
+    \node[anchor=west] at ([xshift=-5.0cm]9.center) {9.};
+    \node[anchor=west] at ([xshift=+5.0cm]9.center) {1 UIN.};
+
+    \node (10) at (0,-10) {$\s Ha$};
+    \draw (9) -- (10);
+    \node[anchor=west] at ([xshift=-5.0cm]10.center) {10.};
+    \node[anchor=west] at ([xshift=+5.0cm]10.center) {5 UIN.};
+
+    \node (11) at (0,-11) {$\s Hb$};
+    \draw (10) -- (11);
+    \node[anchor=west] at ([xshift=-5.0cm]11.center) {11.};
+    \node[anchor=west] at ([xshift=+5.0cm]11.center) {5 UIN.};
+
+    \node (12-1) at (0,-12) {$\s (Fa \ta Ga)$};
+    \draw (11-2) -- (12-1);
+    \node (12-2) at (+3,-12) {$Ha$ \\ \xmark \ 10, 12};
+    \draw (11-2) -- (12-2);
+    \node[anchor=west] at ([xshift=-5.0cm]1.center |- 12-1) {12.};
+    \node[anchor=west] at ([xshift=+5.0cm]1.center |- 12-1) {From line 8.};
+
+    \node (13-1) at (0,-13) {$\s (Fb \ta Gb)$};
+    \draw (12-1) -- (13-1);
+    \node (13-2) at (+3,-13) {$Hb$ \\ \xmark \ 11, 13};
+    \draw (12-1) -- (13-2);
+    \node[anchor=west] at ([xshift=-5.0cm]1.center |- 13-1) {13.};
+    \node[anchor=west] at ([xshift=+5.0cm]1.center |- 13-1) {From line 9.};
+
+    \node (14-1) at (0,-14) {$\s Ga$};
+    \draw (13-1) -- (14-1);
+    \node (14-2) at (+3,-14) {$\s Fa$ \\ \xmark \ 6, 14};
+    \draw (13-1) -- (14-2);
+    \node[anchor=west] at ([xshift=-5.0cm]1.center |- 14-1) {14.};
+    \node[anchor=west] at ([xshift=+5.0cm]1.center |- 14-1) {From line 12.};
+
+    \node (15-1) at (0,-15) {$\s Fb$ \\ \cmark};
+    \draw (14-1) -- (15-1);
+    \node (15-2) at (+3,-15) {$\s Gb$ \\ \xmark \ 7, 15};
+    \draw (14-1) -- (15-2);
+    \node[anchor=west] at ([xshift=-5.0cm]1.center |- 15-1) {15.};
+    \node[anchor=west] at ([xshift=+5.0cm]1.center |- 15-1) {From line 13.};
+\end{tikzpicture}
+                    \vspace{1em}
+                \end{minipage}
             \end{enumerate}
     \end{enumerate}
+
+    \subsection*{EXERCISE 7.3}
+
+    \begin{enumerate}[label=\arabic*,leftmargin=*]
+        \item The consistency-trees are the followings.\\
+            When an IQLI is specified, the domain is the whole numbers.
+            \nopagebreak
+            \begin{enumerate}[label=\arabic*.]
+                \begin{minipage}{\textwidth}
+                \item $: \ex x \ [Fx \tv \s Fx]$ \\
+                    Valid.
+                    \vspace{1em}\\
+\begin{tikzpicture}[every text node part/.style={align=center}]
+    \node (1) at (0,-1) {$\s \ex x \ [Fx \tv \s Fx]$};
+    \node[anchor=west] at ([xshift=-3.0cm]1.center) {1.};
+    \node[anchor=west] at ([xshift=+3.0cm]1.center) {Negated conclusion.};
+
+    \node (2) at (0,-2) {$\all x \ [\s (Fx \tv \s Fx)]$};
+    \draw (1) -- (2);
+    \node[anchor=west] at ([xshift=-3.0cm]2.center) {2.};
+    \node[anchor=west] at ([xshift=+3.0cm]2.center) {1 quantifier-equivalence.};
+
+    \node (3) at (0,-3) {$\s (Fa \tv \s Fa)$};
+    \draw (2) -- (3);
+    \node[anchor=west] at ([xshift=-3.0cm]3.center) {3.};
+    \node[anchor=west] at ([xshift=+3.0cm]3.center) {2 UIN.};
+
+    \node (4) at (0,-4) {$\s Fa$};
+    \draw (3) -- (4);
+    \node[anchor=west] at ([xshift=-3.0cm]4.center) {4.};
+    \node[anchor=west] at ([xshift=+3.0cm]4.center) {From line 3.};
+
+    \node (5) at (0,-5) {$\s \s Fa$ \\ \xmark 4, 5};
+    \draw (4) -- (5);
+    \node[anchor=west] at ([xshift=-3.0cm]5.center) {5.};
+    \node[anchor=west] at ([xshift=+3.0cm]5.center) {From line 3.};
+\end{tikzpicture}
+                    \vspace{1em}
+                \end{minipage}
+                \begin{minipage}{\textwidth}
+                \item $\all x \ [Fx \ra Gx] : \ex x \ [Fx \ta Gx]$ \\
+                    Invalid. IQLI: $F$: \{\}, $G$: \{\}, $a$: 1.
+                    \vspace{1em}\\
+\begin{tikzpicture}[every text node part/.style={align=center}]
+    \node (1) at (0,-1) {$\all x \ [Fx \ra Gx]$};
+    \node[anchor=west] at ([xshift=-3.0cm]1.center) {1.};
+    \node[anchor=west] at ([xshift=+3.0cm]1.center) {Premise.};
+
+    \node (2) at (0,-2) {$\s \ex x \ [Fx \ta Gx]$};
+    \draw (1) -- (2);
+    \node[anchor=west] at ([xshift=-3.0cm]2.center) {2.};
+    \node[anchor=west] at ([xshift=+3.0cm]2.center) {Negated conclusion.};
+
+    \node (3) at (0,-3) {$\all x \ [\s (Fx \ta Gx)]$};
+    \draw (2) -- (3);
+    \node[anchor=west] at ([xshift=-3.0cm]3.center) {3.};
+    \node[anchor=west] at ([xshift=+3.0cm]3.center) {2 quantifier-equivalence.};
+
+    \node (4) at (0,-4) {$Fa \ra Ga$};
+    \draw (3) -- (4);
+    \node[anchor=west] at ([xshift=-3.0cm]4.center) {4.};
+    \node[anchor=west] at ([xshift=+3.0cm]4.center) {1 UIN.};
+
+    \node (5) at (0,-5) {$\s (Fa \ta Ga)$};
+    \draw (4) -- (5);
+    \node[anchor=west] at ([xshift=-3.0cm]5.center) {5.};
+    \node[anchor=west] at ([xshift=+3.0cm]5.center) {3 UIN.};
+
+    \node (6-1) at (-1,-6) {$\s Fa$};
+    \draw (5) -- (6-1);
+    \node (6-2) at (+1,-6) {$Ga$};
+    \draw (5) -- (6-2);
+    \node[anchor=west] at ([xshift=-3.0cm]1.center |- 6-1) {6.};
+    \node[anchor=west] at ([xshift=+3.0cm]1.center |- 6-1) {From line 4.};
+
+    \node (7-1) at (-1.75,-7) {$\s Fa$ \\ \cmark};
+    \draw (6-1) -- (7-1);
+    \node (7-2) at (-0.25,-7) {$\s Ga$};
+    \draw (6-1) -- (7-2);
+    \node[anchor=west] at ([xshift=-3.0cm]1.center |- 7-1) {7.};
+    \node[anchor=west] at ([xshift=+3.0cm]1.center |- 7-1) {From line 5.};
+\end{tikzpicture}
+                    \vspace{1em}
+                \end{minipage}
+                \begin{minipage}{\textwidth}
+                \item $: \ex x \ [Fx] \tv \all x \ [\s Fx]$ \\
+                    Valid.
+                    \vspace{1em}\\
+\begin{tikzpicture}[every text node part/.style={align=center}]
+    \node (1) at (0,-1) {$\s (\ex x \ [Fx] \tv \all x \ [\s Fx])$};
+    \node[anchor=west] at ([xshift=-3.0cm]1.center) {1.};
+    \node[anchor=west] at ([xshift=+3.0cm]1.center) {Negated conclusion.};
+
+    \node (2) at (0,-2) {$\s \ex x \ [Fx]$};
+    \draw (1) -- (2);
+    \node[anchor=west] at ([xshift=-3.0cm]2.center) {2.};
+    \node[anchor=west] at ([xshift=+3.0cm]2.center) {From line 1.};
+
+    \node (3) at (0,-3) {$\s \all x \ [\s Fx]$};
+    \draw (2) -- (3);
+    \node[anchor=west] at ([xshift=-3.0cm]3.center) {3.};
+    \node[anchor=west] at ([xshift=+3.0cm]3.center) {From line 1.};
+
+    \node (4) at (0,-4) {$\all x \ [\s Fx]$};
+    \draw (3) -- (4);
+    \node[anchor=west] at ([xshift=-3.0cm]4.center) {4.};
+    \node[anchor=west] at ([xshift=+3.0cm]4.center) {2 quantifier-equivalence.};
+
+    \node (5) at (0,-5) {$\ex x \ [\s \s Fx]$};
+    \draw (4) -- (5);
+    \node[anchor=west] at ([xshift=-3.0cm]5.center) {5.};
+    \node[anchor=west] at ([xshift=+3.0cm]5.center) {3 quantifier-equivalence.};
+
+    \node (6) at (0,-6) {$\s \s Fa$};
+    \draw (5) -- (6);
+    \node[anchor=west] at ([xshift=-3.0cm]6.center) {6.};
+    \node[anchor=west] at ([xshift=+3.0cm]6.center) {5 EIN.};
+
+    \node (7) at (0,-7) {$\s Fa$ \\ \xmark 6, 7};
+    \draw (6) -- (7);
+    \node[anchor=west] at ([xshift=-3.0cm]7.center) {7.};
+    \node[anchor=west] at ([xshift=+3.0cm]7.center) {4 UIN.};
+\end{tikzpicture}
+                    \vspace{1em}
+                \end{minipage}
+                \begin{minipage}{\textwidth}
+                \item $\all x \ [Fx \tv Gx] : \all x \ [Fx] \tv \all x \ [Gx]$ \\
+                    Invalid. IQLI: $F$: \{2\}, $G$: \{1\}, $a$: 1, $b$: 2.
+                    \vspace{1em}\\
+\begin{tikzpicture}[every text node part/.style={align=center}]
+    \node (1) at (0,-1) {$\all x \ [Fx \tv Gx]$};
+    \node[anchor=west] at ([xshift=-3.0cm]1.center) {1.};
+    \node[anchor=west] at ([xshift=+3.0cm]1.center) {Premise.};
+
+    \node (2) at (0,-2) {$\s (\all x \ [Fx] \tv \all x \ [Gx])$};
+    \draw (1) -- (2);
+    \node[anchor=west] at ([xshift=-3.0cm]2.center) {2.};
+    \node[anchor=west] at ([xshift=+3.0cm]2.center) {Negated conclusion.};
+
+    \node (3) at (0,-3) {$\s \all x \ [Fx]$};
+    \draw (2) -- (3);
+    \node[anchor=west] at ([xshift=-3.0cm]3.center) {3.};
+    \node[anchor=west] at ([xshift=+3.0cm]3.center) {From line 2.};
+
+    \node (4) at (0,-4) {$\s \all x \ [Gx]$};
+    \draw (3) -- (4);
+    \node[anchor=west] at ([xshift=-3.0cm]4.center) {4.};
+    \node[anchor=west] at ([xshift=+3.0cm]4.center) {From line 2.};
+
+    \node (5) at (0,-5) {$\ex x \ [\s Fx]$};
+    \draw (4) -- (5);
+    \node[anchor=west] at ([xshift=-3.0cm]5.center) {5.};
+    \node[anchor=west] at ([xshift=+3.0cm]5.center) {3 quantifier-equivalence.};
+
+    \node (6) at (0,-6) {$\ex x \ [\s Gx]$};
+    \draw (5) -- (6);
+    \node[anchor=west] at ([xshift=-3.0cm]6.center) {6.};
+    \node[anchor=west] at ([xshift=+3.0cm]6.center) {4 quantifier-equivalence.};
+
+    \node (7) at (0,-7) {$\s Fa$};
+    \draw (6) -- (7);
+    \node[anchor=west] at ([xshift=-3.0cm]7.center) {7.};
+    \node[anchor=west] at ([xshift=+3.0cm]7.center) {5 EIN.};
+
+    \node (8) at (0,-8) {$\s Gb$};
+    \draw (7) -- (8);
+    \node[anchor=west] at ([xshift=-3.0cm]8.center) {8.};
+    \node[anchor=west] at ([xshift=+3.0cm]8.center) {6 EIN.};
+
+    \node (9) at (0,-9) {$Fa \tv Ga$};
+    \draw (8) -- (9);
+    \node[anchor=west] at ([xshift=-3.0cm]9.center) {9.};
+    \node[anchor=west] at ([xshift=+3.0cm]9.center) {1 UIN.};
+
+    \node (10) at (0,-10) {$Fb \tv Gb$};
+    \draw (9) -- (10);
+    \node[anchor=west] at ([xshift=-3.0cm]10.center) {10.};
+    \node[anchor=west] at ([xshift=+3.0cm]10.center) {1 UIN.};
+
+    \node (11-1) at (+0,-11) {$Ga$};
+    \draw (10) -- (11-1);
+    \node (11-2) at (+1.5,-11) {$Fa$ \\ \xmark \ 7, 11};
+    \draw (10) -- (11-2);
+    \node[anchor=west] at ([xshift=-3.0cm]1.center |- 11-1) {11.};
+    \node[anchor=west] at ([xshift=+3.0cm]1.center |- 11-1) {From line 9.};
+
+    \node (12-1) at (+0,-12) {$Fb$ \\ \cmark};
+    \draw (11-1) -- (12-1);
+    \node (12-2) at (+1.5,-12) {$Gb$ \\ \xmark \ 8, 12};
+    \draw (11-1) -- (12-2);
+    \node[anchor=west] at ([xshift=-3.0cm]1.center |- 12-1) {12.};
+    \node[anchor=west] at ([xshift=+3.0cm]1.center |- 12-1) {From line 10.};
+\end{tikzpicture}
+                    \vspace{1em}
+                \end{minipage}
+                \begin{minipage}{\textwidth}
+                \item $: (\all x \ [Fx] \ra \textrm{P}) \ra (\ex x \ [Fx] \ra \textrm{P})$ \\
+                    Invalid. IQLI: $F$: \{1\}, $a$: 1, $b$: 2, P: 0=1.
+                    \vspace{1em}\\
+\begin{tikzpicture}[every text node part/.style={align=center}]
+    \node (1) at (0,-1) {$\s ((\all x \ [Fx] \ra \textrm{P}) \ra (\ex x \ [Fx] \ra \textrm{P}))$};
+    \node[anchor=west] at ([xshift=-5.0cm]1.center) {1.};
+    \node[anchor=west] at ([xshift=+5.0cm]1.center) {Negated conclusion.};
+
+    \node (2) at (0,-2) {$\all x \ [Fx] \ra \textrm{P}$};
+    \draw (1) -- (2);
+    \node[anchor=west] at ([xshift=-5.0cm]2.center) {2.};
+    \node[anchor=west] at ([xshift=+5.0cm]2.center) {From line 1.};
+
+    \node (3) at (0,-3) {$\s (\ex x \ [Fx] \ra \textrm{P})$};
+    \draw (2) -- (3);
+    \node[anchor=west] at ([xshift=-5.0cm]3.center) {3.};
+    \node[anchor=west] at ([xshift=+5.0cm]3.center) {From line 1.};
+
+    \node (4) at (0,-4) {$\ex x \ [Fx]$};
+    \draw (3) -- (4);
+    \node[anchor=west] at ([xshift=-5.0cm]4.center) {4.};
+    \node[anchor=west] at ([xshift=+5.0cm]4.center) {From line 3.};
+
+    \node (5) at (0,-5) {$\s \textrm{P}$};
+    \draw (4) -- (5);
+    \node[anchor=west] at ([xshift=-5.0cm]5.center) {5.};
+    \node[anchor=west] at ([xshift=+5.0cm]5.center) {From line 3.};
+
+    \node (6) at (0,-6) {$Fa$};
+    \draw (5) -- (6);
+    \node[anchor=west] at ([xshift=-5.0cm]6.center) {6.};
+    \node[anchor=west] at ([xshift=+5.0cm]6.center) {4 EIN.};
+
+    \node (7-1) at (-1,-7) {$\s \all x \ [Fx]$};
+    \draw (6) -- (7-1);
+    \node (7-2) at (+1,-7) {$\textrm{P}$ \\ \xmark \ 5, 7};
+    \draw (6) -- (7-2);
+    \node[anchor=west] at ([xshift=-5.0cm]1.center |- 7-1) {7.};
+    \node[anchor=west] at ([xshift=+5.0cm]1.center |- 7-1) {From line 2.};
+
+    \node (8) at (-1,-8) {$\ex x \ [\s Fx]$};
+    \draw (7-1) -- (8);
+    \node[anchor=west] at ([xshift=-5.0cm]1.center |- 8) {8.};
+    \node[anchor=west] at ([xshift=+5.0cm]1.center |- 8) {7 quantifier-equivalence.};
+
+    \node (9) at (-1,-9) {$\s Fb$ \\ \cmark};
+    \draw (8) -- (9);
+    \node[anchor=west] at ([xshift=-5.0cm]1.center |- 9) {9.};
+    \node[anchor=west] at ([xshift=+5.0cm]1.center |- 9) {8 EIN.};
+\end{tikzpicture}
+                    \vspace{1em}
+                \end{minipage}
+                \begin{minipage}{\textwidth}
+                \item $\ex x \ [\s Fx], \all x \ [Fx \tv \s Gx] : \all x \ [\s Gx]$ \\
+                    Invalid. IQLI: $F$: \{2\}, $G$: \{2\}, $a$: 1, $b$: 2.
+                    \vspace{1em}\\
+\begin{tikzpicture}[every text node part/.style={align=center}]
+    \node (1) at (0,-1) {$\ex x \ [\s Fx]$};
+    \node[anchor=west] at ([xshift=-5.0cm]1.center) {1.};
+    \node[anchor=west] at ([xshift=+5.0cm]1.center) {Premise.};
+
+    \node (2) at (0,-2) {$\all x \ [Fx \tv \s Gx]$};
+    \draw (1) -- (2);
+    \node[anchor=west] at ([xshift=-5.0cm]2.center) {2.};
+    \node[anchor=west] at ([xshift=+5.0cm]2.center) {Premise.};
+
+    \node (3) at (0,-3) {$\s \all x \ [\s Gx]$};
+    \draw (2) -- (3);
+    \node[anchor=west] at ([xshift=-5.0cm]3.center) {3.};
+    \node[anchor=west] at ([xshift=+5.0cm]3.center) {Negated conclusion.};
+
+    \node (4) at (0,-4) {$\ex x \ [\s \s Gx]$};
+    \draw (3) -- (4);
+    \node[anchor=west] at ([xshift=-5.0cm]4.center) {4.};
+    \node[anchor=west] at ([xshift=+5.0cm]4.center) {3 quantifier-equivalence.};
+
+    \node (5) at (0,-5) {$\s Fa$};
+    \draw (4) -- (5);
+    \node[anchor=west] at ([xshift=-5.0cm]5.center) {5.};
+    \node[anchor=west] at ([xshift=+5.0cm]5.center) {1 EIN.};
+
+    \node (6) at (0,-6) {$\s \s Gb$};
+    \draw (5) -- (6);
+    \node[anchor=west] at ([xshift=-5.0cm]6.center) {6.};
+    \node[anchor=west] at ([xshift=+5.0cm]6.center) {4 EIN.};
+
+    \node (7) at (0,-7) {$Gb$};
+    \draw (6) -- (7);
+    \node[anchor=west] at ([xshift=-5.0cm]7.center) {7.};
+    \node[anchor=west] at ([xshift=+5.0cm]7.center) {From line 6.};
+
+    \node (8) at (0,-8) {$Fa \tv \s Ga$};
+    \draw (7) -- (8);
+    \node[anchor=west] at ([xshift=-5.0cm]8.center) {8.};
+    \node[anchor=west] at ([xshift=+5.0cm]8.center) {2 UIN.};
+
+    \node (9) at (0,-9) {$Fb \tv \s Gb$};
+    \draw (8) -- (9);
+    \node[anchor=west] at ([xshift=-5.0cm]9.center) {9.};
+    \node[anchor=west] at ([xshift=+5.0cm]9.center) {2 UIN.};
+
+    \node (10-1) at (-1,-10) {$Fa$ \\ \xmark \ 5, 10};
+    \draw (9) -- (10-1);
+    \node (10-2) at (+1,-10) {$\s Ga$};
+    \draw (9) -- (10-2);
+    \node[anchor=west] at ([xshift=-5.0cm]10.center) {10.};
+    \node[anchor=west] at ([xshift=+5.0cm]10.center) {From line 6.};
+
+    \node (11-1) at (0,-11) {$\s Gb$ \\ \xmark \ 7, 11};
+    \draw (10-2) -- (11-1);
+    \node (11-2) at (+2,-11) {$Fb$ \\ \cmark};
+    \draw (10-2) -- (11-2);
+    \node[anchor=west] at ([xshift=-5.0cm]11.center) {11.};
+    \node[anchor=west] at ([xshift=+5.0cm]11.center) {From line 9.};
+\end{tikzpicture}
+                    \vspace{1em}
+                \end{minipage}
+                \begin{minipage}{\textwidth}
+                \item $\all x \ [Fx \lra Gx] : \ex x \ [Fx] \lra \ex x \ [Gx]$ \\
+                    Valid.
+                    \vspace{1em}\\
+\begin{tikzpicture}[every text node part/.style={align=center}]
+    \node (1) at (0,-1) {$\all x \ [Fx \lra Gx]$};
+    \node[anchor=west] at ([xshift=-5.0cm]1.center) {1.};
+    \node[anchor=west] at ([xshift=+5.0cm]1.center) {Premise.};
+
+    \node (2) at (0,-2) {$\s (\ex x \ [Fx] \lra \ex x \ [Gx])$};
+    \draw (1) -- (2);
+    \node[anchor=west] at ([xshift=-5.0cm]2.center) {2.};
+    \node[anchor=west] at ([xshift=+5.0cm]2.center) {Negated conclusion.};
+
+    \node (3-1) at (-2,-3) {$\ex x \ [Fx]$};
+    \draw (2) -- (3-1);
+    \node (3-2) at (+2,-3) {$\ex x \ [Gx]$};
+    \draw (2) -- (3-2);
+    \node[anchor=west] at ([xshift=-5.0cm]3.center) {3.};
+    \node[anchor=west] at ([xshift=+5.0cm]3.center) {From line 2.};
+
+    \node (4-1) at (-2,-4) {$\s \ex x \ [Gx]$};
+    \draw (3-1) -- (4-1);
+    \node (4-2) at (+2,-4) {$\s \ex x \ [Fx]$};
+    \draw (3-2) -- (4-2);
+    \node[anchor=west] at ([xshift=-5.0cm]4.center) {4.};
+    \node[anchor=west] at ([xshift=+5.0cm]4.center) {From line 2.};
+
+    \node (5-1) at (-2,-5) {$\all x \ [\s Gx]$};
+    \draw (4-1) -- (5-1);
+    \node (5-2) at (+2,-5) {$\all x \ [\s Fx]$};
+    \draw (4-2) -- (5-2);
+    \node[anchor=west] at ([xshift=-5.0cm]5.center) {5.};
+    \node[anchor=west] at ([xshift=+5.0cm]5.center) {4 quantifier-equivalence.};
+
+    \node (6-1) at (-2,-6) {$Fa$};
+    \draw (5-1) -- (6-1);
+    \node (6-2) at (+2,-6) {$Ga$};
+    \draw (5-2) -- (6-2);
+    \node[anchor=west] at ([xshift=-5.0cm]6.center) {6.};
+    \node[anchor=west] at ([xshift=+5.0cm]6.center) {3 EIN.};
+
+    \node (7-1) at (-2,-7) {$\s Ga$};
+    \draw (6-1) -- (7-1);
+    \node (7-2) at (+2,-7) {$\s Fa$};
+    \draw (6-2) -- (7-2);
+    \node[anchor=west] at ([xshift=-5.0cm]7.center) {7.};
+    \node[anchor=west] at ([xshift=+5.0cm]7.center) {5 UIN.};
+
+    \node (8-1) at (-2,-8) {$Fa \lra Ga$};
+    \draw (7-1) -- (8-1);
+    \node (8-2) at (+2,-8) {$Fa \lra Ga$};
+    \draw (7-2) -- (8-2);
+    \node[anchor=west] at ([xshift=-5.0cm]8.center) {8.};
+    \node[anchor=west] at ([xshift=+5.0cm]8.center) {1 UIN.};
+
+    \node (9-1-1) at (-3,-9) {$Fa$};
+    \draw (8-1) -- (9-1-1);
+    \node (9-1-2) at (-1,-9) {$\s Fa$};
+    \draw (8-1) -- (9-1-2);
+    \node (9-2-1) at (+1,-9) {$Fa$};
+    \draw (8-2) -- (9-2-1);
+    \node (9-2-2) at (+3,-9) {$\s Fa$};
+    \draw (8-2) -- (9-2-2);
+    \node[anchor=west] at ([xshift=-5.0cm]9.center) {9.};
+    \node[anchor=west] at ([xshift=+5.0cm]9.center) {From line 8.};
+
+    \node (10-1-1) at (-3,-10) {$Ga$ \\ \xmark \ 7, 10};
+    \draw (9-1-1) -- (10-1-1);
+    \node (10-1-2) at (-1,-10) {$\s Ga$ \\ \xmark \ 6, 9};
+    \draw (9-1-2) -- (10-1-2);
+    \node (10-2-1) at (+1,-10) {$Ga$ \\ \xmark \ 7, 9};
+    \draw (9-2-1) -- (10-2-1);
+    \node (10-2-2) at (+3,-10) {$\s Ga$ \\ \xmark \ 6, 10};
+    \draw (9-2-2) -- (10-2-2);
+    \node[anchor=west] at ([xshift=-5.0cm]10.center) {10.};
+    \node[anchor=west] at ([xshift=+5.0cm]10.center) {From line 8.};
+\end{tikzpicture}
+                    \vspace{1em}
+                \end{minipage}
+            \end{enumerate}
+    \end{enumerate}
+
 \end{document}
