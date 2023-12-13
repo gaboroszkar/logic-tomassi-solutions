@@ -10046,6 +10046,129 @@ T & T & T & T & T &   & T & T  & T &   & \textbf{T} & T & F  & T & \textbf{T} & 
 \end{tikzpicture}
                     \vspace{1em}
                 \end{minipage}
+                \begin{minipage}{\textwidth}
+                \item $\all x \ [\ex y \ [Rxy]] : \ex y \ [Ray]$ \\
+                    Valid.
+                    \vspace{1em}\\
+\begin{tikzpicture}[every text node part/.style={align=center}]
+    \node (1) at (0,-1) {$\all x \ [\ex y \ [Rxy]]$};
+    \node[anchor=west] at ([xshift=-5.0cm]1.center) {1.};
+    \node[anchor=west] at ([xshift=+5.0cm]1.center) {Premise.};
+
+    \node (2) at (0,-2) {$\s \ex y \ [Ray]$};
+    \draw (1) -- (2);
+    \node[anchor=west] at ([xshift=-5.0cm]2.center) {2.};
+    \node[anchor=west] at ([xshift=+5.0cm]2.center) {Negated conclusion.};
+
+    \node (3) at (0,-3) {$\all y \ [\s Ray]$};
+    \draw (2) -- (3);
+    \node[anchor=west] at ([xshift=-5.0cm]3.center) {3.};
+    \node[anchor=west] at ([xshift=+5.0cm]3.center) {2 quantifier-equivalence.};
+
+    \node (4) at (0,-4) {$\ex y \ [Ray]$};
+    \draw (3) -- (4);
+    \node[anchor=west] at ([xshift=-5.0cm]4.center) {4.};
+    \node[anchor=west] at ([xshift=+5.0cm]4.center) {1 UIN.};
+
+    \node (5) at (0,-5) {$Rab$};
+    \draw (4) -- (5);
+    \node[anchor=west] at ([xshift=-5.0cm]5.center) {5.};
+    \node[anchor=west] at ([xshift=+5.0cm]5.center) {4 EIN.};
+
+    \node (6) at (0,-6) {$\s Rab$ \\ \xmark \ 5, 6};
+    \draw (5) -- (6);
+    \node[anchor=west] at ([xshift=-5.0cm]6.center) {6.};
+    \node[anchor=west] at ([xshift=+5.0cm]6.center) {3 UIN.};
+\end{tikzpicture}
+                    \vspace{1em}
+                \end{minipage}
+                \begin{minipage}{\textwidth}
+                \item $\all x \ [\all y \ [Rxy]] : \all x \ [Rxx]$ \\
+                    Valid.
+                    \vspace{1em}\\
+\begin{tikzpicture}[every text node part/.style={align=center}]
+    \node (1) at (0,-1) {$\all x \ [\all y \ [Rxy]]$};
+    \node[anchor=west] at ([xshift=-5.0cm]1.center) {1.};
+    \node[anchor=west] at ([xshift=+5.0cm]1.center) {Premise.};
+
+    \node (2) at (0,-2) {$\s \all x \ [Rxx]$};
+    \draw (1) -- (2);
+    \node[anchor=west] at ([xshift=-5.0cm]2.center) {2.};
+    \node[anchor=west] at ([xshift=+5.0cm]2.center) {Negated conclusion.};
+
+    \node (3) at (0,-3) {$\ex x \ [\s Rxx]$};
+    \draw (2) -- (3);
+    \node[anchor=west] at ([xshift=-5.0cm]3.center) {3.};
+    \node[anchor=west] at ([xshift=+5.0cm]3.center) {2 quantifier-equivalence.};
+
+    \node (4) at (0,-4) {$\s Raa$};
+    \draw (3) -- (4);
+    \node[anchor=west] at ([xshift=-5.0cm]4.center) {4.};
+    \node[anchor=west] at ([xshift=+5.0cm]4.center) {3 EIN.};
+
+    \node (5) at (0,-5) {$\all y \ [Ray]$};
+    \draw (4) -- (5);
+    \node[anchor=west] at ([xshift=-5.0cm]5.center) {5.};
+    \node[anchor=west] at ([xshift=+5.0cm]5.center) {1 UIN.};
+
+    \node (6) at (0,-6) {$Raa$ \\ \xmark \ 4, 6};
+    \draw (5) -- (6);
+    \node[anchor=west] at ([xshift=-5.0cm]6.center) {6.};
+    \node[anchor=west] at ([xshift=+5.0cm]6.center) {5 UIN.};
+\end{tikzpicture}
+                    \vspace{1em}
+                \end{minipage}
+                \begin{minipage}{\textwidth}
+                \item $\all x \ [\ex y \ [Ryx]] : \ex y \ [\all x \ [Ryx]]$ \\
+                    Invalid. Undecidable.
+                    \vspace{1em}\\
+\begin{tikzpicture}[every text node part/.style={align=center}]
+    \node (1) at (0,-1) {$\all x \ [\ex y \ [Ryx]]$};
+    \node[anchor=west] at ([xshift=-5.0cm]1.center) {1.};
+    \node[anchor=west] at ([xshift=+5.0cm]1.center) {Premise.};
+
+    \node (2) at (0,-2) {$\s \ex y \ [\all x \ [Ryx]]$};
+    \draw (1) -- (2);
+    \node[anchor=west] at ([xshift=-5.0cm]2.center) {2.};
+    \node[anchor=west] at ([xshift=+5.0cm]2.center) {Negated conclusion.};
+
+    \node (3) at (0,-3) {$\all y \ [\s \all x \ [Ryx]]$};
+    \draw (2) -- (3);
+    \node[anchor=west] at ([xshift=-5.0cm]3.center) {3.};
+    \node[anchor=west] at ([xshift=+5.0cm]3.center) {2 quantifier-equivalence.};
+
+    \node (4) at (0,-4) {$\all y \ [\ex x \ [\s Ryx]]$};
+    \draw (3) -- (4);
+    \node[anchor=west] at ([xshift=-5.0cm]4.center) {4.};
+    \node[anchor=west] at ([xshift=+5.0cm]4.center) {3 quantifier-equivalence.};
+
+    \node (5) at (0,-5) {$\ex y \ [Rya]$};
+    \draw (4) -- (5);
+    \node[anchor=west] at ([xshift=-5.0cm]5.center) {5.};
+    \node[anchor=west] at ([xshift=+5.0cm]5.center) {1 UIN.};
+
+    \node (6) at (0,-6) {$Rba$};
+    \draw (5) -- (6);
+    \node[anchor=west] at ([xshift=-5.0cm]6.center) {6.};
+    \node[anchor=west] at ([xshift=+5.0cm]6.center) {5 EIN.};
+
+    \node (7) at (0,-7) {$\ex y \ [Ryb]$};
+    \draw (6) -- (7);
+    \node[anchor=west] at ([xshift=-5.0cm]7.center) {7.};
+    \node[anchor=west] at ([xshift=+5.0cm]7.center) {1 UIN.};
+
+    \node (8) at (0,-8) {$Rcb$};
+    \draw (7) -- (8);
+    \node[anchor=west] at ([xshift=-5.0cm]8.center) {8.};
+    \node[anchor=west] at ([xshift=+5.0cm]8.center) {7 EIN.};
+
+    \node (9) at (0,-9) {.};
+    \draw (8) -- (9);
+    \node[anchor=west] at ([xshift=-5.0cm]9.center) {};
+    \node[anchor=west] at ([xshift=+5.0cm]9.center) {};
+\end{tikzpicture}
+                    \vspace{1em}
+                \end{minipage}
             \end{enumerate}
     \end{enumerate}
 
