@@ -6,6 +6,7 @@
 \usepackage{enumitem}
 \usepackage{tikz}
 \usepackage{pifont} % For checkmark and xmark with ding.
+\usepackage[T1]{fontenc}
 
 \newcommand{\mra}{$\rightarrow$ }
 \newcommand{\mlra}{$\leftrightarrow$ }
@@ -9658,7 +9659,7 @@ T & T & T & T & T &   & T & T  & T &   & \textbf{T} & T & F  & T & \textbf{T} & 
 
     \begin{enumerate}[label=\arabic*,leftmargin=*]
         \item The consistency-trees are the followings.\\
-            When an IQLI is specified, the domain is the whole numbers.
+            When an IQLI is specified, the domain is the positive whole numbers.
             \nopagebreak
             \begin{enumerate}[label=\arabic*.]
                 \begin{minipage}{\textwidth}
@@ -10120,7 +10121,8 @@ T & T & T & T & T &   & T & T  & T &   & \textbf{T} & T & F  & T & \textbf{T} & 
                 \end{minipage}
                 \begin{minipage}{\textwidth}
                 \item $\all x \ [\ex y \ [Ryx]] : \ex y \ [\all x \ [Ryx]]$ \\
-                    Invalid. Undecidable.
+                    Invalid. IQLI: $R$: \{<1, 1>, <2, 2>, ..., <n, n>, ...\}\\
+                    Undecidable.
                     \vspace{1em}\\
 \begin{tikzpicture}[every text node part/.style={align=center}]
     \node (1) at (0,-1) {$\all x \ [\ex y \ [Ryx]]$};
@@ -10166,6 +10168,702 @@ T & T & T & T & T &   & T & T  & T &   & \textbf{T} & T & F  & T & \textbf{T} & 
     \draw (8) -- (9);
     \node[anchor=west] at ([xshift=-5.0cm]9.center) {};
     \node[anchor=west] at ([xshift=+5.0cm]9.center) {};
+\end{tikzpicture}
+                    \vspace{1em}
+                \end{minipage}
+                \begin{minipage}{\textwidth}
+                \item $\all x \ [\ex y \ [Ryx]], \all x \ [\all y \ [Rxy \ra Sxy]] : \all x \ [\ex y \ [Syx]]$ \\
+                    Valid.
+                    \vspace{1em}\\
+\begin{tikzpicture}[every text node part/.style={align=center}]
+    \node (1) at (0,-1) {$\all x \ [\ex y \ [Ryx]]$};
+    \node[anchor=west] at ([xshift=-3.0cm]1.center) {1.};
+    \node[anchor=west] at ([xshift=+3.0cm]1.center) {Premise.};
+
+    \node (2) at (0,-2) {$\all x \ [\all y \ [Rxy \ra Sxy]]$};
+    \draw (1) -- (2);
+    \node[anchor=west] at ([xshift=-3.0cm]2.center) {2.};
+    \node[anchor=west] at ([xshift=+3.0cm]2.center) {Premise.};
+
+    \node (3) at (0,-3) {$\s \all x \ [\ex y \ [Syx]]$};
+    \draw (2) -- (3);
+    \node[anchor=west] at ([xshift=-3.0cm]3.center) {3.};
+    \node[anchor=west] at ([xshift=+3.0cm]3.center) {Negated conclusion.};
+
+    \node (4) at (0,-4) {$\ex x \ [\s \ex y \ [Syx]]$};
+    \draw (3) -- (4);
+    \node[anchor=west] at ([xshift=-3.0cm]4.center) {4.};
+    \node[anchor=west] at ([xshift=+3.0cm]4.center) {3 quantifier-equivalence.};
+
+    \node (5) at (0,-5) {$\s \ex y \ [Sya]$};
+    \draw (4) -- (5);
+    \node[anchor=west] at ([xshift=-3.0cm]5.center) {5.};
+    \node[anchor=west] at ([xshift=+3.0cm]5.center) {4 EIN.};
+
+    \node (6) at (0,-6) {$\all y \ [\s Sya]$};
+    \draw (5) -- (6);
+    \node[anchor=west] at ([xshift=-3.0cm]6.center) {6.};
+    \node[anchor=west] at ([xshift=+3.0cm]6.center) {5 quantifier-equivalence.};
+
+    \node (7) at (0,-7) {$\ex y \ [Rya]$};
+    \draw (6) -- (7);
+    \node[anchor=west] at ([xshift=-3.0cm]7.center) {7.};
+    \node[anchor=west] at ([xshift=+3.0cm]7.center) {1 UIN.};
+
+    \node (8) at (0,-8) {$Rba$};
+    \draw (7) -- (8);
+    \node[anchor=west] at ([xshift=-3.0cm]8.center) {8.};
+    \node[anchor=west] at ([xshift=+3.0cm]8.center) {7 EIN.};
+
+    \node (9) at (0,-9) {$\s Sba$};
+    \draw (8) -- (9);
+    \node[anchor=west] at ([xshift=-3.0cm]9.center) {9.};
+    \node[anchor=west] at ([xshift=+3.0cm]9.center) {6 UIN.};
+
+    \node (10) at (0,-10) {$\all y \ [Rby \ra Sby]$};
+    \draw (9) -- (10);
+    \node[anchor=west] at ([xshift=-3.0cm]10.center) {10.};
+    \node[anchor=west] at ([xshift=+3.0cm]10.center) {2 UIN.};
+
+    \node (11) at (0,-11) {$Rba \ra Sba$};
+    \draw (10) -- (11);
+    \node[anchor=west] at ([xshift=-3.0cm]11.center) {11.};
+    \node[anchor=west] at ([xshift=+3.0cm]11.center) {10 UIN.};
+
+    \node (12-1) at (-1,-12) {$\s Rba$ \\ \xmark \ 8, 12};
+    \draw (11) -- (12-1);
+    \node (12-2) at (+1,-12) {$Sba$ \\ \xmark \ 9, 12};
+    \draw (11) -- (12-2);
+    \node[anchor=west] at ([xshift=-3.0cm]1.center |- 12-1) {12.};
+    \node[anchor=west] at ([xshift=+3.0cm]1.center |- 12-1) {From line 11.};
+\end{tikzpicture}
+                    \vspace{1em}
+                \end{minipage}
+                \begin{minipage}{\textwidth}
+                \item $\all y \ [Fy \ra Gy] : \all x \ [\ex y \ [Fy \ta Rxy] \ra \ex y \ [Gy \ta Rxy]]$ \\
+                    Valid.
+                    \vspace{1em}\\
+\begin{tikzpicture}[every text node part/.style={align=center}]
+    \node (1) at (0,-1) {$\all y \ [Fy \ra Gy]$};
+    \node[anchor=west] at ([xshift=-5.0cm]1.center) {1.};
+    \node[anchor=west] at ([xshift=+5.0cm]1.center) {Premise.};
+
+    \node (2) at (0,-2) {$\s \all x \ [\ex y \ [Fy \ta Rxy] \ra \ex y \ [Gy \ta Rxy]]$};
+    \draw (1) -- (2);
+    \node[anchor=west] at ([xshift=-5.0cm]2.center) {2.};
+    \node[anchor=west] at ([xshift=+5.0cm]2.center) {Negated conclusion.};
+
+    \node (3) at (0,-3) {$\ex x \ [\s (\ex y \ [Fy \ta Rxy] \ra \ex y \ [Gy \ta Rxy])]$};
+    \draw (2) -- (3);
+    \node[anchor=west] at ([xshift=-5.0cm]3.center) {3.};
+    \node[anchor=west] at ([xshift=+5.0cm]3.center) {2 quantifier-equivalence.};
+
+    \node (4) at (0,-4) {$\s (\ex y \ [Fy \ta Ray] \ra \ex y \ [Gy \ta Ray])$};
+    \draw (3) -- (4);
+    \node[anchor=west] at ([xshift=-5.0cm]4.center) {4.};
+    \node[anchor=west] at ([xshift=+5.0cm]4.center) {3 EIN.};
+
+    \node (5) at (0,-5) {$\ex y \ [Fy \ta Ray]$};
+    \draw (4) -- (5);
+    \node[anchor=west] at ([xshift=-5.0cm]5.center) {5.};
+    \node[anchor=west] at ([xshift=+5.0cm]5.center) {From line 4.};
+
+    \node (6) at (0,-6) {$\s \ex y \ [Gy \ta Ray]$};
+    \draw (5) -- (6);
+    \node[anchor=west] at ([xshift=-5.0cm]6.center) {6.};
+    \node[anchor=west] at ([xshift=+5.0cm]6.center) {From line 4.};
+
+    \node (7) at (0,-7) {$\all y \ [\s (Gy \ta Ray)]$};
+    \draw (6) -- (7);
+    \node[anchor=west] at ([xshift=-5.0cm]7.center) {7.};
+    \node[anchor=west] at ([xshift=+5.0cm]7.center) {6 quantifier-equivalence.};
+
+    \node (8) at (0,-8) {$Fb \ta Rab$};
+    \draw (7) -- (8);
+    \node[anchor=west] at ([xshift=-5.0cm]8.center) {8.};
+    \node[anchor=west] at ([xshift=+5.0cm]8.center) {5 EIN.};
+
+    \node (9) at (0,-9) {$\s (Gb \ta Rab)$};
+    \draw (8) -- (9);
+    \node[anchor=west] at ([xshift=-5.0cm]9.center) {9.};
+    \node[anchor=west] at ([xshift=+5.0cm]9.center) {7 UIN.};
+
+    \node (10) at (0,-10) {$Fb \ra Gb$};
+    \draw (9) -- (10);
+    \node[anchor=west] at ([xshift=-5.0cm]10.center) {10.};
+    \node[anchor=west] at ([xshift=+5.0cm]10.center) {1 UIN.};
+
+    \node (11) at (0,-11) {$Fb$};
+    \draw (10) -- (11);
+    \node[anchor=west] at ([xshift=-5.0cm]11.center) {11.};
+    \node[anchor=west] at ([xshift=+5.0cm]11.center) {From line 8.};
+
+    \node (12) at (0,-12) {$Rab$};
+    \draw (11) -- (12);
+    \node[anchor=west] at ([xshift=-5.0cm]12.center) {12.};
+    \node[anchor=west] at ([xshift=+5.0cm]12.center) {From line 8.};
+
+    \node (13-1) at (0,-13) {$\s Gb$};
+    \draw (12) -- (13-1);
+    \node (13-2) at (+2,-13) {$\s Rab$ \\ \xmark \ 12, 13};
+    \draw (12) -- (13-2);
+    \node[anchor=west] at ([xshift=-5.0cm]1.center |- 13-1) {13.};
+    \node[anchor=west] at ([xshift=+5.0cm]1.center |- 13-1) {From line 9.};
+
+    \node (14-1) at (-1,-14) {$\s Fb$ \\ \xmark \ 11, 14};
+    \draw (13-1) -- (14-1);
+    \node (14-2) at (+1,-14) {$Gb$ \\ \xmark \ 13, 14};
+    \draw (13-1) -- (14-2);
+    \node[anchor=west] at ([xshift=-5.0cm]1.center |- 14-1) {14.};
+    \node[anchor=west] at ([xshift=+5.0cm]1.center |- 14-1) {From line 9.};
+\end{tikzpicture}
+                    \vspace{1em}
+                \end{minipage}
+                \begin{minipage}{\textwidth}
+                \item $: \ex x \ [\all y \ [\s Rxy]]$ \\
+                    Invalid. IQLI: $R$: \{<1, 1>, <2, 1>, ..., <n, 1>, ...\}.\\
+                    Undecidable.
+                    \vspace{1em}\\
+\begin{tikzpicture}[every text node part/.style={align=center}]
+    \node (1) at (0,-1) {$\s \ex x \ [\all y \ [\s Rxy]]$};
+    \node[anchor=west] at ([xshift=-5.0cm]1.center) {1.};
+    \node[anchor=west] at ([xshift=+5.0cm]1.center) {Negated conclusion.};
+
+    \node (2) at (0,-2) {$\all x \ [\s \all y \ [\s Rxy]]$};
+    \draw (1) -- (2);
+    \node[anchor=west] at ([xshift=-5.0cm]2.center) {2.};
+    \node[anchor=west] at ([xshift=+5.0cm]2.center) {1 quantifier-equivalence.};
+
+    \node (3) at (0,-3) {$\all x \ [\ex y \ [\s \s Rxy]]$};
+    \draw (2) -- (3);
+    \node[anchor=west] at ([xshift=-5.0cm]3.center) {3.};
+    \node[anchor=west] at ([xshift=+5.0cm]3.center) {2 quantifier-equivalence.};
+
+    \node (4) at (0,-4) {$\ex y \ [\s \s Ray]$};
+    \draw (3) -- (4);
+    \node[anchor=west] at ([xshift=-5.0cm]4.center) {4.};
+    \node[anchor=west] at ([xshift=+5.0cm]4.center) {3 UIN.};
+
+    \node (5) at (0,-5) {$\s \s Rab$};
+    \draw (4) -- (5);
+    \node[anchor=west] at ([xshift=-5.0cm]5.center) {5.};
+    \node[anchor=west] at ([xshift=+5.0cm]5.center) {4 EIN.};
+
+    \node (6) at (0,-6) {$\ex y \ [\s \s Rby]$};
+    \draw (5) -- (6);
+    \node[anchor=west] at ([xshift=-5.0cm]6.center) {6.};
+    \node[anchor=west] at ([xshift=+5.0cm]6.center) {3 UIN.};
+
+    \node (7) at (0,-7) {$\s \s Rbc$};
+    \draw (6) -- (7);
+    \node[anchor=west] at ([xshift=-5.0cm]7.center) {7.};
+    \node[anchor=west] at ([xshift=+5.0cm]7.center) {6 EIN.};
+
+    \node (8) at (0,-8) {.};
+    \draw (7) -- (8);
+    \node[anchor=west] at ([xshift=-5.0cm]8.center) {};
+    \node[anchor=west] at ([xshift=+5.0cm]8.center) {};
+\end{tikzpicture}
+                    \vspace{1em}
+                \end{minipage}
+                \begin{minipage}{\textwidth}
+                \item $: \all x \ [x=x]$ \\
+                    Valid.
+                    \vspace{1em}\\
+\begin{tikzpicture}[every text node part/.style={align=center}]
+    \node (1) at (0,-1) {$\s \all x \ [x=x]$};
+    \node[anchor=west] at ([xshift=-5.0cm]1.center) {1.};
+    \node[anchor=west] at ([xshift=+5.0cm]1.center) {Negated conclusion.};
+
+    \node (2) at (0,-2) {$\ex \ [\s x=x]$};
+    \draw (1) -- (2);
+    \node[anchor=west] at ([xshift=-5.0cm]2.center) {2.};
+    \node[anchor=west] at ([xshift=+5.0cm]2.center) {1 quantifier-equivalence.};
+
+    \node (3) at (0,-3) {$\s a=a$ \\ \xmark};
+    \draw (2) -- (3);
+    \node[anchor=west] at ([xshift=-5.0cm]3.center) {3.};
+    \node[anchor=west] at ([xshift=+5.0cm]3.center) {2 EIN.};
+\end{tikzpicture}
+                    \vspace{1em}
+                \end{minipage}
+                \begin{minipage}{\textwidth}
+                \item $\all x \ [\all y \ [(x=y) \ra (y=x)]] : \ex x \ [Rxx]$ \\
+                    Invalid. IQLI: $R$: \{\}.
+                    \vspace{1em}\\
+\begin{tikzpicture}[every text node part/.style={align=center}]
+    \node (1) at (0,-1) {$\all x \ [\all y \ [(x=y) \ra (y=x)]]$};
+    \node[anchor=west] at ([xshift=-5.0cm]1.center) {1.};
+    \node[anchor=west] at ([xshift=+5.0cm]1.center) {Premise.};
+
+    \node (2) at (0,-2) {$\s \ex x \ [Rxx]$};
+    \draw (1) -- (2);
+    \node[anchor=west] at ([xshift=-5.0cm]2.center) {2.};
+    \node[anchor=west] at ([xshift=+5.0cm]2.center) {Negated conclusion.};
+
+    \node (3) at (0,-3) {$\all x \ [\s Rxx]$};
+    \draw (2) -- (3);
+    \node[anchor=west] at ([xshift=-5.0cm]3.center) {3.};
+    \node[anchor=west] at ([xshift=+5.0cm]3.center) {3 quantifier-equivalence.};
+
+    \node (4) at (0,-4) {$\s Raa$};
+    \draw (3) -- (4);
+    \node[anchor=west] at ([xshift=-5.0cm]4.center) {4.};
+    \node[anchor=west] at ([xshift=+5.0cm]4.center) {3 UIN.};
+
+    \node (5) at (0,-5) {$\all y \ [(a=y) \ra (y=a)]$};
+    \draw (4) -- (5);
+    \node[anchor=west] at ([xshift=-5.0cm]5.center) {5.};
+    \node[anchor=west] at ([xshift=+5.0cm]5.center) {1 UIN.};
+
+    \node (6) at (0,-6) {$(a=a) \ra (a=a)$};
+    \draw (5) -- (6);
+    \node[anchor=west] at ([xshift=-5.0cm]6.center) {6.};
+    \node[anchor=west] at ([xshift=+5.0cm]6.center) {5 UIN.};
+
+    \node (7-1) at (-1,-7) {$\s (a=a)$ \\ \xmark};
+    \draw (6) -- (7-1);
+    \node (7-2) at (+1,-7) {$a=a$ \\ \cmark};
+    \draw (6) -- (7-2);
+    \node[anchor=west] at ([xshift=-5.0cm]7.center) {7.};
+    \node[anchor=west] at ([xshift=+5.0cm]7.center) {From line 6.};
+\end{tikzpicture}
+                    \vspace{1em}
+                \end{minipage}
+                \begin{minipage}{\textwidth}
+                \item $\all y \ [\ex x \ [Rxy \ta Rxa] \ra (a=y)], \ex x \ [Rxb \ta Rxa] : (a=b)$ \\
+                    Valid.
+                    \vspace{1em}\\
+\begin{tikzpicture}[every text node part/.style={align=center}]
+    \node (1) at (0,-1) {$\all y \ [\ex x \ [Rxy \ta Rxa] \ra (a=y)]$};
+    \node[anchor=west] at ([xshift=-5.0cm]1.center) {1.};
+    \node[anchor=west] at ([xshift=+5.0cm]1.center) {Premise.};
+
+    \node (2) at (0,-2) {$\ex x \ [Rxb \ta Rxa]$};
+    \draw (1) -- (2);
+    \node[anchor=west] at ([xshift=-5.0cm]2.center) {2.};
+    \node[anchor=west] at ([xshift=+5.0cm]2.center) {Premise.};
+
+    \node (3) at (0,-3) {$\s (a=b)$};
+    \draw (2) -- (3);
+    \node[anchor=west] at ([xshift=-5.0cm]3.center) {3.};
+    \node[anchor=west] at ([xshift=+5.0cm]3.center) {Negated conclusion.};
+
+    \node (4) at (0,-4) {$Rcb \ta Rca$};
+    \draw (3) -- (4);
+    \node[anchor=west] at ([xshift=-5.0cm]4.center) {4.};
+    \node[anchor=west] at ([xshift=+5.0cm]4.center) {2 EIN.};
+
+    \node (5) at (0,-5) {$Rcb$};
+    \draw (4) -- (5);
+    \node[anchor=west] at ([xshift=-5.0cm]5.center) {5.};
+    \node[anchor=west] at ([xshift=+5.0cm]5.center) {From line 4.};
+
+    \node (6) at (0,-6) {$Rca$};
+    \draw (5) -- (6);
+    \node[anchor=west] at ([xshift=-5.0cm]6.center) {6.};
+    \node[anchor=west] at ([xshift=+5.0cm]6.center) {From line 4.};
+
+    \node (7) at (0,-7) {$\ex x \ [Rxb \ta Rxa] \ra (a=b)$};
+    \draw (6) -- (7);
+    \node[anchor=west] at ([xshift=-5.0cm]7.center) {7.};
+    \node[anchor=west] at ([xshift=+5.0cm]7.center) {1 UIN.};
+
+    \node (8-1) at (-2,-8) {$\s \ex x \ [Rxb \ta Rxa]$};
+    \draw (7) -- (8-1);
+    \node (8-2) at (+2,-8) {$a=b$ \\ \xmark \ 3, 8};
+    \draw (7) -- (8-2);
+    \node[anchor=west] at ([xshift=-5.0cm]8.center) {8.};
+    \node[anchor=west] at ([xshift=+5.0cm]8.center) {From line 7.};
+
+    \node (9) at (-2,-9) {$\all x \ [\s (Rxb \ta Rxa)]$};
+    \draw (8-1) -- (9);
+    \node[anchor=west] at ([xshift=-5.0cm]1.center |- 9) {9.};
+    \node[anchor=west] at ([xshift=+5.0cm]1.center |- 9) {8 quantifier-equivalence.};
+
+    \node (10) at (-2,-10) {$\s (Rcb \ta Rca)$};
+    \draw (9) -- (10);
+    \node[anchor=west] at ([xshift=-5.0cm]1.center |- 10) {10.};
+    \node[anchor=west] at ([xshift=+5.0cm]1.center |- 10) {9 UIN.};
+
+    \node (11-1) at (-2,-11) {$\s Rcb$ \\ \xmark \ 5, 11};
+    \draw (10) -- (11-1);
+    \node (11-2) at (+0,-11) {$\s Rca$ \\ \xmark \ 6, 11};
+    \draw (10) -- (11-2);
+    \node[anchor=west] at ([xshift=-5.0cm]1.center |- 11) {11.};
+    \node[anchor=west] at ([xshift=+5.0cm]1.center |- 11) {From line 10.};
+\end{tikzpicture}
+                    \vspace{1em}
+                \end{minipage}
+                \begin{minipage}{\textwidth}
+                \item $\ex x \ [Fx \ta \all y \ [(Gy \ra Rxy)]] : \all y \ [Gy \ra \ex x \ [Fx \ta Rxy]]$ \\
+                    Valid.
+                    \vspace{1em}\\
+\begin{tikzpicture}[every text node part/.style={align=center}]
+    \node (1) at (0,-1) {$\ex x \ [Fx \ta \all y \ [(Gy \ra Rxy)]]$};
+    \node[anchor=west] at ([xshift=-5.0cm]1.center) {1.};
+    \node[anchor=west] at ([xshift=+5.0cm]1.center) {Premise.};
+
+    \node (2) at (0,-2) {$\s \all y \ [Gy \ra \ex x \ [Fx \ta Rxy]]$};
+    \draw (1) -- (2);
+    \node[anchor=west] at ([xshift=-5.0cm]2.center) {2.};
+    \node[anchor=west] at ([xshift=+5.0cm]2.center) {Negated conclusion.};
+
+    \node (3) at (0,-3) {$\ex y \ [\s (Gy \ra \ex x \ [Fx \ta Rxy])]$};
+    \draw (2) -- (3);
+    \node[anchor=west] at ([xshift=-5.0cm]3.center) {3.};
+    \node[anchor=west] at ([xshift=+5.0cm]3.center) {2 quantifier-equivalence.};
+
+    \node (4) at (0,-4) {$Fa \ta \all y \ [(Gy \ra Ray)]$};
+    \draw (3) -- (4);
+    \node[anchor=west] at ([xshift=-5.0cm]4.center) {4.};
+    \node[anchor=west] at ([xshift=+5.0cm]4.center) {1 EIN.};
+
+    \node (5) at (0,-5) {$Fa$};
+    \draw (4) -- (5);
+    \node[anchor=west] at ([xshift=-5.0cm]5.center) {5.};
+    \node[anchor=west] at ([xshift=+5.0cm]5.center) {From line 4.};
+
+    \node (6) at (0,-6) {$\all y \ [(Gy \ra Ray)]$};
+    \draw (5) -- (6);
+    \node[anchor=west] at ([xshift=-5.0cm]6.center) {6.};
+    \node[anchor=west] at ([xshift=+5.0cm]6.center) {From line 4.};
+
+    \node (7) at (0,-7) {$\s (Gb \ra \ex x \ [Fx \ta Rxb])$};
+    \draw (6) -- (7);
+    \node[anchor=west] at ([xshift=-5.0cm]7.center) {7.};
+    \node[anchor=west] at ([xshift=+5.0cm]7.center) {3 EIN.};
+
+    \node (8) at (0,-8) {$Gb$};
+    \draw (7) -- (8);
+    \node[anchor=west] at ([xshift=-5.0cm]8.center) {8.};
+    \node[anchor=west] at ([xshift=+5.0cm]8.center) {From line 7.};
+
+    \node (9) at (0,-9) {$\s \ex x \ [Fx \ta Rxb]$};
+    \draw (8) -- (9);
+    \node[anchor=west] at ([xshift=-5.0cm]9.center) {9.};
+    \node[anchor=west] at ([xshift=+5.0cm]9.center) {From line 7.};
+
+    \node (10) at (0,-10) {$\all x \ [\s (Fx \ta Rxb)]$};
+    \draw (9) -- (10);
+    \node[anchor=west] at ([xshift=-5.0cm]10.center) {10.};
+    \node[anchor=west] at ([xshift=+5.0cm]10.center) {9 quantifier-equivalence.};
+
+    \node (11) at (0,-11) {$Gb \ra Rab$};
+    \draw (10) -- (11);
+    \node[anchor=west] at ([xshift=-5.0cm]11.center) {11.};
+    \node[anchor=west] at ([xshift=+5.0cm]11.center) {6 UIN.};
+
+    \node (12) at (0,-12) {$\s (Fa \ta Rab)$};
+    \draw (11) -- (12);
+    \node[anchor=west] at ([xshift=-5.0cm]12.center) {12.};
+    \node[anchor=west] at ([xshift=+5.0cm]12.center) {10 UIN.};
+
+    \node (13-1) at (-2,-13) {$\s Gb$ \\ \xmark \ 8, 13};
+    \draw (12) -- (13-1);
+    \node (13-2) at (+2,-13) {$Rab$};
+    \draw (12) -- (13-2);
+    \node[anchor=west] at ([xshift=-5.0cm]1.center |- 13-1) {13.};
+    \node[anchor=west] at ([xshift=+5.0cm]1.center |- 13-1) {From line 11.};
+
+    \node (14-1) at (+0,-14) {$\s Fa$ \\ \xmark \ 5, 14};
+    \draw (13-2) -- (14-1);
+    \node (14-2) at (+2,-14) {$\s Rab$ \\ \xmark \ 13, 14};
+    \draw (13-2) -- (14-2);
+    \node[anchor=west] at ([xshift=-5.0cm]1.center |- 14-1) {14.};
+    \node[anchor=west] at ([xshift=+5.0cm]1.center |- 14-1) {From line 12.};
+\end{tikzpicture}
+                    \vspace{1em}
+                \end{minipage}
+                \begin{minipage}{\textwidth}
+                \item $\ex x \ [Fx], \all x \ [\all y \ [(Fx \ta Fy) \ra (x=y)]] : \ex x \ [Fx \ta \all y \ [Fy \ra (x=y)]]$ \\
+                    Valid.
+                    \vspace{1em}\\
+\begin{tikzpicture}[every text node part/.style={align=center}]
+    \node (1) at (0,-1) {$\ex x \ [Fx]$};
+    \node[anchor=west] at ([xshift=-5.0cm]1.center) {1.};
+    \node[anchor=west] at ([xshift=+5.0cm]1.center) {Premise.};
+
+    \node (2) at (0,-2) {$\all x \ [\all y \ [(Fx \ta Fy) \ra (x=y)]]$};
+    \draw (1) -- (2);
+    \node[anchor=west] at ([xshift=-5.0cm]2.center) {2.};
+    \node[anchor=west] at ([xshift=+5.0cm]2.center) {Premise.};
+
+    \node (3) at (0,-3) {$\s \ex x \ [Fx \ta \all y \ [Fy \ra (x=y)]]$};
+    \draw (2) -- (3);
+    \node[anchor=west] at ([xshift=-5.0cm]3.center) {3.};
+    \node[anchor=west] at ([xshift=+5.0cm]3.center) {Negated conclusion.};
+
+    \node (4) at (0,-4) {$\all x \ [\s (Fx \ta \all y \ [Fy \ra (x=y)])]$};
+    \draw (3) -- (4);
+    \node[anchor=west] at ([xshift=-5.0cm]4.center) {4.};
+    \node[anchor=west] at ([xshift=+5.0cm]4.center) {3 quantifier-equivalence.};
+
+    \node (5) at (0,-5) {$Fa$};
+    \draw (4) -- (5);
+    \node[anchor=west] at ([xshift=-5.0cm]5.center) {5.};
+    \node[anchor=west] at ([xshift=+5.0cm]5.center) {1 EIN.};
+
+    \node (6) at (0,-6) {$\s (Fa \ta \all y \ [Fy \ra (a=y)])$};
+    \draw (5) -- (6);
+    \node[anchor=west] at ([xshift=-5.0cm]6.center) {6.};
+    \node[anchor=west] at ([xshift=+5.0cm]6.center) {4 UIN.};
+
+    \node (7-1) at (-2,-7) {$\s Fa$ \\ \xmark \ 5, 7};
+    \draw (6) -- (7-1);
+    \node (7-2) at (+2,-7) {$\s \all y \ [Fy \ra (a=y)]$};
+    \draw (6) -- (7-2);
+    \node[anchor=west] at ([xshift=-5.0cm]7.center) {7.};
+    \node[anchor=west] at ([xshift=+5.0cm]7.center) {From line 6.};
+
+    \node (8) at (+2,-8) {$\ex y \ [\s (Fy \ra (a=y))]$};
+    \draw (7-2) -- (8);
+    \node[anchor=west] at ([xshift=-5.0cm]1.center |- 8) {8.};
+    \node[anchor=west] at ([xshift=+5.0cm]1.center |- 8) {7 quantifier-equivalence.};
+
+    \node (9) at (+2,-9) {$\s (Fb \ra (a=b))$};
+    \draw (8) -- (9);
+    \node[anchor=west] at ([xshift=-5.0cm]1.center |- 9) {9.};
+    \node[anchor=west] at ([xshift=+5.0cm]1.center |- 9) {8 EIN.};
+
+    \node (10) at (+2,-10) {$Fb$};
+    \draw (9) -- (10);
+    \node[anchor=west] at ([xshift=-5.0cm]1.center |- 10) {10.};
+    \node[anchor=west] at ([xshift=+5.0cm]1.center |- 10) {From line 9.};
+
+    \node (11) at (+2,-11) {$\s (a=b)$};
+    \draw (10) -- (11);
+    \node[anchor=west] at ([xshift=-5.0cm]1.center |- 11) {11.};
+    \node[anchor=west] at ([xshift=+5.0cm]1.center |- 11) {From line 9.};
+
+    \node (12) at (+2,-12) {$\all y \ [(Fa \ta Fy) \ra (a=y)]$};
+    \draw (11) -- (12);
+    \node[anchor=west] at ([xshift=-5.0cm]1.center |- 12) {12.};
+    \node[anchor=west] at ([xshift=+5.0cm]1.center |- 12) {2 UIN.};
+
+    \node (13) at (+2,-13) {$(Fa \ta Fb) \ra (a=b)$};
+    \draw (12) -- (13);
+    \node[anchor=west] at ([xshift=-5.0cm]1.center |- 13) {13.};
+    \node[anchor=west] at ([xshift=+5.0cm]1.center |- 13) {12 UIN.};
+
+    \node (14-1) at (+0,-14) {$\s (Fa \ta Fb)$};
+    \draw (13) -- (14-1);
+    \node (14-2) at (+4,-14) {$a=b$ \\ \xmark \ 11, 14};
+    \draw (13) -- (14-2);
+    \node[anchor=west] at ([xshift=-5.0cm]1.center |- 14-1) {14.};
+    \node[anchor=west] at ([xshift=+5.0cm]1.center |- 14-1) {From line 13.};
+
+    \node (15-1) at (-2,-15) {$\s Fa$ \\ \xmark \ 5, 15};
+    \draw (14-1) -- (15-1);
+    \node (15-2) at (+2,-15) {$\s Fb$ \\ \xmark \ 10, 15};
+    \draw (14-1) -- (15-2);
+    \node[anchor=west] at ([xshift=-5.0cm]1.center |- 15-1) {15.};
+    \node[anchor=west] at ([xshift=+5.0cm]1.center |- 15-1) {From line 14.};
+\end{tikzpicture}
+                    \vspace{1em}
+                \end{minipage}
+                \begin{minipage}{\textwidth}
+                \item $\all x \ [\s Rxx], \all x \ [\all y \ [\all z \ [(Rxy \ta Ryz) \ra Rxz]]] : \all x \ [\all y \ [Rxy \ra \s Ryx]]$ \\
+                    Valid.
+                    \vspace{1em}\\
+\begin{tikzpicture}[every text node part/.style={align=center}]
+    \node (1) at (0,-1) {$\all x \ [\s Rxx]$};
+    \node[anchor=west] at ([xshift=-5.0cm]1.center) {1.};
+    \node[anchor=west] at ([xshift=+5.0cm]1.center) {Premise.};
+
+    \node (2) at (0,-2) {$\all x \ [\all y \ [\all z \ [(Rxy \ta Ryz) \ra Rxz]]]$};
+    \draw (1) -- (2);
+    \node[anchor=west] at ([xshift=-5.0cm]2.center) {2.};
+    \node[anchor=west] at ([xshift=+5.0cm]2.center) {Premise.};
+
+    \node (3) at (0,-3) {$\s \all x \ [\all y \ [Rxy \ra \s Ryx]]$};
+    \draw (2) -- (3);
+    \node[anchor=west] at ([xshift=-5.0cm]3.center) {3.};
+    \node[anchor=west] at ([xshift=+5.0cm]3.center) {Negated conclusion.};
+
+    \node (4) at (0,-4) {$\ex x \ [\s \all y \ [Rxy \ra \s Ryx]]$};
+    \draw (3) -- (4);
+    \node[anchor=west] at ([xshift=-5.0cm]4.center) {4.};
+    \node[anchor=west] at ([xshift=+5.0cm]4.center) {3 quantifier-equivalence.};
+
+    \node (5) at (0,-5) {$\s \all y \ [Ray \ra \s Rya]$};
+    \draw (4) -- (5);
+    \node[anchor=west] at ([xshift=-5.0cm]5.center) {5.};
+    \node[anchor=west] at ([xshift=+5.0cm]5.center) {4 EIN.};
+
+    \node (6) at (0,-6) {$\ex y \ [\s (Ray \ra \s Rya)]$};
+    \draw (5) -- (6);
+    \node[anchor=west] at ([xshift=-5.0cm]6.center) {6.};
+    \node[anchor=west] at ([xshift=+5.0cm]6.center) {5 quantifier-equivalence.};
+
+    \node (7) at (0,-7) {$\s (Rab \ra \s Rba)$};
+    \draw (6) -- (7);
+    \node[anchor=west] at ([xshift=-5.0cm]7.center) {7.};
+    \node[anchor=west] at ([xshift=+5.0cm]7.center) {6 EIN.};
+
+    \node (8) at (0,-8) {$Rab$};
+    \draw (7) -- (8);
+    \node[anchor=west] at ([xshift=-5.0cm]8.center) {8.};
+    \node[anchor=west] at ([xshift=+5.0cm]8.center) {From line 7.};
+
+    \node (9) at (0,-9) {$\s \s Rba$};
+    \draw (8) -- (9);
+    \node[anchor=west] at ([xshift=-5.0cm]9.center) {9.};
+    \node[anchor=west] at ([xshift=+5.0cm]9.center) {From line 7.};
+
+    \node (10) at (0,-10) {$Rba$};
+    \draw (9) -- (10);
+    \node[anchor=west] at ([xshift=-5.0cm]10.center) {10.};
+    \node[anchor=west] at ([xshift=+5.0cm]10.center) {From line 9.};
+
+    \node (11) at (0,-11) {$\all y \ [\all z \ [(Ray \ta Ryz) \ra Raz]]$};
+    \draw (10) -- (11);
+    \node[anchor=west] at ([xshift=-5.0cm]11.center) {11.};
+    \node[anchor=west] at ([xshift=+5.0cm]11.center) {2 UIN.};
+
+    \node (12) at (0,-12) {$\all z \ [(Rab \ta Rbz) \ra Raz]$};
+    \draw (11) -- (12);
+    \node[anchor=west] at ([xshift=-5.0cm]12.center) {12.};
+    \node[anchor=west] at ([xshift=+5.0cm]12.center) {11 UIN.};
+
+    \node (13) at (0,-13) {$(Rab \ta Rba) \ra Raa$};
+    \draw (12) -- (13);
+    \node[anchor=west] at ([xshift=-5.0cm]13.center) {13.};
+    \node[anchor=west] at ([xshift=+5.0cm]13.center) {12 UIN.};
+
+    \node (14-1) at (-2,-14) {$\s (Rab \ta Rba)$};
+    \draw (13) -- (14-1);
+    \node (14-2) at (+2,-14) {$Raa$};
+    \draw (13) -- (14-2);
+    \node[anchor=west] at ([xshift=-5.0cm]1.center |- 14-1) {14.};
+    \node[anchor=west] at ([xshift=+5.0cm]1.center |- 14-1) {From line 13.};
+
+    \node (15-2) at (+2,-15) {$\s Raa$ \\ \xmark \ 1, 15};
+    \draw (14-2) -- (15-2);
+    \node[anchor=west] at ([xshift=-5.0cm]1.center |- 15-2) {15.};
+    \node[anchor=west] at ([xshift=+5.0cm]1.center |- 15-2) {1 UIN.};
+
+    \node (16-1) at (-2,-16) {$\s Rab$ \\ \xmark \ 8, 16};
+    \draw (14-1) -- (16-1);
+    \node (16-2) at (+0,-16) {$\s Rba$ \\ \xmark \ 10, 16};
+    \draw (14-1) -- (16-2);
+    \node[anchor=west] at ([xshift=-5.0cm]1.center |- 16-1) {16.};
+    \node[anchor=west] at ([xshift=+5.0cm]1.center |- 16-1) {From line 14.};
+\end{tikzpicture}
+                    \vspace{1em}
+                \end{minipage}
+                \begin{minipage}{\textwidth}
+                \item $\ex x \ [\ex y \ [(Fx \ta Fy) \ta (Rxy \tv Ryx)]],\\
+                    \all x \ [Fx \ra \s Rxx] : \ex x \ [\ex y \ [\s (x=y) \ta (Fx \ta Fy)]]$ \\
+                    Valid.
+                    \vspace{1em}\\
+\begin{tikzpicture}[every text node part/.style={align=center}]
+    \node (1) at (0,-1) {$\ex x \ [\ex y \ [(Fx \ta Fy) \ta (Rxy \tv Ryx)]]$};
+    \node[anchor=west] at ([xshift=-5.0cm]1.center) {1.};
+    \node[anchor=west] at ([xshift=+5.0cm]1.center) {Premise.};
+
+    \node (2) at (0,-2) {$\all x \ [Fx \ra \s Rxx]$};
+    \draw (1) -- (2);
+    \node[anchor=west] at ([xshift=-5.0cm]2.center) {2.};
+    \node[anchor=west] at ([xshift=+5.0cm]2.center) {Premise.};
+
+    \node (3) at (0,-3) {$\s \ex x \ [\ex y \ [\s (x=y) \ta (Fx \ta Fy)]]$};
+    \draw (2) -- (3);
+    \node[anchor=west] at ([xshift=-5.0cm]3.center) {3.};
+    \node[anchor=west] at ([xshift=+5.0cm]3.center) {Negated conclusion.};
+
+    \node (4) at (0,-4) {$\all x \ [\s \ex y \ [\s (x=y) \ta (Fx \ta Fy)]]$};
+    \draw (3) -- (4);
+    \node[anchor=west] at ([xshift=-5.0cm]4.center) {4.};
+    \node[anchor=west] at ([xshift=+5.0cm]4.center) {3 quantifier-equivalence.};
+
+    \node (5) at (0,-5) {$\ex y \ [(Fa \ta Fy) \ta (Ray \tv Rya)]$};
+    \draw (4) -- (5);
+    \node[anchor=west] at ([xshift=-5.0cm]5.center) {5.};
+    \node[anchor=west] at ([xshift=+5.0cm]5.center) {1 EIN.};
+
+    \node (6) at (0,-6) {$(Fa \ta Fb) \ta (Rab \tv Rba)$};
+    \draw (5) -- (6);
+    \node[anchor=west] at ([xshift=-5.0cm]6.center) {6.};
+    \node[anchor=west] at ([xshift=+5.0cm]6.center) {5 EIN.};
+
+    \node (7) at (0,-7) {$Fa \ta Fb$};
+    \draw (6) -- (7);
+    \node[anchor=west] at ([xshift=-5.0cm]7.center) {7.};
+    \node[anchor=west] at ([xshift=+5.0cm]7.center) {From line 6.};
+
+    \node (8) at (0,-8) {$Rab \tv Rba$};
+    \draw (7) -- (8);
+    \node[anchor=west] at ([xshift=-5.0cm]8.center) {8.};
+    \node[anchor=west] at ([xshift=+5.0cm]8.center) {From line 6.};
+
+    \node (9) at (0,-9) {$Fa$};
+    \draw (8) -- (9);
+    \node[anchor=west] at ([xshift=-5.0cm]9.center) {9.};
+    \node[anchor=west] at ([xshift=+5.0cm]9.center) {From line 7.};
+
+    \node (10) at (0,-10) {$Fb$};
+    \draw (9) -- (10);
+    \node[anchor=west] at ([xshift=-5.0cm]10.center) {10.};
+    \node[anchor=west] at ([xshift=+5.0cm]10.center) {From line 7.};
+
+    \node (11) at (0,-11) {$Fa \ra \s Raa$};
+    \draw (10) -- (11);
+    \node[anchor=west] at ([xshift=-5.0cm]11.center) {11.};
+    \node[anchor=west] at ([xshift=+5.0cm]11.center) {2 UIN.};
+
+    \node (12-1) at (-2,-12) {$\s Fa$ \\ \xmark \ 9, 12};
+    \draw (11) -- (12-1);
+    \node (12-2) at (+2,-12) {$\s Raa$};
+    \draw (11) -- (12-2);
+    \node[anchor=west] at ([xshift=-5.0cm]12.center) {12.};
+    \node[anchor=west] at ([xshift=+5.0cm]12.center) {From line 11.};
+
+    \node (13) at (+2,-13) {$\s \ex y \ [\s (a=y) \ta (Fa \ta Fy)]$};
+    \draw (12-2) -- (13);
+    \node[anchor=west] at ([xshift=-5.0cm]1.center |- 13) {13.};
+    \node[anchor=west] at ([xshift=+5.0cm]1.center |- 13) {4 UIN.};
+
+    \node (14) at (+2,-14) {$\all y \ [\s (\s (a=y) \ta (Fa \ta Fy))]$};
+    \draw (13) -- (14);
+    \node[anchor=west] at ([xshift=-5.0cm]1.center |- 14) {14.};
+    \node[anchor=west] at ([xshift=+5.0cm]1.center |- 14) {13 quantifier-equivalence.};
+
+    \node (15) at (+2,-15) {$\s (\s (a=b) \ta (Fa \ta Fb))$};
+    \draw (14) -- (15);
+    \node[anchor=west] at ([xshift=-5.0cm]1.center |- 15) {15.};
+    \node[anchor=west] at ([xshift=+5.0cm]1.center |- 15) {14 UIN.};
+
+    \node (16-1) at (-2,-16) {$\s \s a=b$};
+    \draw (15) -- (16-1);
+    \node (16-2) at (+2,-16) {$\s (Fa \ta Fb)$};
+    \draw (15) -- (16-2);
+    \node[anchor=west] at ([xshift=-5.0cm]1.center |- 16-1) {16.};
+    \node[anchor=west] at ([xshift=+5.0cm]1.center |- 16-1) {From line 15.};
+
+    \node (17-1) at (-2,-17) {$a=b$};
+    \draw (16-1) -- (17-1);
+    \node[anchor=west] at ([xshift=-5.0cm]1.center |- 17-1) {17.};
+    \node[anchor=west] at ([xshift=+5.0cm]1.center |- 17-1) {From line 16.};
+
+    \node (18-1) at (-2,-18) {$Raa \tv Raa$};
+    \draw (17-1) -- (18-1);
+    \node[anchor=west] at ([xshift=-5.0cm]1.center |- 18-1) {18.};
+    \node[anchor=west] at ([xshift=+5.0cm]1.center |- 18-1) {From line 8, 17.};
+
+    \node (19-1) at (-3,-19) {$Raa$ \\ \xmark \ 12, 19};
+    \draw (18-1) -- (19-1);
+    \node (19-2) at (-1,-19) {$Raa$ \\ \xmark \ 12, 19};
+    \draw (18-1) -- (19-2);
+    \node[anchor=west] at ([xshift=-5.0cm]1.center |- 19-1) {19.};
+    \node[anchor=west] at ([xshift=+5.0cm]1.center |- 19-1) {From line 18.};
+
+    \node (20-1) at (+1,-20) {$\s Fa$ \\ \xmark \ 9, 20};
+    \draw (16-2) -- (20-1);
+    \node (20-2) at (+3,-20) {$\s Fb$ \\ \xmark \ 10, 20};
+    \draw (16-2) -- (20-2);
+    \node[anchor=west] at ([xshift=-5.0cm]1.center |- 20-1) {20.};
+    \node[anchor=west] at ([xshift=+5.0cm]1.center |- 20-1) {From line 16.};
 \end{tikzpicture}
                     \vspace{1em}
                 \end{minipage}
